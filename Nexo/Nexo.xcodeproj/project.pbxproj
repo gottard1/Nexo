@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		858411F92CA1AFFE0054E820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858411F82CA1AFFE0054E820 /* AppDelegate.swift */; };
-		858411FD2CA1AFFE0054E820 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858411FC2CA1AFFE0054E820 /* ViewController.swift */; };
-		858412022CA1AFFF0054E820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858412012CA1AFFF0054E820 /* Assets.xcassets */; };
 		858412052CA1AFFF0054E820 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 858412042CA1AFFF0054E820 /* Base */; };
 		858412102CA1AFFF0054E820 /* NexoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584120F2CA1AFFF0054E820 /* NexoTests.swift */; };
+		C354197B2CA3792E00C9372F /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C354197A2CA3792E00C9372F /* Auth.framework */; };
+		C354197D2CA3792E00C9372F /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C354197C2CA3792E00C9372F /* Shared.framework */; };
+		C354197E2CA379FD00C9372F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C354196F2CA3761600C9372F /* AppCoordinator.swift */; };
+		C354197F2CA37A4300C9372F /* Auth.framework in Sources */ = {isa = PBXBuildFile; fileRef = C354197A2CA3792E00C9372F /* Auth.framework */; };
+		C35419802CA37A4300C9372F /* Shared.framework in Sources */ = {isa = PBXBuildFile; fileRef = C354197C2CA3792E00C9372F /* Shared.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,12 +30,13 @@
 /* Begin PBXFileReference section */
 		858411F52CA1AFFE0054E820 /* Nexo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nexo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858411F82CA1AFFE0054E820 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		858411FC2CA1AFFE0054E820 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		858412012CA1AFFF0054E820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		858412042CA1AFFF0054E820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		858412062CA1AFFF0054E820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8584120B2CA1AFFF0054E820 /* NexoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8584120F2CA1AFFF0054E820 /* NexoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTests.swift; sourceTree = "<group>"; };
+		C354196F2CA3761600C9372F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C354197A2CA3792E00C9372F /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C354197C2CA3792E00C9372F /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C354197B2CA3792E00C9372F /* Auth.framework in Frameworks */,
+				C354197D2CA3792E00C9372F /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +65,7 @@
 				858411F72CA1AFFE0054E820 /* Nexo */,
 				8584120E2CA1AFFF0054E820 /* NexoTests */,
 				858411F62CA1AFFE0054E820 /* Products */,
+				C35419792CA3792E00C9372F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +81,8 @@
 		858411F72CA1AFFE0054E820 /* Nexo */ = {
 			isa = PBXGroup;
 			children = (
+				C354196F2CA3761600C9372F /* AppCoordinator.swift */,
 				858411F82CA1AFFE0054E820 /* AppDelegate.swift */,
-				858411FC2CA1AFFE0054E820 /* ViewController.swift */,
-				858412012CA1AFFF0054E820 /* Assets.xcassets */,
 				858412032CA1AFFF0054E820 /* LaunchScreen.storyboard */,
 				858412062CA1AFFF0054E820 /* Info.plist */,
 			);
@@ -89,6 +95,15 @@
 				8584120F2CA1AFFF0054E820 /* NexoTests.swift */,
 			);
 			path = NexoTests;
+			sourceTree = "<group>";
+		};
+		C35419792CA3792E00C9372F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C354197A2CA3792E00C9372F /* Auth.framework */,
+				C354197C2CA3792E00C9372F /* Shared.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +187,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				858412022CA1AFFF0054E820 /* Assets.xcassets in Resources */,
 				858412052CA1AFFF0054E820 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				858411FD2CA1AFFE0054E820 /* ViewController.swift in Sources */,
+				C354197F2CA37A4300C9372F /* Auth.framework in Sources */,
+				C35419802CA37A4300C9372F /* Shared.framework in Sources */,
+				C354197E2CA379FD00C9372F /* AppCoordinator.swift in Sources */,
 				858411F92CA1AFFE0054E820 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

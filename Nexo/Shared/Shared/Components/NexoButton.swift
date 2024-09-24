@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum ButtonStyle {
+public enum ButtonStyle {
     case filled
     case outlined
     case onlyText
@@ -15,43 +15,41 @@ enum ButtonStyle {
     case disabled
 }
 
-import UIKit
-
-class CustomButton: UIButton {
+public final class CustomButton: UIButton {
     
     private var buttonStyle: ButtonStyle = .filled
     
-    var enableBackgroundColor: UIColor = .yellow {
+    public var enableBackgroundColor: UIColor = .yellow {
         didSet {
             setupButton()
         }
     }
     
-    var borderColor: UIColor = .yellow {
+    public var borderColor: UIColor = .yellow {
         didSet {
             setupButton()
         }
     }
     
-    var enableTitleColor: UIColor = .white {
+    public var enableTitleColor: UIColor = .white {
         didSet {
             setupButton()
         }
     }
     
-    var disableTitleColor: UIColor = .white {
+    public var disableTitleColor: UIColor = .white {
         didSet {
             setupButton()
         }
     }
     
-    var disableBackgroundColor: UIColor = .gray {
+    public var disableBackgroundColor: UIColor = .gray {
         didSet {
             setupButton()
         }
     }
     
-    init(style: ButtonStyle = .filled) {
+    public init(style: ButtonStyle = .filled) {
         super.init(frame: .zero)
         self.buttonStyle = style
         setupButton()

@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Shared/Shared.xcodeproj">
    </FileRef>
+   <FileRef
+       location = "group:Auth/Auth.xcodeproj">
+   </FileRef>
 </Workspace>
