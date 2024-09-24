@@ -11,6 +11,7 @@
 		855DC7B32CA1B05E0055571D /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855DC7A82CA1B05E0055571D /* Shared.framework */; };
 		855DC7B82CA1B05E0055571D /* SharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7B72CA1B05E0055571D /* SharedTests.swift */; };
 		855DC7B92CA1B05E0055571D /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DC7AB2CA1B05E0055571D /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
 		855DC7B22CA1B05E0055571D /* SharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7B72CA1B05E0055571D /* SharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTests.swift; sourceTree = "<group>"; };
+		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,8 @@
 			children = (
 				855DC7AB2CA1B05E0055571D /* Shared.h */,
 				855DC7AC2CA1B05E0055571D /* Shared.docc */,
+				C3D7264C2CA2284B00634461 /* Resources */,
+				C3D726492CA2250E00634461 /* Components */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -83,6 +87,21 @@
 				855DC7B72CA1B05E0055571D /* SharedTests.swift */,
 			);
 			path = SharedTests;
+			sourceTree = "<group>";
+		};
+		C3D726492CA2250E00634461 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C3D7264A2CA2270000634461 /* NexoButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C3D7264C2CA2284B00634461 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */,
+				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

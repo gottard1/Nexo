@@ -12,19 +12,10 @@
 		858412022CA1AFFF0054E820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858412012CA1AFFF0054E820 /* Assets.xcassets */; };
 		858412052CA1AFFF0054E820 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 858412042CA1AFFF0054E820 /* Base */; };
 		858412102CA1AFFF0054E820 /* NexoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584120F2CA1AFFF0054E820 /* NexoTests.swift */; };
-		8584121A2CA1AFFF0054E820 /* NexoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858412192CA1AFFF0054E820 /* NexoUITests.swift */; };
-		8584121C2CA1AFFF0054E820 /* NexoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584121B2CA1AFFF0054E820 /* NexoUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		8584120C2CA1AFFF0054E820 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 858411ED2CA1AFFE0054E820 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 858411F42CA1AFFE0054E820;
-			remoteInfo = Nexo;
-		};
-		858412162CA1AFFF0054E820 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 858411ED2CA1AFFE0054E820 /* Project object */;
 			proxyType = 1;
@@ -42,9 +33,6 @@
 		858412062CA1AFFF0054E820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8584120B2CA1AFFF0054E820 /* NexoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8584120F2CA1AFFF0054E820 /* NexoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTests.swift; sourceTree = "<group>"; };
-		858412152CA1AFFF0054E820 /* NexoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NexoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		858412192CA1AFFF0054E820 /* NexoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoUITests.swift; sourceTree = "<group>"; };
-		8584121B2CA1AFFF0054E820 /* NexoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +50,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		858412122CA1AFFF0054E820 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,7 +58,6 @@
 			children = (
 				858411F72CA1AFFE0054E820 /* Nexo */,
 				8584120E2CA1AFFF0054E820 /* NexoTests */,
-				858412182CA1AFFF0054E820 /* NexoUITests */,
 				858411F62CA1AFFE0054E820 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,7 +67,6 @@
 			children = (
 				858411F52CA1AFFE0054E820 /* Nexo.app */,
 				8584120B2CA1AFFF0054E820 /* NexoTests.xctest */,
-				858412152CA1AFFF0054E820 /* NexoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,15 +89,6 @@
 				8584120F2CA1AFFF0054E820 /* NexoTests.swift */,
 			);
 			path = NexoTests;
-			sourceTree = "<group>";
-		};
-		858412182CA1AFFF0054E820 /* NexoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				858412192CA1AFFF0054E820 /* NexoUITests.swift */,
-				8584121B2CA1AFFF0054E820 /* NexoUITestsLaunchTests.swift */,
-			);
-			path = NexoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,24 +129,6 @@
 			productReference = 8584120B2CA1AFFF0054E820 /* NexoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		858412142CA1AFFF0054E820 /* NexoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 858412252CA1AFFF0054E820 /* Build configuration list for PBXNativeTarget "NexoUITests" */;
-			buildPhases = (
-				858412112CA1AFFF0054E820 /* Sources */,
-				858412122CA1AFFF0054E820 /* Frameworks */,
-				858412132CA1AFFF0054E820 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				858412172CA1AFFF0054E820 /* PBXTargetDependency */,
-			);
-			name = NexoUITests;
-			productName = NexoUITests;
-			productReference = 858412152CA1AFFF0054E820 /* NexoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,10 +143,6 @@
 						CreatedOnToolsVersion = 15.3;
 					};
 					8584120A2CA1AFFF0054E820 = {
-						CreatedOnToolsVersion = 15.3;
-						TestTargetID = 858411F42CA1AFFE0054E820;
-					};
-					858412142CA1AFFF0054E820 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 858411F42CA1AFFE0054E820;
 					};
@@ -215,7 +163,6 @@
 			targets = (
 				858411F42CA1AFFE0054E820 /* Nexo */,
 				8584120A2CA1AFFF0054E820 /* NexoTests */,
-				858412142CA1AFFF0054E820 /* NexoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,13 +178,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		858412092CA1AFFF0054E820 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		858412132CA1AFFF0054E820 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -264,15 +204,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		858412112CA1AFFF0054E820 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8584121C2CA1AFFF0054E820 /* NexoUITestsLaunchTests.swift in Sources */,
-				8584121A2CA1AFFF0054E820 /* NexoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -280,11 +211,6 @@
 			isa = PBXTargetDependency;
 			target = 858411F42CA1AFFE0054E820 /* Nexo */;
 			targetProxy = 8584120C2CA1AFFF0054E820 /* PBXContainerItemProxy */;
-		};
-		858412172CA1AFFF0054E820 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 858411F42CA1AFFE0054E820 /* Nexo */;
-			targetProxy = 858412162CA1AFFF0054E820 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -482,7 +408,6 @@
 		858412232CA1AFFF0054E820 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -506,7 +431,6 @@
 		858412242CA1AFFF0054E820 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -524,50 +448,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nexo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nexo";
-			};
-			name = Release;
-		};
-		858412262CA1AFFF0054E820 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.NexoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Nexo;
-			};
-			name = Debug;
-		};
-		858412272CA1AFFF0054E820 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.NexoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Nexo;
 			};
 			name = Release;
 		};
@@ -597,15 +477,6 @@
 			buildConfigurations = (
 				858412232CA1AFFF0054E820 /* Debug */,
 				858412242CA1AFFF0054E820 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		858412252CA1AFFF0054E820 /* Build configuration list for PBXNativeTarget "NexoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				858412262CA1AFFF0054E820 /* Debug */,
-				858412272CA1AFFF0054E820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
