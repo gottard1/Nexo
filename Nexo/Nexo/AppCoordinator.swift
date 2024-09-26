@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Auth
 
 public final class AppCoordinator {
     private let navigationController: UINavigationController
@@ -29,6 +30,8 @@ public final class AppCoordinator {
     }
     
     private func startAuthFlow() {
+        print(navigationController.viewControllers.count)
+        
         authCoordinator = AuthCoordinator(navigationController: navigationController)
         authCoordinator?.start()
     }

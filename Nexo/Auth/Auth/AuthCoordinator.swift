@@ -7,15 +7,18 @@
 
 import UIKit
 
-final class AuthCoordinator {
+public final class AuthCoordinator {
     private let navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     public func start() {
         let loginViewController = LoginViewController()
+        
+        print(navigationController.viewControllers.count)
+        
         navigationController.pushViewController(loginViewController, animated: true)
     }
 }

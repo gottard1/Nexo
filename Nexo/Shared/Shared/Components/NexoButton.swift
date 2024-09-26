@@ -15,7 +15,7 @@ public enum ButtonStyle {
     case disabled
 }
 
-public final class CustomButton: UIButton {
+public final class NexoButton: UIButton {
     
     private var buttonStyle: ButtonStyle = .filled
     
