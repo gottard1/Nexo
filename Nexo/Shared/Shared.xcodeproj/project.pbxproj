@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D540B2CAB8DE100B8B019 /* NexoColor.swift */; };
+		850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D540D2CAB8E5B00B8B019 /* NexoImage.swift */; };
+		850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */; };
+		853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423912CB54CD900EF82B2 /* NexoTabBarController.swift */; };
+		853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */; };
 		855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7AC2CA1B05E0055571D /* Shared.docc */; };
 		855DC7B32CA1B05E0055571D /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855DC7A82CA1B05E0055571D /* Shared.framework */; };
 		855DC7B82CA1B05E0055571D /* SharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7B72CA1B05E0055571D /* SharedTests.swift */; };
 		855DC7B92CA1B05E0055571D /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DC7AB2CA1B05E0055571D /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */; };
+		8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361E2CB8642500CF83CC /* NexoTabBarView.swift */; };
+		858436252CB9799500CF83CC /* NexoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436242CB9799500CF83CC /* NexoTextField.swift */; };
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
+		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
 		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
 /* End PBXBuildFile section */
@@ -27,12 +36,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		850D540B2CAB8DE100B8B019 /* NexoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoColor.swift; sourceTree = "<group>"; };
+		850D540D2CAB8E5B00B8B019 /* NexoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoImage.swift; sourceTree = "<group>"; };
+		850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		853423912CB54CD900EF82B2 /* NexoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarController.swift; sourceTree = "<group>"; };
+		853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItem.swift; sourceTree = "<group>"; };
 		855DC7A82CA1B05E0055571D /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7AB2CA1B05E0055571D /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
 		855DC7B22CA1B05E0055571D /* SharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7B72CA1B05E0055571D /* SharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTests.swift; sourceTree = "<group>"; };
+		8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItemModel.swift; sourceTree = "<group>"; };
+		8584361E2CB8642500CF83CC /* NexoTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarView.swift; sourceTree = "<group>"; };
+		858436242CB9799500CF83CC /* NexoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTextField.swift; sourceTree = "<group>"; };
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +74,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850D540F2CAB8EE600B8B019 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		853422AF2CB4444300EF82B2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C3D7264A2CA2270000634461 /* NexoButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		853422B02CB4444A00EF82B2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				853423912CB54CD900EF82B2 /* NexoTabBarController.swift */,
+				858436202CB8643300CF83CC /* View */,
+				8584361D2CB860B300CF83CC /* Item */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		855DC79E2CA1B05E0055571D = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				855DC7AB2CA1B05E0055571D /* Shared.h */,
-				855DC7AC2CA1B05E0055571D /* Shared.docc */,
+				8585B8BF2CAAE670000D38D7 /* Core */,
+				850D540F2CAB8EE600B8B019 /* Extensions */,
 				C3D7264C2CA2284B00634461 /* Resources */,
 				C3D726492CA2250E00634461 /* Components */,
 			);
@@ -93,10 +138,64 @@
 			path = SharedTests;
 			sourceTree = "<group>";
 		};
+		8584361D2CB860B300CF83CC /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */,
+				853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		858436202CB8643300CF83CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8584361E2CB8642500CF83CC /* NexoTabBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		858436232CB9771F00CF83CC /* Textfield */ = {
+			isa = PBXGroup;
+			children = (
+				858436242CB9799500CF83CC /* NexoTextField.swift */,
+			);
+			path = Textfield;
+			sourceTree = "<group>";
+		};
+		8585B8BD2CAAE1D4000D38D7 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8585B8B42CA59E1B000D38D7 /* Colors.xcassets */,
+				850D540B2CAB8DE100B8B019 /* NexoColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		8585B8BE2CAAE1DB000D38D7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C35419692CA375A300C9372F /* Assets.xcassets */,
+				850D540D2CAB8E5B00B8B019 /* NexoImage.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8585B8BF2CAAE670000D38D7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				855DC7AC2CA1B05E0055571D /* Shared.docc */,
+				85FC07BF2CAB928D0052E651 /* Coordinator.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		C3D726492CA2250E00634461 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C3D7264A2CA2270000634461 /* NexoButton.swift */,
+				858436232CB9771F00CF83CC /* Textfield */,
+				853422B02CB4444A00EF82B2 /* TabBar */,
+				853422AF2CB4444300EF82B2 /* Buttons */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -104,8 +203,8 @@
 		C3D7264C2CA2284B00634461 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C35419692CA375A300C9372F /* Assets.xcassets */,
-				8585B8B42CA59E1B000D38D7 /* Colors.xcassets */,
+				8585B8BE2CAAE1DB000D38D7 /* Images */,
+				8585B8BD2CAAE1D4000D38D7 /* Colors */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -221,8 +320,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */,
 				855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */,
+				850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */,
+				858436252CB9799500CF83CC /* NexoTextField.swift in Sources */,
+				85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */,
+				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
+				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
+				8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */,
+				8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */,
 				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
+				850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

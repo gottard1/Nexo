@@ -6,19 +6,22 @@
 //
 
 import UIKit
+import Shared
 import Auth
 
-public final class AppCoordinator {
-    private let navigationController: UINavigationController
+final class AppCoordinator: Coordinator {
+    var navigationController: UINavigationController
+    
     private var authCoordinator: AuthCoordinator?
+    private var tabBarCoordinator: TabBarCoordinator?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
+    public func start() {
         if isUserAuthenticated() {
-            // TODO: iniciarHomeFlow()
+            startHomeFlow()
         } else {
             startAuthFlow()
         }
@@ -30,9 +33,12 @@ public final class AppCoordinator {
     }
     
     private func startAuthFlow() {
-        print(navigationController.viewControllers.count)
-        
         authCoordinator = AuthCoordinator(navigationController: navigationController)
         authCoordinator?.start()
+    }
+    
+    private func startHomeFlow() {
+        tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator?.start()
     }
 }

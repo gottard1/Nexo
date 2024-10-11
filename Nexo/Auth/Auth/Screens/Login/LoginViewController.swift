@@ -10,9 +10,42 @@ import Shared
 
 final class LoginViewController: UIViewController {
     
-    private let button: NexoButton = {
+    weak var coordinator: Coordinator?
+    
+    private let stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 8
+        return stack
+    }()
+    
+    private let enabled: NexoButton = {
         let button = NexoButton(style: .filled)
-        button.setTitle("Continuar", for: .normal)
+        button.setTitle("Habilitado", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let enabledAndDisable: NexoButton = {
+        let button = NexoButton(style: .filled)
+        button.setTitle("Habilitado e desabilitado", for: .normal)
+        button.isEnabled = false
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let destructive: NexoButton = {
+        let button = NexoButton(style: .destructive)
+        button.setTitle("Destrutivo", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let text: NexoButton = {
+        let button = NexoButton(style: .onlyText)
+        button.setTitle("Texto", for: .normal)
+        button.enableTitleColor = NexoColor.mainSecondary
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -25,24 +58,28 @@ final class LoginViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = Colors.
-        view.addSubview(button)
+        view.backgroundColor = NexoColor.whiteF2F2F2
+        view.addSubview(stackView)
+        
+        stackView.addArrangedSubview(enabled)
+        stackView.addArrangedSubview(destructive)
+        stackView.addArrangedSubview(enabledAndDisable)
+        stackView.addArrangedSubview(text)
+    }
+    
+    private func setupActions() {
+        enabled.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func buttonTapped() {
+        enabledAndDisable.isEnabled.toggle()
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            button.heightAnchor.constraint(equalToConstant: 50)
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
-    }
-    
-    private func setupActions() {
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    }
-    
-    @objc private func buttonTapped() {
-        print("Botão 'Continuar' foi pressionado")
     }
 }

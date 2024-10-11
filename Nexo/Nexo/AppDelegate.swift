@@ -7,12 +7,13 @@
 
 import UIKit
 import Auth
+import Shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var appCoordinator: AppCoordinator?
+    var appCoordinator: Coordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -20,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.start()
-        
-        print(navigationController.viewControllers.count)
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

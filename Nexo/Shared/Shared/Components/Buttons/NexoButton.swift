@@ -19,13 +19,13 @@ public final class NexoButton: UIButton {
     
     private var buttonStyle: ButtonStyle = .filled
     
-    public var enableBackgroundColor: UIColor = .yellow {
+    public var enableBackgroundColor: UIColor = NexoColor.mainSecondary {
         didSet {
             setupButton()
         }
     }
     
-    public var borderColor: UIColor = .yellow {
+    public var borderColor: UIColor = NexoColor.mainSecondary {
         didSet {
             setupButton()
         }
@@ -43,7 +43,7 @@ public final class NexoButton: UIButton {
         }
     }
     
-    public var disableBackgroundColor: UIColor = .gray {
+    public var disableBackgroundColor: UIColor = NexoColor.disable {
         didSet {
             setupButton()
         }
@@ -57,6 +57,16 @@ public final class NexoButton: UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 16
         titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    public override var isEnabled: Bool {
+        didSet {
+            setupButton()
+        }
     }
     
     @available(*, unavailable)
@@ -81,10 +91,9 @@ public final class NexoButton: UIButton {
             case .destructive:
                 backgroundColor = .clear
                 layer.borderWidth = 1
-                layer.borderColor = borderColor.cgColor
-                setTitleColor(.red, for: .normal)
+                layer.borderColor = NexoColor.gray1.cgColor
+                setTitleColor(NexoColor.redC13018, for: .normal)
             case .disabled:
-                isEnabled = false
                 backgroundColor = disableBackgroundColor
                 setTitleColor(disableTitleColor.withAlphaComponent(0.7) , for: .normal)
         }
