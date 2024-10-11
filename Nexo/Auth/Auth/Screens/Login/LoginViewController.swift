@@ -50,6 +50,15 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
+    private let normalTextField = NexoTextField(type: .normal)
+    private let helperTextField = NexoTextField(type: .withHelper("Helper* se precisar"))
+    private let iconTextField = NexoTextField(type: .withIcon(UIImage(systemName: "trash.square.fill") ?? UIImage()))
+    private let actionButtonTextField = NexoTextField(type: .actionButton("Action"))
+    private let currencyTextField = NexoTextField(type: .currency(UIImage(systemName: "paperplane.fill") ?? UIImage()))
+    private let secureTextField = NexoTextField(type: .secureText(UIImage(systemName: "arrowshape.left.fill") ?? UIImage()))
+    private let roundedTextField = NexoRoundedTextField()
+    private let roundedTextView = NexoRoundedTextView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -65,6 +74,13 @@ final class LoginViewController: UIViewController {
         stackView.addArrangedSubview(destructive)
         stackView.addArrangedSubview(enabledAndDisable)
         stackView.addArrangedSubview(text)
+        stackView.addArrangedSubview(normalTextField)
+        stackView.addArrangedSubview(helperTextField)
+        stackView.addArrangedSubview(iconTextField)
+        stackView.addArrangedSubview(actionButtonTextField)
+        stackView.addArrangedSubview(currencyTextField)
+        stackView.addArrangedSubview(secureTextField)
+
     }
     
     private func setupActions() {
