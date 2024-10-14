@@ -11,37 +11,50 @@ public final class NexoRoundedTextField: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Title"
-        label.textColor = .darkGray
-        label.font = UIFont.systemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        label.textColor = NexoColor.gray6
         return label
     }()
     
     private let textField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Placeholder"
-        textField.backgroundColor = .lightGray
-        textField.layer.cornerRadius = 8
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.backgroundColor = NexoColor.gray4
+        textField.layer.cornerRadius = 16
+        textField.textColor = NexoColor.gray2
         return textField
     }()
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    public init(title: String?, placeholder: String?) {
+        super.init(frame: .zero)
         setupView()
+        setupLeftView()
+        
+        if let title {
+            titleLabel.text = title
+        }
+        
+        if let placeholder {
+            textField.placeholder = placeholder
+        }
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
+    }
+    
+    private func setupLeftView() {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: self.frame.size.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
     }
     
     private func setupView() {
         addSubview(titleLabel)
         addSubview(textField)
         
-        // Constraints
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -53,10 +66,5 @@ public final class NexoRoundedTextField: UIView {
             textField.heightAnchor.constraint(equalToConstant: 50),
             textField.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-    }
-    
-    public func configure(withTitle title: String, placeholder: String) {
-        titleLabel.text = title
-        textField.placeholder = placeholder
     }
 }

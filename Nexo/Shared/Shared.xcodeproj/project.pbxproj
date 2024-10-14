@@ -22,6 +22,13 @@
 		858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436262CB9963900CF83CC /* NexoRoundedTextView.swift */; };
 		858436292CB9970600CF83CC /* NexoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436282CB9970600CF83CC /* NexoTextField.swift */; };
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
+		85A670422CBD5AA900915268 /* NexoFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A670412CBD5AA900915268 /* NexoFont.swift */; };
+		85A6704C2CBD5BA800915268 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A6704B2CBD5BA800915268 /* OpenSans-SemiBold.ttf */; };
+		85A6704E2CBD5BC800915268 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A6704D2CBD5BC800915268 /* OpenSans-Bold.ttf */; };
+		85A670502CBD5BDA00915268 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A6704F2CBD5BDA00915268 /* OpenSans-Light.ttf */; };
+		85A670522CBD5BFB00915268 /* Exo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A670512CBD5BFB00915268 /* Exo2-Bold.ttf */; };
+		85A670542CBD5C1300915268 /* Exo2-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A670532CBD5C1300915268 /* Exo2-Light.ttf */; };
+		85A670562CBD5CF800915268 /* Shared.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A670552CBD5CF800915268 /* Shared.plist */; };
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
 		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
@@ -54,6 +61,13 @@
 		858436262CB9963900CF83CC /* NexoRoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextView.swift; sourceTree = "<group>"; };
 		858436282CB9970600CF83CC /* NexoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTextField.swift; sourceTree = "<group>"; };
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		85A670412CBD5AA900915268 /* NexoFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoFont.swift; sourceTree = "<group>"; };
+		85A6704B2CBD5BA800915268 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		85A6704D2CBD5BC800915268 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		85A6704F2CBD5BDA00915268 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		85A670512CBD5BFB00915268 /* Exo2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Bold.ttf"; sourceTree = "<group>"; };
+		85A670532CBD5C1300915268 /* Exo2-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Light.ttf"; sourceTree = "<group>"; };
+		85A670552CBD5CF800915268 /* Shared.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Shared.plist; sourceTree = "<group>"; };
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
@@ -125,6 +139,7 @@
 		855DC7AA2CA1B05E0055571D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				85A670552CBD5CF800915268 /* Shared.plist */,
 				855DC7AB2CA1B05E0055571D /* Shared.h */,
 				8585B8BF2CAAE670000D38D7 /* Core */,
 				850D540F2CAB8EE600B8B019 /* Extensions */,
@@ -196,6 +211,35 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		85A6703E2CBD5A8000915268 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				85A670412CBD5AA900915268 /* NexoFont.swift */,
+				85A670402CBD5A9700915268 /* OpenSans */,
+				85A6703F2CBD5A8C00915268 /* Exo2 */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		85A6703F2CBD5A8C00915268 /* Exo2 */ = {
+			isa = PBXGroup;
+			children = (
+				85A670532CBD5C1300915268 /* Exo2-Light.ttf */,
+				85A670512CBD5BFB00915268 /* Exo2-Bold.ttf */,
+			);
+			path = Exo2;
+			sourceTree = "<group>";
+		};
+		85A670402CBD5A9700915268 /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				85A6704F2CBD5BDA00915268 /* OpenSans-Light.ttf */,
+				85A6704D2CBD5BC800915268 /* OpenSans-Bold.ttf */,
+				85A6704B2CBD5BA800915268 /* OpenSans-SemiBold.ttf */,
+			);
+			path = OpenSans;
+			sourceTree = "<group>";
+		};
 		C3D726492CA2250E00634461 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +253,7 @@
 		C3D7264C2CA2284B00634461 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				85A6703E2CBD5A8000915268 /* Fonts */,
 				8585B8BE2CAAE1DB000D38D7 /* Images */,
 				8585B8BD2CAAE1D4000D38D7 /* Colors */,
 			);
@@ -308,6 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C354196A2CA375A300C9372F /* Assets.xcassets in Resources */,
+				85A670542CBD5C1300915268 /* Exo2-Light.ttf in Resources */,
+				85A6704C2CBD5BA800915268 /* OpenSans-SemiBold.ttf in Resources */,
+				85A6704E2CBD5BC800915268 /* OpenSans-Bold.ttf in Resources */,
+				85A670522CBD5BFB00915268 /* Exo2-Bold.ttf in Resources */,
+				85A670562CBD5CF800915268 /* Shared.plist in Resources */,
+				85A670502CBD5BDA00915268 /* OpenSans-Light.ttf in Resources */,
 				8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +383,7 @@
 				858436252CB9799500CF83CC /* NexoRoundedTextField.swift in Sources */,
 				85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */,
 				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
+				85A670422CBD5AA900915268 /* NexoFont.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
 				858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */,
 				858436292CB9970600CF83CC /* NexoTextField.swift in Sources */,
@@ -500,6 +552,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Shared/Shared.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -535,6 +588,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Shared/Shared.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

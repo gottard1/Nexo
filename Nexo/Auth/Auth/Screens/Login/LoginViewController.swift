@@ -12,6 +12,13 @@ final class LoginViewController: UIViewController {
     
     weak var coordinator: Coordinator?
     
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
     private let stackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -50,14 +57,14 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
-    private let normalTextField = NexoTextField(type: .normal)
-    private let helperTextField = NexoTextField(type: .withHelper("Helper* se precisar"))
-    private let iconTextField = NexoTextField(type: .withIcon(UIImage(systemName: "trash.square.fill") ?? UIImage()))
-    private let actionButtonTextField = NexoTextField(type: .actionButton("Action"))
-    private let currencyTextField = NexoTextField(type: .currency(UIImage(systemName: "paperplane.fill") ?? UIImage()))
-    private let secureTextField = NexoTextField(type: .secureText(UIImage(systemName: "arrowshape.left.fill") ?? UIImage()))
-    private let roundedTextField = NexoRoundedTextField()
-    private let roundedTextView = NexoRoundedTextView()
+    private let normalTextField = NexoTextField(type: .normal, title: "Normal")
+    private let helperTextField = NexoTextField(type: .withHelper("Helper* se precisar"), title: "Com Dica")
+    private let iconTextField = NexoTextField(type: .withIcon(UIImage(systemName: "trash.square.fill") ?? UIImage()), title: "Com imagem")
+    private let actionButtonTextField = NexoTextField(type: .actionButton("Action"), title: "Com botão de ação")
+    private let currencyTextField = NexoTextField(type: .currency(UIImage(systemName: "trash.square.fill") ?? UIImage()), title: "Dinheiro")
+    private let secureTextField = NexoTextField(type: .secureText(UIImage(systemName: "arrowshape.left.fill") ?? UIImage()), title: "Senha")
+    private let roundedTextField = NexoRoundedTextField(title: "TextField", placeholder: "Placeholder")
+    private let roundedTextView = NexoRoundedTextView(title: "TextView", placeholder: "Escreva qualquer coisa", hint: "Dica")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +75,8 @@ final class LoginViewController: UIViewController {
     
     private func setupView() {
         view.backgroundColor = NexoColor.whiteF2F2F2
-        view.addSubview(stackView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
         
         stackView.addArrangedSubview(enabled)
         stackView.addArrangedSubview(destructive)
@@ -80,7 +88,8 @@ final class LoginViewController: UIViewController {
         stackView.addArrangedSubview(actionButtonTextField)
         stackView.addArrangedSubview(currencyTextField)
         stackView.addArrangedSubview(secureTextField)
-
+        stackView.addArrangedSubview(roundedTextView)
+        stackView.addArrangedSubview(roundedTextField)
     }
     
     private func setupActions() {
@@ -93,9 +102,16 @@ final class LoginViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
 }

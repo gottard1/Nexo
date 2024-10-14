@@ -9,39 +9,36 @@ import UIKit
 
 public enum NexoTextFieldType {
     case normal
-    case withHelper(String) // Helper text abaixo do campo
-    case withIcon(UIImage)  // Ícone à direita
-    case actionButton(String)  // Texto à direita como botão
-    case currency(UIImage)  // Ícone de moeda à esquerda
-    case secureText(UIImage)  // Campo de senha com ícone de visibilidade
+    case withHelper(String)
+    case withIcon(UIImage)
+    case actionButton(String)
+    case currency(UIImage?)
+    case secureText(UIImage)
 }
 
 public final class NexoTextField: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Label"
-        label.textColor = .darkGray
-        label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NexoColor.gray6
+        label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
         return label
     }()
     
     private let textField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Placeholder"
-        textField.font = UIFont.systemFont(ofSize: 16)
-        textField.textColor = .darkText
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        textField.textColor = NexoColor.black040F14
         return textField
     }()
     
     private let helperLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
-        label.textColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NexoColor.gray3
+        label.font = NexoFont.openSansFont(ofType: .regular, size: 12)
         label.isHidden = true
         return label
     }()
@@ -56,24 +53,44 @@ public final class NexoTextField: UIView {
     
     private let actionButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Action", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Action", for: .normal)
+        button.titleLabel?.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        button.titleLabel?.textColor = NexoColor.mainSecondary
+        button.tintColor = NexoColor.mainSecondary
+        button.isHidden = true
         return button
     }()
     
     private let bottomLineView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = NexoColor.gray2
         return view
     }()
     
-    public init(type: NexoTextFieldType) {
+    public var activeColor: UIColor = NexoColor.mainSecondary
+    public var inactiveColor: UIColor = NexoColor.gray2
+    public var type: NexoTextFieldType = .normal
+    
+    public init(
+        type: NexoTextFieldType,
+        title: String,
+        placeholder: String? = nil
+    ) {
+        self.type = type
         super.init(frame: .zero)
         setupView()
+        
+        titleLabel.text = title
+        
+        if let placeholder {
+            textField.placeholder = placeholder
+        }
+        
         configure(for: type)
+        
+        textField.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -92,6 +109,88 @@ public final class NexoTextField: UIView {
         setupConstraints()
     }
     
+    public func configure(for type: NexoTextFieldType) {
+        switch type {
+            case .normal:
+                break
+            case .withHelper(let helperText):
+                helperLabel.text = helperText
+                helperLabel.isHidden = false
+            case .withIcon(let icon):
+                iconImageView.image = icon
+                iconImageView.isHidden = false
+            case .actionButton(let buttonText):
+                actionButton.setTitle(buttonText, for: .normal)
+                actionButton.isHidden = false
+            case .currency(let rightIcon):
+                let currencyLabel = UILabel()
+                currencyLabel.text = "R$"
+                currencyLabel.font = UIFont.boldSystemFont(ofSize: 22)
+                currencyLabel.textColor = .black
+                currencyLabel.textAlignment = .center
+                currencyLabel.frame = CGRect(x: 0, y: 0, width: 32, height: 36)
+                
+                let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 36))
+                leftView.addSubview(currencyLabel)
+                
+                textField.placeholder = "0,00"
+                
+                textField.leftView = leftView
+                textField.leftViewMode = .always
+                textField.keyboardType = .decimalPad
+                
+                if let rightIcon {
+                    iconImageView.image = rightIcon
+                    iconImageView.isHidden = false
+                }
+            case .secureText(let icon):
+                textField.isSecureTextEntry = true
+                iconImageView.image = icon
+                iconImageView.isHidden = false
+        }
+    }
+}
+
+// MARK: - UITextField Delegate
+extension NexoTextField: UITextFieldDelegate {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        bottomLineView.backgroundColor = activeColor
+        titleLabel.textColor = activeColor
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        bottomLineView.backgroundColor = inactiveColor
+        titleLabel.textColor = inactiveColor
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if case .currency = type {
+            guard let currentText = textField.text as NSString? else { return true }
+            let newString = currentText.replacingCharacters(in: range, with: string)
+            
+            let digits = newString.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+            
+            if let value = Double(digits) {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .currency
+                formatter.currencySymbol = ""
+                formatter.minimumFractionDigits = 2
+                formatter.maximumFractionDigits = 2
+                
+                let formattedValue = formatter.string(from: NSNumber(value: value / 100))
+                textField.text = formattedValue
+            } else {
+                textField.text = ""
+            }
+            return false
+        }
+        return true
+    }
+}
+
+// MARK: - Layout
+extension NexoTextField {
+    
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
@@ -100,7 +199,7 @@ public final class NexoTextField: UIView {
             
             textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),  // Placeholder para ícone ou botão
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             
             helperLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
             helperLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -122,39 +221,4 @@ public final class NexoTextField: UIView {
         ])
     }
     
-    public func configure(for type: NexoTextFieldType) {
-        switch type {
-            case .normal:
-                break  // Sem modificações
-            case .withHelper(let helperText):
-                helperLabel.text = helperText
-                helperLabel.isHidden = false
-            case .withIcon(let icon):
-                iconImageView.image = icon
-                iconImageView.isHidden = false
-            case .actionButton(let buttonText):
-                actionButton.setTitle(buttonText, for: .normal)
-                actionButton.isHidden = false
-            case .currency(let icon):
-                textField.leftView = UIImageView(image: icon)
-                textField.leftViewMode = .always
-            case .secureText(let icon):
-                textField.isSecureTextEntry = true
-                iconImageView.image = icon
-                iconImageView.isHidden = false
-        }
-    }
-    
-    public func updateTitle(_ title: String) {
-        titleLabel.text = title
-    }
-    
-    public func updatePlaceholder(_ placeholder: String) {
-        textField.placeholder = placeholder
-    }
-    
-    public func updateHelper(_ helperText: String) {
-        helperLabel.text = helperText
-        helperLabel.isHidden = false
-    }
 }

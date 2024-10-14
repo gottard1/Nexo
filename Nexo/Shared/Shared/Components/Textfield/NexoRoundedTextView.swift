@@ -7,38 +7,48 @@
 
 import UIKit
 
-public final class NexoRoundedTextView: UIView {
+public final class NexoRoundedTextView: UIView, UITextViewDelegate {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Title"
-        label.textColor = .darkGray
-        label.font = UIFont.systemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NexoColor.gray6
+        label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
         return label
     }()
     
     private let textView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .lightGray.withAlphaComponent(0.2)
-        textView.layer.cornerRadius = 8
-        textView.font = UIFont.systemFont(ofSize: 14)
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = NexoColor.background
+        textView.font = NexoFont.openSansFont(ofType: .regular, size: 14)
+        textView.layer.cornerRadius = 8
+        textView.isScrollEnabled = false
         return textView
     }()
     
     private let hintLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hint"
-        label.textColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 12)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = NexoColor.gray5
+        label.font = NexoFont.openSansFont(ofType: .regular, size: 14)
         return label
     }()
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
+    public init(title: String, placeholder: String?, hint: String?) {
+        super.init(frame: .zero)
         setupView()
+        
+        titleLabel.text = title
+        
+        if let placeholder {
+            textView.text = placeholder
+            textView.textColor = NexoColor.gray2
+        }
+        
+        if let hint {
+            hintLabel.text = hint
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -51,7 +61,8 @@ public final class NexoRoundedTextView: UIView {
         addSubview(textView)
         addSubview(hintLabel)
         
-        // Constraints
+        textView.delegate = self
+        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -62,15 +73,14 @@ public final class NexoRoundedTextView: UIView {
             textView.trailingAnchor.constraint(equalTo: trailingAnchor),
             textView.heightAnchor.constraint(equalToConstant: 100),
             
-            hintLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor, constant: -8),
-            hintLabel.bottomAnchor.constraint(equalTo: textView.bottomAnchor, constant: -8),
-            textView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            hintLabel.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 8),
+            hintLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
+            hintLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
-    public func configure(withTitle title: String, placeholder: String, hint: String) {
-        titleLabel.text = title
-        textView.text = placeholder
-        hintLabel.text = hint
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = nil
+        textView.textColor = NexoColor.gray6
     }
 }
