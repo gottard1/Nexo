@@ -13,7 +13,7 @@ public enum NexoTextFieldType {
     case withIcon(UIImage)
     case actionButton(String)
     case currency(UIImage?)
-    case secureText(UIImage)
+    case secureText
 }
 
 public final class NexoTextField: UIView {
@@ -43,12 +43,14 @@ public final class NexoTextField: UIView {
         return label
     }()
     
-    private let iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.isHidden = true
-        return imageView
+    // Substituímos o UIImageView por um UIButton
+    private let iconButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.contentMode = .scaleAspectFit
+        button.tintColor = NexoColor.mainSecondary
+        button.isHidden = true
+        return button
     }()
     
     private let actionButton: UIButton = {
@@ -72,6 +74,8 @@ public final class NexoTextField: UIView {
     public var activeColor: UIColor = NexoColor.mainSecondary
     public var inactiveColor: UIColor = NexoColor.gray2
     public var type: NexoTextFieldType = .normal
+    
+    private var isPasswordVisible = false // Controla a visibilidade da senha
     
     public init(
         type: NexoTextFieldType,
@@ -102,7 +106,7 @@ public final class NexoTextField: UIView {
         addSubview(titleLabel)
         addSubview(textField)
         addSubview(helperLabel)
-        addSubview(iconImageView)
+        addSubview(iconButton)
         addSubview(actionButton)
         addSubview(bottomLineView)
         
@@ -117,37 +121,52 @@ public final class NexoTextField: UIView {
                 helperLabel.text = helperText
                 helperLabel.isHidden = false
             case .withIcon(let icon):
-                iconImageView.image = icon
-                iconImageView.isHidden = false
+                iconButton.setImage(icon, for: .normal)
+                iconButton.isHidden = false
+                iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
             case .actionButton(let buttonText):
                 actionButton.setTitle(buttonText, for: .normal)
                 actionButton.isHidden = false
             case .currency(let rightIcon):
                 let currencyLabel = UILabel()
                 currencyLabel.text = "R$"
-                currencyLabel.font = UIFont.boldSystemFont(ofSize: 22)
-                currencyLabel.textColor = .black
+                currencyLabel.font = NexoFont.exo2Font(ofType: .bold, size: 22)
+                currencyLabel.textColor =  NexoColor.black040F14
                 currencyLabel.textAlignment = .center
                 currencyLabel.frame = CGRect(x: 0, y: 0, width: 32, height: 36)
                 
-                let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 36))
+                let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
                 leftView.addSubview(currencyLabel)
                 
-                textField.placeholder = "0,00"
+                textField.font = NexoFont.exo2Font(ofType: .bold, size: 22)
                 
+                textField.placeholder = "0,00"
                 textField.leftView = leftView
                 textField.leftViewMode = .always
                 textField.keyboardType = .decimalPad
                 
                 if let rightIcon {
-                    iconImageView.image = rightIcon
-                    iconImageView.isHidden = false
+                    iconButton.setImage(rightIcon, for: .normal)
+                    iconButton.isHidden = false
+                    iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
                 }
-            case .secureText(let icon):
+            case .secureText:
                 textField.isSecureTextEntry = true
-                iconImageView.image = icon
-                iconImageView.isHidden = false
+                iconButton.isHidden = false
+                iconButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+                iconButton.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
         }
+    }
+    
+    @objc private func iconButtonTapped() {
+        print("Icon tapped")
+    }
+    
+    @objc private func togglePasswordVisibility() {
+        isPasswordVisible.toggle()
+        textField.isSecureTextEntry = !isPasswordVisible
+        let iconImage = isPasswordVisible ? UIImage(systemName: "eye.fill") : UIImage(systemName: "eye.slash.fill")
+        iconButton.setImage(iconImage, for: .normal)
     }
 }
 
@@ -206,10 +225,10 @@ extension NexoTextField {
             helperLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             helperLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            iconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            iconImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
-            iconImageView.widthAnchor.constraint(equalToConstant: 24),
-            iconImageView.heightAnchor.constraint(equalToConstant: 24),
+            iconButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            iconButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
+            iconButton.widthAnchor.constraint(equalToConstant: 32),
+            iconButton.heightAnchor.constraint(equalToConstant: 32),
             
             actionButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             actionButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
@@ -220,5 +239,4 @@ extension NexoTextField {
             bottomLineView.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
-    
 }

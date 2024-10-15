@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var appCoordinator: Coordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        NexoFont.registerFonts()
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let navigationController = UINavigationController()

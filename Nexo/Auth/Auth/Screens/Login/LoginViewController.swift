@@ -62,7 +62,7 @@ final class LoginViewController: UIViewController {
     private let iconTextField = NexoTextField(type: .withIcon(UIImage(systemName: "trash.square.fill") ?? UIImage()), title: "Com imagem")
     private let actionButtonTextField = NexoTextField(type: .actionButton("Action"), title: "Com botão de ação")
     private let currencyTextField = NexoTextField(type: .currency(UIImage(systemName: "trash.square.fill") ?? UIImage()), title: "Dinheiro")
-    private let secureTextField = NexoTextField(type: .secureText(UIImage(systemName: "arrowshape.left.fill") ?? UIImage()), title: "Senha")
+    private let secureTextField = NexoTextField(type: .secureText, title: "Senha")
     private let roundedTextField = NexoRoundedTextField(title: "TextField", placeholder: "Placeholder")
     private let roundedTextView = NexoRoundedTextView(title: "TextView", placeholder: "Escreva qualquer coisa", hint: "Dica")
     
@@ -71,6 +71,7 @@ final class LoginViewController: UIViewController {
         setupView()
         setupConstraints()
         setupActions()
+        
     }
     
     private func setupView() {
@@ -110,8 +111,7 @@ final class LoginViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
     }
 }
