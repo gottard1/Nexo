@@ -35,13 +35,16 @@ public final class NexoRoundedTextView: UIView, UITextViewDelegate {
         return label
     }()
     
+    private var placeholder: String?
+    
     public init(title: String, placeholder: String?, hint: String?) {
         super.init(frame: .zero)
         setupView()
         
         titleLabel.text = title
         
-        if let placeholder {
+        if let placeholder = placeholder {
+            self.placeholder = placeholder
             textView.text = placeholder
             textView.textColor = NexoColor.gray2
         }
@@ -51,10 +54,29 @@ public final class NexoRoundedTextView: UIView, UITextViewDelegate {
         }
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
+    
+    public func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholder {
+            textView.text = nil
+            textView.textColor = NexoColor.gray6
+        }
+    }
+    
+    public func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholder
+            textView.textColor = NexoColor.gray2
+        }
+    }
+}
+
+// MARK: - Layout
+extension NexoRoundedTextView {
     
     private func setupView() {
         addSubview(titleLabel)
@@ -79,8 +101,4 @@ public final class NexoRoundedTextView: UIView, UITextViewDelegate {
         ])
     }
     
-    public func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text = nil
-        textView.textColor = NexoColor.gray6
-    }
 }

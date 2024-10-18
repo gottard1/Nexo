@@ -21,7 +21,7 @@ public final class NexoTextField: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = NexoColor.gray6
+        label.textColor = NexoColor.gray2
         label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
         return label
     }()
@@ -43,11 +43,13 @@ public final class NexoTextField: UIView {
         return label
     }()
     
-    // Substituímos o UIImageView por um UIButton
     private let iconButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.contentMode = .scaleAspectFit
+        var config = UIButton.Configuration.plain()
+        config.imagePadding = 8
+        config.baseForegroundColor = NexoColor.mainSecondary
+        button.configuration = config
         button.tintColor = NexoColor.mainSecondary
         button.isHidden = true
         return button
@@ -56,7 +58,6 @@ public final class NexoTextField: UIView {
     private let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Action", for: .normal)
         button.titleLabel?.font = NexoFont.openSansFont(ofType: .regular, size: 16)
         button.titleLabel?.textColor = NexoColor.mainSecondary
         button.tintColor = NexoColor.mainSecondary
@@ -71,11 +72,14 @@ public final class NexoTextField: UIView {
         return view
     }()
     
-    public var activeColor: UIColor = NexoColor.mainSecondary
+    public var selectedColor: UIColor = NexoColor.mainSecondary
+    public var activeColor: UIColor = NexoColor.gray6
     public var inactiveColor: UIColor = NexoColor.gray2
+    private var isPasswordVisible = false
+    
     public var type: NexoTextFieldType = .normal
     
-    private var isPasswordVisible = false // Controla a visibilidade da senha
+    public var buttonAction: (() -> Void)? = nil
     
     public init(
         type: NexoTextFieldType,
@@ -123,10 +127,11 @@ public final class NexoTextField: UIView {
             case .withIcon(let icon):
                 iconButton.setImage(icon, for: .normal)
                 iconButton.isHidden = false
-                iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+                iconButton.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
             case .actionButton(let buttonText):
                 actionButton.setTitle(buttonText, for: .normal)
                 actionButton.isHidden = false
+                actionButton.addTarget(self, action: #selector(buttonDidTapped), for: .touchUpInside)
             case .currency(let rightIcon):
                 let currencyLabel = UILabel()
                 currencyLabel.text = "R$"
@@ -148,7 +153,7 @@ public final class NexoTextField: UIView {
                 if let rightIcon {
                     iconButton.setImage(rightIcon, for: .normal)
                     iconButton.isHidden = false
-                    iconButton.addTarget(self, action: #selector(iconButtonTapped), for: .touchUpInside)
+                    iconButton.addTarget(self, action: #selector(currencyTapped), for: .touchUpInside)
                 }
             case .secureText:
                 textField.isSecureTextEntry = true
@@ -158,8 +163,12 @@ public final class NexoTextField: UIView {
         }
     }
     
-    @objc private func iconButtonTapped() {
-        print("Icon tapped")
+    @objc private func buttonDidTapped() {
+        buttonAction?()
+    }
+    
+    @objc private func currencyTapped() {
+        textField.text = nil
     }
     
     @objc private func togglePasswordVisibility() {
@@ -173,13 +182,17 @@ public final class NexoTextField: UIView {
 // MARK: - UITextField Delegate
 extension NexoTextField: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        bottomLineView.backgroundColor = activeColor
-        titleLabel.textColor = activeColor
+        titleLabel.textColor = selectedColor
+        bottomLineView.backgroundColor = selectedColor
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text, !text.isEmpty {
+            titleLabel.textColor = activeColor
+        } else {
+            titleLabel.textColor = inactiveColor
+        }
         bottomLineView.backgroundColor = inactiveColor
-        titleLabel.textColor = inactiveColor
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -189,18 +202,23 @@ extension NexoTextField: UITextFieldDelegate {
             
             let digits = newString.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
             
+            guard digits.count <= 15 else { return false }
+            
             if let value = Double(digits) {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = .currency
                 formatter.currencySymbol = ""
                 formatter.minimumFractionDigits = 2
                 formatter.maximumFractionDigits = 2
+                formatter.groupingSeparator = "."
+                formatter.decimalSeparator = ","
                 
                 let formattedValue = formatter.string(from: NSNumber(value: value / 100))
                 textField.text = formattedValue
             } else {
                 textField.text = ""
             }
+            
             return false
         }
         return true
@@ -220,12 +238,12 @@ extension NexoTextField {
             textField.leadingAnchor.constraint(equalTo: leadingAnchor),
             textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             
-            helperLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
+            helperLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 6),
             helperLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             helperLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             helperLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            iconButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            iconButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             iconButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
             iconButton.widthAnchor.constraint(equalToConstant: 32),
             iconButton.heightAnchor.constraint(equalToConstant: 32),
@@ -233,7 +251,7 @@ extension NexoTextField {
             actionButton.trailingAnchor.constraint(equalTo: trailingAnchor),
             actionButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
             
-            bottomLineView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
+            bottomLineView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 6),
             bottomLineView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomLineView.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomLineView.heightAnchor.constraint(equalToConstant: 1)

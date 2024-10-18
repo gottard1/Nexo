@@ -20,9 +20,9 @@ public final class NexoRoundedTextField: UIView {
     private let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = NexoColor.gray4
+        textField.backgroundColor = NexoColor.background
         textField.layer.cornerRadius = 16
-        textField.textColor = NexoColor.gray2
+        textField.textColor = NexoColor.gray4
         return textField
     }()
     

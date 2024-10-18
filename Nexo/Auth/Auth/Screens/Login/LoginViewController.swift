@@ -72,6 +72,14 @@ final class LoginViewController: UIViewController {
         setupConstraints()
         setupActions()
         
+        actionButtonTextField.buttonAction = {
+            print("Icon tapped")
+        }
+        
+        iconTextField.buttonAction = {
+            print("botão de ação tapped")
+        }
+        
     }
     
     private func setupView() {
