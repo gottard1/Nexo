@@ -189,6 +189,8 @@ extension NexoTextField: UITextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text, !text.isEmpty {
             titleLabel.textColor = activeColor
+        } else if textField.text == "R$ 0,00" {
+            titleLabel.textColor = inactiveColor
         } else {
             titleLabel.textColor = inactiveColor
         }
