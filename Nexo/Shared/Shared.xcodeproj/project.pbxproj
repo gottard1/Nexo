@@ -22,6 +22,13 @@
 		858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436262CB9963900CF83CC /* NexoRoundedTextView.swift */; };
 		858436292CB9970600CF83CC /* NexoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436282CB9970600CF83CC /* NexoTextField.swift */; };
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
+		85A6222A2CE2A08C00B36AB1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622292CE2A08C00B36AB1 /* UIViewController+Extension.swift */; };
+		85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */; };
+		85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622312CE2A54100B36AB1 /* PresentationController.swift */; };
+		85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */; };
+		85A622362CE2A60600B36AB1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622352CE2A60600B36AB1 /* UIView+Extension.swift */; };
+		85A622382CE2A62200B36AB1 /* UIPresentationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */; };
+		85A6223A2CE3702200B36AB1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */; };
 		85A670422CBD5AA900915268 /* NexoFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A670412CBD5AA900915268 /* NexoFont.swift */; };
 		85A6704C2CBD5BA800915268 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A6704B2CBD5BA800915268 /* OpenSans-SemiBold.ttf */; };
 		85A6704E2CBD5BC800915268 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A6704D2CBD5BC800915268 /* OpenSans-Bold.ttf */; };
@@ -29,6 +36,10 @@
 		85A670522CBD5BFB00915268 /* Exo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A670512CBD5BFB00915268 /* Exo2-Bold.ttf */; };
 		85A670542CBD5C1300915268 /* Exo2-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85A670532CBD5C1300915268 /* Exo2-Light.ttf */; };
 		85A670562CBD5CF800915268 /* Shared.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A670552CBD5CF800915268 /* Shared.plist */; };
+		85BCBA952CD2A667005DEEAF /* BaseTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA942CD2A667005DEEAF /* BaseTarget.swift */; };
+		85BCBA972CD2A708005DEEAF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA962CD2A708005DEEAF /* NetworkError.swift */; };
+		85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */; };
+		85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */; };
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
 		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
@@ -61,6 +72,13 @@
 		858436262CB9963900CF83CC /* NexoRoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextView.swift; sourceTree = "<group>"; };
 		858436282CB9970600CF83CC /* NexoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTextField.swift; sourceTree = "<group>"; };
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		85A622292CE2A08C00B36AB1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalBottomSheet.swift; sourceTree = "<group>"; };
+		85A622312CE2A54100B36AB1 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentationViewController.swift; sourceTree = "<group>"; };
+		85A622352CE2A60600B36AB1 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPresentationController+Extension.swift"; sourceTree = "<group>"; };
+		85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		85A670412CBD5AA900915268 /* NexoFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoFont.swift; sourceTree = "<group>"; };
 		85A6704B2CBD5BA800915268 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		85A6704D2CBD5BC800915268 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -68,6 +86,10 @@
 		85A670512CBD5BFB00915268 /* Exo2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Bold.ttf"; sourceTree = "<group>"; };
 		85A670532CBD5C1300915268 /* Exo2-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Light.ttf"; sourceTree = "<group>"; };
 		85A670552CBD5CF800915268 /* Shared.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Shared.plist; sourceTree = "<group>"; };
+		85BCBA942CD2A667005DEEAF /* BaseTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTarget.swift; sourceTree = "<group>"; };
+		85BCBA962CD2A708005DEEAF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
@@ -96,6 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */,
+				85A622292CE2A08C00B36AB1 /* UIViewController+Extension.swift */,
+				85A622352CE2A60600B36AB1 /* UIView+Extension.swift */,
+				85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */,
+				85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,7 +169,6 @@
 				855DC7AB2CA1B05E0055571D /* Shared.h */,
 				8585B8BF2CAAE670000D38D7 /* Core */,
 				850D540F2CAB8EE600B8B019 /* Extensions */,
-				C3D7264C2CA2284B00634461 /* Resources */,
 				C3D726492CA2250E00634461 /* Components */,
 			);
 			path = Shared;
@@ -207,8 +232,36 @@
 			children = (
 				855DC7AC2CA1B05E0055571D /* Shared.docc */,
 				85FC07BF2CAB928D0052E651 /* Coordinator.swift */,
+				85BCBA932CD2A54D005DEEAF /* Network */,
+				C3D7264C2CA2284B00634461 /* Resources */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		85A6222B2CE2A24300B36AB1 /* Presentation  */ = {
+			isa = PBXGroup;
+			children = (
+				85A622302CE2A52800B36AB1 /* Controller */,
+				85A6222D2CE2A2A300B36AB1 /* Modal */,
+			);
+			path = "Presentation ";
+			sourceTree = "<group>";
+		};
+		85A6222D2CE2A2A300B36AB1 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		85A622302CE2A52800B36AB1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				85A622312CE2A54100B36AB1 /* PresentationController.swift */,
+				85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		85A6703E2CBD5A8000915268 /* Fonts */ = {
@@ -240,9 +293,21 @@
 			path = OpenSans;
 			sourceTree = "<group>";
 		};
+		85BCBA932CD2A54D005DEEAF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				85BCBA942CD2A667005DEEAF /* BaseTarget.swift */,
+				85BCBA962CD2A708005DEEAF /* NetworkError.swift */,
+				85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */,
+				85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C3D726492CA2250E00634461 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				85A6222B2CE2A24300B36AB1 /* Presentation  */,
 				858436232CB9771F00CF83CC /* Textfield */,
 				853422B02CB4444A00EF82B2 /* TabBar */,
 				853422AF2CB4444300EF82B2 /* Buttons */,
@@ -377,19 +442,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */,
 				853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */,
+				85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */,
+				85BCBA972CD2A708005DEEAF /* NetworkError.swift in Sources */,
 				855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */,
+				85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */,
 				850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */,
 				858436252CB9799500CF83CC /* NexoRoundedTextField.swift in Sources */,
+				85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */,
 				85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */,
+				85A622362CE2A60600B36AB1 /* UIView+Extension.swift in Sources */,
 				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
+				85A6222A2CE2A08C00B36AB1 /* UIViewController+Extension.swift in Sources */,
+				85BCBA952CD2A667005DEEAF /* BaseTarget.swift in Sources */,
 				85A670422CBD5AA900915268 /* NexoFont.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
 				858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */,
+				85A622382CE2A62200B36AB1 /* UIPresentationController+Extension.swift in Sources */,
 				858436292CB9970600CF83CC /* NexoTextField.swift in Sources */,
+				85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */,
 				8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */,
 				8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */,
 				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
+				85A6223A2CE3702200B36AB1 /* UIApplication+Extension.swift in Sources */,
 				850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

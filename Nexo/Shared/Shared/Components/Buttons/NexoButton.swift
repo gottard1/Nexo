@@ -49,6 +49,14 @@ public final class NexoButton: UIButton {
         }
     }
     
+    public typealias ButtonBlock = (NexoButton) -> Void
+    
+    private var action: ButtonBlock? {
+        didSet {
+            self.addTarget(self, action: #selector(onTapAction(sender:)), for: .touchUpInside)
+        }
+    }
+    
     public init(style: ButtonStyle = .filled) {
         super.init(frame: .zero)
         self.buttonStyle = style
@@ -97,5 +105,13 @@ public final class NexoButton: UIButton {
                 backgroundColor = disableBackgroundColor
                 setTitleColor(disableTitleColor.withAlphaComponent(0.7) , for: .normal)
         }
+    }
+    
+    @objc func onTapAction(sender: NexoButton) {
+        action?(sender)
+    }
+    
+    public func onTap(_ action: @escaping ButtonBlock) {
+        self.action = action
     }
 }

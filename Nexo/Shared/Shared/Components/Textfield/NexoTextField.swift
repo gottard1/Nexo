@@ -81,6 +81,12 @@ public final class NexoTextField: UIView {
     
     public var buttonAction: (() -> Void)? = nil
     
+    public var text: String? {
+        get {
+            return textField.text ?? ""
+        }
+    }
+    
     public init(
         type: NexoTextFieldType,
         title: String,

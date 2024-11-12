@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		855F9B982CD94873007FE3FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B972CD94873007FE3FB /* LoginView.swift */; };
+		855F9B9A2CD949A5007FE3FB /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B992CD949A5007FE3FB /* LoginInteractor.swift */; };
+		855F9B9C2CD949B8007FE3FB /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B9B2CD949B8007FE3FB /* LoginPresenter.swift */; };
+		855F9B9F2CD949D4007FE3FB /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B9E2CD949D4007FE3FB /* LoginService.swift */; };
+		8590E8882CDE8D1D0077D0EA /* LoginTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */; };
+		85A622222CE236A100B36AB1 /* AuthEndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */; };
+		85A622242CE23C5E00B36AB1 /* AuthenticateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */; };
+		85A622262CE23CDF00B36AB1 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622252CE23CDF00B36AB1 /* RegisterRequest.swift */; };
 		C35419712CA3764600C9372F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35419702CA3764600C9372F /* AuthCoordinator.swift */; };
 		C35419752CA376E700C9372F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35419742CA376E700C9372F /* LoginViewController.swift */; };
 		C35419782CA3779600C9372F /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35419772CA3779600C9372F /* Shared.framework */; };
@@ -28,6 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		855F9B972CD94873007FE3FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		855F9B992CD949A5007FE3FB /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		855F9B9B2CD949B8007FE3FB /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		855F9B9E2CD949D4007FE3FB /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTarget.swift; sourceTree = "<group>"; };
+		85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointsModel.swift; sourceTree = "<group>"; };
+		85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateRequest.swift; sourceTree = "<group>"; };
+		85A622252CE23CDF00B36AB1 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		C35419702CA3764600C9372F /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		C35419742CA376E700C9372F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C35419772CA3779600C9372F /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +74,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		855F9B9D2CD949C7007FE3FB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				85A6221D2CE2298300B36AB1 /* Models */,
+				85A6221C2CE2297A00B36AB1 /* Services */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		85A6221C2CE2297A00B36AB1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */,
+				85A6221E2CE2298800B36AB1 /* Login */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		85A6221D2CE2298300B36AB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85A622282CE23E9800B36AB1 /* Register */,
+				85A622272CE23DE000B36AB1 /* Authenticate */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85A6221E2CE2298800B36AB1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				855F9B9E2CD949D4007FE3FB /* LoginService.swift */,
+				8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		85A622272CE23DE000B36AB1 /* Authenticate */ = {
+			isa = PBXGroup;
+			children = (
+				85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */,
+			);
+			path = Authenticate;
+			sourceTree = "<group>";
+		};
+		85A622282CE23E9800B36AB1 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				85A622252CE23CDF00B36AB1 /* RegisterRequest.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		C35419722CA376CC00C9372F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				C35419742CA376E700C9372F /* LoginViewController.swift */,
+				855F9B972CD94873007FE3FB /* LoginView.swift */,
+				855F9B992CD949A5007FE3FB /* LoginInteractor.swift */,
+				855F9B9B2CD949B8007FE3FB /* LoginPresenter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -105,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C35419702CA3764600C9372F /* AuthCoordinator.swift */,
+				855F9B9D2CD949C7007FE3FB /* Repositories */,
 				C35419722CA376CC00C9372F /* Screens */,
 				C36940F52CA374C1001AC719 /* Auth.h */,
 				C36940F62CA374C1001AC719 /* Auth.docc */,
@@ -231,8 +303,16 @@
 			files = (
 				C35419812CA37A8B00C9372F /* Shared.framework in Sources */,
 				C35419752CA376E700C9372F /* LoginViewController.swift in Sources */,
+				85A622262CE23CDF00B36AB1 /* RegisterRequest.swift in Sources */,
+				855F9B9C2CD949B8007FE3FB /* LoginPresenter.swift in Sources */,
+				855F9B9A2CD949A5007FE3FB /* LoginInteractor.swift in Sources */,
+				85A622222CE236A100B36AB1 /* AuthEndpointsModel.swift in Sources */,
+				8590E8882CDE8D1D0077D0EA /* LoginTarget.swift in Sources */,
 				C35419712CA3764600C9372F /* AuthCoordinator.swift in Sources */,
+				855F9B982CD94873007FE3FB /* LoginView.swift in Sources */,
 				C36940F72CA374C1001AC719 /* Auth.docc in Sources */,
+				85A622242CE23C5E00B36AB1 /* AuthenticateRequest.swift in Sources */,
+				855F9B9F2CD949D4007FE3FB /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
