@@ -5,9 +5,10 @@
 //  Created by Marcel Felipe Gottardi Anesi on 11/11/24.
 //
 
-import Foundation
+import UIKit
 
 extension UIPresentationController {
+    
     func updatePresentationLayout(animated: Bool = false) {
         containerView?.setNeedsLayout()
         if animated {

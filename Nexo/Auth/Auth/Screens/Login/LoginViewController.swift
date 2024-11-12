@@ -33,6 +33,7 @@ final class LoginViewController: UIViewController {
             displayLoginError("Preencha os campos")
             return
         }
+        
         interactor?.login(username: username, password: password)
     }
 }
@@ -40,10 +41,20 @@ final class LoginViewController: UIViewController {
 // MARK: - Login Protocol
 extension LoginViewController: LoginViewProtocol {
     func displayLoginSuccess(with token: AuthenticateResponse) {
+        coordinator.goToHome()
     }
     
     func displayLoginError(_ message: String) {
-        print(message)
+//        showCustomAlert(
+//            title: "Deu erro",
+//            message: message,
+//            customTitle: "OK",
+//            customHandler: {
+//                print("okbutton")
+//            },
+//            cancelTitle: "SAIR") {
+//                print("erro button")
+//            }
     }
     
 }

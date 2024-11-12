@@ -21,6 +21,19 @@ public final class AuthCoordinator: Coordinator {
         showLogin()
     }
     
+    func goToHome() {
+        
+    }
+    
+    func showLoginErrorAlert(message: String) {
+        showCustomAlert(title: "Atenção", message: message)
+    }
+    
+}
+
+// MARK: - Private Functions
+extension AuthCoordinator {
+    
     private func showLogin() {
         let loginService = LoginService(networkManager: networkManager)
         let loginViewController = LoginViewController()
@@ -33,8 +46,4 @@ public final class AuthCoordinator: Coordinator {
         navigationController.pushViewController(loginViewController, animated: true)
     }
     
-    func goToHome() {
-        // TODO: - Navegação para a tela principal
-    }
 }
-

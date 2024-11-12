@@ -37,6 +37,7 @@ public final class ModalBottomSheetView: BasePresentViewController {
         let label = UILabel()
         label.font = NexoFont.exo2Font(ofType: .bold, size: 22)
         label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -45,13 +46,19 @@ public final class ModalBottomSheetView: BasePresentViewController {
         label.font = NexoFont.openSansFont(ofType: .regular, size: 14)
         label.textAlignment = .justified
         label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let customView: UIView = .init()
+    private let customView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 16
         stackView.axis = .vertical
         return stackView
@@ -141,7 +148,7 @@ public final class ModalBottomSheetView: BasePresentViewController {
                 stackButton.heightAnchor.constraint(equalToConstant: 50)
             ])
             
-            stackButton.onTap { [weak self] in
+            stackButton.onTap { [weak self] _ in
                 if button.shouldDismissWhenClicked { self?.dismiss(animated: true) }
                 button.action?()
             }
