@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NexoFont.registerFonts()
         window = UIWindow(frame: UIScreen.main.bounds)
         
+        setupNavigationControllerAppearence()
+        
         let navigationController = UINavigationController()
         appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.start()
@@ -26,7 +28,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
+        
         return true
+    }
+    
+    private func setupNavigationControllerAppearence() {
+        let customAppearance = UINavigationBarAppearance()
+        customAppearance.backgroundColor = NexoColor.mainPrimary
+        customAppearance.shadowColor = .clear
+        
+        customAppearance.titleTextAttributes = [
+            .foregroundColor: NexoColor.whiteF2F2F2,
+            .font: NexoFont.openSans(ofType: .semibold, size: 18)
+        ]
+        
+        customAppearance.largeTitleTextAttributes = [
+            .foregroundColor: NexoColor.whiteF2F2F2,
+            .font: NexoFont.openSans(ofType: .semibold, size: 34)
+        ]
+        UINavigationBar.appearance().standardAppearance = customAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = customAppearance
     }
 }
 

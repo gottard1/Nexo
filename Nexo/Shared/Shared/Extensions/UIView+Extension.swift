@@ -7,10 +7,18 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     func roundCorners(radius: CGFloat) {
         clipsToBounds = true
         layer.cornerRadius = radius
         layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    /// Part of constraint Maker
+    func anchor(_ closure: (ConstraintMaker) -> Void) {
+        translatesAutoresizingMaskIntoConstraints = false
+        let maker = ConstraintMaker(view: self)
+        closure(maker)
+        maker.activateConstraints()
     }
 }

@@ -12,6 +12,8 @@
 		850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */; };
 		853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423912CB54CD900EF82B2 /* NexoTabBarController.swift */; };
 		853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */; };
+		8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */; };
+		8544319E2CEBCCD100B3B024 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */; };
 		855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7AC2CA1B05E0055571D /* Shared.docc */; };
 		855DC7B32CA1B05E0055571D /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855DC7A82CA1B05E0055571D /* Shared.framework */; };
 		855DC7B82CA1B05E0055571D /* SharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7B72CA1B05E0055571D /* SharedTests.swift */; };
@@ -22,7 +24,6 @@
 		858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436262CB9963900CF83CC /* NexoRoundedTextView.swift */; };
 		858436292CB9970600CF83CC /* NexoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436282CB9970600CF83CC /* NexoTextField.swift */; };
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
-		85A6222A2CE2A08C00B36AB1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622292CE2A08C00B36AB1 /* UIViewController+Extension.swift */; };
 		85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */; };
 		85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622312CE2A54100B36AB1 /* PresentationController.swift */; };
 		85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */; };
@@ -61,6 +62,8 @@
 		850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		853423912CB54CD900EF82B2 /* NexoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarController.swift; sourceTree = "<group>"; };
 		853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItem.swift; sourceTree = "<group>"; };
+		8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowNavigator.swift; sourceTree = "<group>"; };
+		8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
 		855DC7A82CA1B05E0055571D /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7AB2CA1B05E0055571D /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
@@ -72,7 +75,6 @@
 		858436262CB9963900CF83CC /* NexoRoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextView.swift; sourceTree = "<group>"; };
 		858436282CB9970600CF83CC /* NexoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTextField.swift; sourceTree = "<group>"; };
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		85A622292CE2A08C00B36AB1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalBottomSheet.swift; sourceTree = "<group>"; };
 		85A622312CE2A54100B36AB1 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentationViewController.swift; sourceTree = "<group>"; };
@@ -118,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */,
-				85A622292CE2A08C00B36AB1 /* UIViewController+Extension.swift */,
 				85A622352CE2A60600B36AB1 /* UIView+Extension.swift */,
 				85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */,
 				85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */,
@@ -142,6 +143,14 @@
 				8584361D2CB860B300CF83CC /* Item */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8544319C2CEBCCC200B3B024 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		855DC79E2CA1B05E0055571D = {
@@ -168,6 +177,7 @@
 				85A670552CBD5CF800915268 /* Shared.plist */,
 				855DC7AB2CA1B05E0055571D /* Shared.h */,
 				8585B8BF2CAAE670000D38D7 /* Core */,
+				8544319C2CEBCCC200B3B024 /* Helpers */,
 				850D540F2CAB8EE600B8B019 /* Extensions */,
 				C3D726492CA2250E00634461 /* Components */,
 			);
@@ -232,6 +242,7 @@
 			children = (
 				855DC7AC2CA1B05E0055571D /* Shared.docc */,
 				85FC07BF2CAB928D0052E651 /* Coordinator.swift */,
+				8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */,
 				85BCBA932CD2A54D005DEEAF /* Network */,
 				C3D7264C2CA2284B00634461 /* Resources */,
 			);
@@ -443,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */,
+				8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */,
 				853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */,
 				85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */,
 				85BCBA972CD2A708005DEEAF /* NetworkError.swift in Sources */,
@@ -454,7 +466,6 @@
 				85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */,
 				85A622362CE2A60600B36AB1 /* UIView+Extension.swift in Sources */,
 				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
-				85A6222A2CE2A08C00B36AB1 /* UIViewController+Extension.swift in Sources */,
 				85BCBA952CD2A667005DEEAF /* BaseTarget.swift in Sources */,
 				85A670422CBD5AA900915268 /* NexoFont.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
@@ -465,6 +476,7 @@
 				8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */,
 				8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */,
 				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
+				8544319E2CEBCCD100B3B024 /* ConstraintMaker.swift in Sources */,
 				85A6223A2CE3702200B36AB1 /* UIApplication+Extension.swift in Sources */,
 				850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */,
 			);

@@ -11,7 +11,6 @@ class NexoTabBarItem: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -19,14 +18,12 @@ class NexoTabBarItem: UIView {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
     private let selectionIndicator: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.layer.cornerRadius = 8
         view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -72,21 +69,25 @@ extension NexoTabBarItem {
         addSubview(imageView)
         addSubview(titleLabel)
         
-        NSLayoutConstraint.activate([
-            selectionIndicator.topAnchor.constraint(equalTo: topAnchor),
-            selectionIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-            selectionIndicator.widthAnchor.constraint(equalToConstant: 70),
-            selectionIndicator.heightAnchor.constraint(equalToConstant: 4),
-            
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: selectionIndicator.bottomAnchor, constant: 4),
-            imageView.widthAnchor.constraint(equalToConstant: 24),
-            imageView.heightAnchor.constraint(equalToConstant: 24),
-            
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
+        selectionIndicator.anchor { make in
+            make.top(to: topAnchor)
+            make.centerX(to: centerXAnchor)
+            make.width(equalTo: 70)
+            make.height(equalTo: 4)
+        }
+        
+        imageView.anchor { make in
+            make.centerX(to: centerXAnchor)
+            make.top(to: selectionIndicator.bottomAnchor, constant: 4)
+            make.width(equalTo: 24)
+            make.height(equalTo: 24)
+        }
+        
+        titleLabel.anchor { make in
+            make.top(to: imageView.bottomAnchor, constant: 4)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+        }
         
         selectionIndicator.isHidden = true
     }

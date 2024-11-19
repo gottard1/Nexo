@@ -20,32 +20,28 @@ public final class NexoTextField: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = NexoColor.gray2
-        label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        label.font = NexoFont.openSans(ofType: .regular, size: 16)
         return label
     }()
     
     private let textField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        textField.font = NexoFont.openSans(ofType: .regular, size: 16)
         textField.textColor = NexoColor.black040F14
         return textField
     }()
     
     private let helperLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = NexoColor.gray3
-        label.font = NexoFont.openSansFont(ofType: .regular, size: 12)
+        label.font = NexoFont.openSans(ofType: .regular, size: 12)
         label.isHidden = true
         return label
     }()
     
     private let iconButton: UIButton = {
         let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
         var config = UIButton.Configuration.plain()
         config.imagePadding = 8
         config.baseForegroundColor = NexoColor.mainSecondary
@@ -57,8 +53,7 @@ public final class NexoTextField: UIView {
     
     private let actionButton: UIButton = {
         let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        button.titleLabel?.font = NexoFont.openSans(ofType: .regular, size: 16)
         button.titleLabel?.textColor = NexoColor.mainSecondary
         button.tintColor = NexoColor.mainSecondary
         button.isHidden = true
@@ -67,7 +62,6 @@ public final class NexoTextField: UIView {
     
     private let bottomLineView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = NexoColor.gray2
         return view
     }()
@@ -141,7 +135,7 @@ public final class NexoTextField: UIView {
             case .currency(let rightIcon):
                 let currencyLabel = UILabel()
                 currencyLabel.text = "R$"
-                currencyLabel.font = NexoFont.exo2Font(ofType: .bold, size: 22)
+                currencyLabel.font = NexoFont.exo2(ofType: .bold, size: 22)
                 currencyLabel.textColor =  NexoColor.black040F14
                 currencyLabel.textAlignment = .center
                 currencyLabel.frame = CGRect(x: 0, y: 0, width: 32, height: 36)
@@ -149,7 +143,7 @@ public final class NexoTextField: UIView {
                 let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
                 leftView.addSubview(currencyLabel)
                 
-                textField.font = NexoFont.exo2Font(ofType: .bold, size: 22)
+                textField.font = NexoFont.exo2(ofType: .bold, size: 22)
                 
                 textField.placeholder = "0,00"
                 textField.leftView = leftView
@@ -237,32 +231,42 @@ extension NexoTextField: UITextFieldDelegate {
 extension NexoTextField {
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            
-            helperLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 6),
-            helperLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            helperLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            helperLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            iconButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            iconButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
-            iconButton.widthAnchor.constraint(equalToConstant: 32),
-            iconButton.heightAnchor.constraint(equalToConstant: 32),
-            
-            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            actionButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
-            
-            bottomLineView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 6),
-            bottomLineView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bottomLineView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            bottomLineView.heightAnchor.constraint(equalToConstant: 1)
-        ])
+        titleLabel.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+        }
+        
+        textField.anchor { make in
+            make.top(to: titleLabel.bottomAnchor, constant: 8)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor, constant: 40)
+        }
+        
+        helperLabel.anchor { make in
+            make.top(to: textField.bottomAnchor, constant: 6)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.bottom(to: bottomAnchor)
+        }
+        
+        iconButton.anchor { make in
+            make.trailing(to: trailingAnchor)
+            make.centerY(to: textField.centerYAnchor)
+            make.width(equalTo: 32)
+            make.height(equalTo: 32)
+        }
+        
+        actionButton.anchor { make in
+            make.trailing(to: trailingAnchor)
+            make.centerY(to: textField.centerYAnchor)
+        }
+        
+        bottomLineView.anchor { make in
+            make.top(to: textField.bottomAnchor, constant: 6)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.height(equalTo: 1)
+        }
     }
 }

@@ -11,15 +11,13 @@ public final class NexoRoundedTextField: UIView {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        label.font = NexoFont.openSans(ofType: .regular, size: 16)
         label.textColor = NexoColor.gray6
         return label
     }()
     
     private let textField: UITextField = {
         let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = NexoColor.background
         textField.layer.cornerRadius = 16
         textField.textColor = NexoColor.gray4
@@ -55,16 +53,18 @@ public final class NexoRoundedTextField: UIView {
         addSubview(titleLabel)
         addSubview(textField)
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            textField.heightAnchor.constraint(equalToConstant: 50),
-            textField.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        titleLabel.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+        }
+        
+        textField.anchor { make in
+            make.top(to: titleLabel.bottomAnchor, constant: 8)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.height(equalTo: 50)
+            make.bottom(to: bottomAnchor)
+        }
     }
 }

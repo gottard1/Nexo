@@ -62,13 +62,12 @@ public final class NexoButton: UIButton {
         self.buttonStyle = style
         setupButton()
         
-        translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 16
         titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         
-        NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        anchor { make in
+            make.height(equalTo: 50)
+        }
     }
     
     public override var isEnabled: Bool {

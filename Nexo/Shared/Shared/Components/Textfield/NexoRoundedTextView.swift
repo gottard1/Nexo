@@ -11,17 +11,15 @@ public final class NexoRoundedTextView: UIView, UITextViewDelegate {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = NexoColor.gray6
-        label.font = NexoFont.openSansFont(ofType: .regular, size: 16)
+        label.font = NexoFont.openSans(ofType: .regular, size: 16)
         return label
     }()
     
     private let textView: UITextView = {
         let textView = UITextView()
-        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = NexoColor.background
-        textView.font = NexoFont.openSansFont(ofType: .regular, size: 14)
+        textView.font = NexoFont.openSans(ofType: .regular, size: 14)
         textView.layer.cornerRadius = 8
         textView.isScrollEnabled = false
         return textView
@@ -29,9 +27,8 @@ public final class NexoRoundedTextView: UIView, UITextViewDelegate {
     
     private let hintLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = NexoColor.gray5
-        label.font = NexoFont.openSansFont(ofType: .regular, size: 14)
+        label.font = NexoFont.openSans(ofType: .regular, size: 14)
         return label
     }()
     
@@ -85,20 +82,24 @@ extension NexoRoundedTextView {
         
         textView.delegate = self
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            textView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            textView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            textView.heightAnchor.constraint(equalToConstant: 100),
-            
-            hintLabel.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 8),
-            hintLabel.trailingAnchor.constraint(equalTo: textView.trailingAnchor),
-            hintLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        titleLabel.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+        }
+        
+        textView.anchor { make in
+            make.top(to: titleLabel.bottomAnchor, constant: 8)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.height(equalTo: 100)
+        }
+        
+        hintLabel.anchor { make in
+            make.top(to: textView.bottomAnchor, constant: 8)
+            make.trailing(to: textView.trailingAnchor)
+            make.bottom(to: bottomAnchor)
+        }
     }
     
 }

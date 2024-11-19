@@ -9,7 +9,7 @@ import UIKit
 import Shared
 import Auth
 
-final class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator, FlowNavigator {
     var navigationController: UINavigationController
     
     private var authCoordinator: AuthCoordinator?
@@ -21,23 +21,24 @@ final class AppCoordinator: Coordinator {
     
     public func start() {
         if isUserAuthenticated() {
-            startHomeFlow()
+            navigateToHome()
         } else {
-            startAuthFlow()
+            navigateToAuth()
         }
     }
     
     private func isUserAuthenticated() -> Bool {
         // TODO: Verificar se o usuário está autenticado
-        return false
+//        return false
+        return true
     }
     
-    private func startAuthFlow() {
-        authCoordinator = AuthCoordinator(navigationController: navigationController)
+    func navigateToAuth() {
+        authCoordinator = AuthCoordinator(navigationController: navigationController, navigationDelegate: self)
         authCoordinator?.start()
     }
     
-    private func startHomeFlow() {
+    func navigateToHome() {
         tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
         tabBarCoordinator?.start()
     }

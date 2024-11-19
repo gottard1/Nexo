@@ -11,7 +11,6 @@ final class NexoTabBarView: UIView {
     
     let stackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
@@ -39,13 +38,12 @@ extension NexoTabBarView {
     private func setupView() {
         addSubview(stackView)
         
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -24),
-            stackView.heightAnchor.constraint(equalToConstant: 60)
-        ])
+        stackView.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.bottom(to: safeAreaLayoutGuide.bottomAnchor, constant: 24)
+        }
     }
 }
 

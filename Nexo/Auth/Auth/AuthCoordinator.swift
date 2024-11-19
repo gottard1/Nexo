@@ -12,8 +12,11 @@ public final class AuthCoordinator: Coordinator {
     public var navigationController: UINavigationController
     private let networkManager: Networking
     
-    public init(navigationController: UINavigationController) {
+    private weak var navigationDelegate: FlowNavigator?
+    
+    public init(navigationController: UINavigationController, navigationDelegate: FlowNavigator?) {
         self.navigationController = navigationController
+        self.navigationDelegate = navigationDelegate
         self.networkManager = NetworkManager()
     }
     
@@ -22,7 +25,7 @@ public final class AuthCoordinator: Coordinator {
     }
     
     func goToHome() {
-        
+        navigationDelegate?.navigateToHome()
     }
     
     func showLoginErrorAlert(message: String) {
@@ -35,8 +38,11 @@ public final class AuthCoordinator: Coordinator {
 extension AuthCoordinator {
     
     private func showLogin() {
-        let loginService = LoginService(networkManager: networkManager)
         let loginViewController = LoginViewController()
+        loginViewController.onLoginSuccess = { [weak self] in
+            self?.goToHome()
+        }
+        let loginService = LoginService(networkManager: networkManager)
         let presenter = LoginPresenter(view: loginViewController)
         let interactor = LoginInteractor(service: loginService, presenter: presenter)
         

@@ -40,11 +40,11 @@ public final class NexoFont {
         }
     }
     
-    public static func exo2Font(ofType type: Exo2Type, size: CGFloat) -> UIFont {
+    public static func exo2(ofType type: Exo2Type, size: CGFloat) -> UIFont {
         return UIFont(name: type.fontName, size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    public static func openSansFont(ofType type: OpenSansType, size: CGFloat) -> UIFont {
+    public static func openSans(ofType type: OpenSansType, size: CGFloat) -> UIFont {
         return UIFont(name: type.fontName, size: size) ?? UIFont.systemFont(ofSize: size)
     }
 }

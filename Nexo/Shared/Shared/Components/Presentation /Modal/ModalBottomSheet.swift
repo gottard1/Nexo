@@ -35,30 +35,26 @@ public final class ModalBottomSheetView: BasePresentViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = NexoFont.exo2Font(ofType: .bold, size: 22)
+        label.font = NexoFont.exo2(ofType: .bold, size: 22)
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = NexoFont.openSansFont(ofType: .regular, size: 14)
+        label.font = NexoFont.openSans(ofType: .regular, size: 14)
         label.textAlignment = .justified
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let customView: UIView = {
         let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private let buttonsStackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 16
         stackView.axis = .vertical
         return stackView
@@ -143,10 +139,9 @@ public final class ModalBottomSheetView: BasePresentViewController {
             let stackButton = NexoButton(style: buttonStyle)
             stackButton.setTitle(button.text, for: .normal)
             
-            stackButton.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                stackButton.heightAnchor.constraint(equalToConstant: 50)
-            ])
+            stackButton.anchor { make in
+                make.height(equalTo: 50)
+            }
             
             stackButton.onTap { [weak self] _ in
                 if button.shouldDismissWhenClicked { self?.dismiss(animated: true) }
@@ -181,24 +176,30 @@ extension ModalBottomSheetView {
     }
     
     private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            customView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 16),
-            customView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            customView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            buttonsStackView.topAnchor.constraint(equalTo: customView.bottomAnchor, constant: 16),
-            buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            buttonsStackView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -16)
-        ])
+        titleLabel.anchor { make in
+            make.top(to: view.topAnchor, constant: 20)
+            make.leading(to: view.leadingAnchor, constant: 16)
+            make.trailing(to: view.trailingAnchor, constant: 16)
+        }
+        
+        descriptionLabel.anchor { make in
+            make.top(to: titleLabel.bottomAnchor, constant: 16)
+            make.leading(to: view.leadingAnchor, constant: 16)
+            make.trailing(to: view.trailingAnchor, constant: 16)
+        }
+        
+        customView.anchor { make in
+            make.top(to: descriptionLabel.bottomAnchor, constant: 16)
+            make.leading(to: view.leadingAnchor, constant: 16)
+            make.trailing(to: view.trailingAnchor, constant: 16)
+        }
+        
+        buttonsStackView.anchor { make in
+            make.top(to: customView.bottomAnchor, constant: 16)
+            make.leading(to: view.leadingAnchor, constant: 16)
+            make.trailing(to: view.trailingAnchor, constant: 16)
+            make.bottom(to: view.bottomAnchor, constant: 16)
+        }
     }
 }
 

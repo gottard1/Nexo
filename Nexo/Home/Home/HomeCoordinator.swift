@@ -16,9 +16,7 @@ public final class HomeCoordinator: Coordinator {
     }
     
     public func start() {
-        let controller = UIViewController()
-        controller.title = "Home"
-        controller.view.backgroundColor = .brown
+        let controller = HomeViewController()
         navigationController.pushViewController(controller, animated: true)
     }
 }

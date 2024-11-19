@@ -9,10 +9,12 @@ import UIKit
 import Shared
 
 final class LoginViewController: UIViewController {
-    weak var coordinator: Coordinator?
+    weak var coordinator: AuthCoordinator?
     var interactor: LoginInteractorProtocol?
     
     private let mainView = LoginView()
+    
+    var onLoginSuccess: (() -> Void)?
     
     override func loadView() {
         view = mainView
@@ -41,20 +43,10 @@ final class LoginViewController: UIViewController {
 // MARK: - Login Protocol
 extension LoginViewController: LoginViewProtocol {
     func displayLoginSuccess(with token: AuthenticateResponse) {
-        coordinator.goToHome()
+        onLoginSuccess?()
     }
     
     func displayLoginError(_ message: String) {
-//        showCustomAlert(
-//            title: "Deu erro",
-//            message: message,
-//            customTitle: "OK",
-//            customHandler: {
-//                print("okbutton")
-//            },
-//            cancelTitle: "SAIR") {
-//                print("erro button")
-//            }
+        coordinator?.showLoginErrorAlert(message: message)
     }
-    
 }
