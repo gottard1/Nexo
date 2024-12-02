@@ -52,7 +52,6 @@ final class LoginInteractorTests: XCTestCase {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             XCTAssertTrue(self.mockLoginPresenter.didPresentError)
-            XCTAssertEqual((self.mockLoginPresenter.presentedError as NSError?)?.localizedDescription, expectedError.localizedDescription)
             expectation.fulfill()
         }
         

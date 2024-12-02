@@ -10,52 +10,54 @@ import XCTest
 @testable import Shared
 
 final class OnboardingInteractorTests: XCTestCase {
-    var loginInteractor: LoginInteractor!
-    var mockLoginService: MockLoginService!
-    var mockLoginPresenter: MockLoginPresenter!
+    var interactor: OnboardingInteractor!
+    var mockView: MockOnboardingView!
+    var presenter: OnboardingPresenter!
     
     override func setUp() {
         super.setUp()
-        mockLoginService = MockLoginService()
-        mockLoginPresenter = MockLoginPresenter()
-        loginInteractor = LoginInteractor(service: mockLoginService, presenter: mockLoginPresenter)
+        mockView = MockOnboardingView()
+        presenter = OnboardingPresenter()
+        interactor = OnboardingInteractor(presenter: presenter, view: mockView)
     }
     
     override func tearDown() {
-        loginInteractor = nil
-        mockLoginService = nil
-        mockLoginPresenter = nil
+        interactor = nil
+        mockView = nil
+        presenter = nil
         super.tearDown()
     }
     
-    func testLoginSuccess() {
-        let expectation = XCTestExpectation(description: "LoginInteractor calls presenter on success")
-        let expectedResponse = AuthenticateResponse(token: "someToken")
-        mockLoginService.mockLoginResponse = expectedResponse
-        loginInteractor.login(username: "123456789", password: "password")
+    func testHandleButtonTap_callsNavigateToWithCorrectAction() {
+        let expectedAction: AuthActions = .login
+        interactor.handleButtonTap(action: expectedAction)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            XCTAssertTrue(self.mockLoginPresenter.didPresentSuccess)
-            XCTAssertEqual(self.mockLoginPresenter.presentedToken?.token, expectedResponse.token)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1.0)
+        XCTAssertEqual(mockView.didNavigateToAction, expectedAction, "Expected navigateTo(action:) to be called with \(expectedAction), but it wasn't.")
     }
     
-    func testLoginFailure() {
-        let expectation = XCTestExpectation(description: "LoginInteractor handles error correctly")
-        let expectedError = NSError(domain: "TestError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid credentials"])
-        mockLoginService.mockLoginError = expectedError
-        loginInteractor.login(username: "123456789", password: "wrongPassword")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            XCTAssertTrue(self.mockLoginPresenter.didPresentError)
-            XCTAssertEqual((self.mockLoginPresenter.presentedError as NSError?)?.localizedDescription, expectedError.localizedDescription)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1.0)
+    func testHandleButtonTap_callsNavigateToWithSignupAction() {
+        let expectedAction: AuthActions = .register
+        interactor.handleButtonTap(action: expectedAction)
+        XCTAssertEqual(mockView.didNavigateToAction, expectedAction, "Expected navigateTo(action:) to be called with \(expectedAction), but it wasn't.")
+    }
+    
+    func testHandleButtonTap_callsNavigateToWithStatusAction() {
+        let expectedAction: AuthActions = .status
+        interactor.handleButtonTap(action: expectedAction)
+        XCTAssertEqual(mockView.didNavigateToAction, expectedAction, "Expected navigateTo(action:) to be called with \(expectedAction), but it wasn't.")
+    }
+    
+    func testHandleButtonTap_shouldFailWithIncorrectAction() {
+        let unexpectedAction: AuthActions = .register
+        interactor.handleButtonTap(action: .login)
+        XCTAssertNotEqual(mockView.didNavigateToAction, unexpectedAction, "navigateTo(action:) should not be called with \(unexpectedAction).")
     }
 }
 
+final class MockOnboardingView: OnboardingViewProtocol {
+    var didNavigateToAction: AuthActions?
+    
+    func navigateTo(action: AuthActions) {
+        didNavigateToAction = action
+    }
+}
