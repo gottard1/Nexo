@@ -15,8 +15,9 @@ public final class NexoColor {
     }
     
     // Complementary Colors
-    public static var green01AF41: UIColor { return loadColor(named: "green01AF41") }
     public static var disable: UIColor { return loadColor(named: "disable") }
+    public static var blue009ED0: UIColor { return loadColor(named: "blue009ED0") }
+    public static var yellowFCD610: UIColor { return loadColor(named: "yellowFCD610") }
     
     // Core Colors
     public static var accent: UIColor { return loadColor(named: "accent") }
@@ -26,10 +27,9 @@ public final class NexoColor {
     public static var whiteF2F2F2: UIColor { return loadColor(named: "whiteF2F2F2") }
     
     // Criticality Colors
-    public static var blue009ED0: UIColor { return loadColor(named: "blue009ED0") }
-    public static var orangeFFA300: UIColor { return loadColor(named: "orangeFFA300") }
-    public static var redC13018: UIColor { return loadColor(named: "redC13018") }
-    public static var yellowFCD610: UIColor { return loadColor(named: "yellowFCD610") }
+    public static var success: UIColor { return loadColor(named: "green_success") }
+    public static var warning: UIColor { return loadColor(named: "orange_warning") }
+    public static var failure: UIColor { return loadColor(named: "red_failure") }
     
     // Gray Scale Colors
     public static var black040F14: UIColor { return loadColor(named: "black040F14") }

@@ -198,7 +198,7 @@ extension ModalBottomSheetView {
             make.top(to: customView.bottomAnchor, constant: 16)
             make.leading(to: view.leadingAnchor, constant: 16)
             make.trailing(to: view.trailingAnchor, constant: 16)
-            make.bottom(to: view.bottomAnchor, constant: 16)
+            make.bottom(to: view.safeAreaLayoutGuide.bottomAnchor, constant: 16)
         }
     }
 }

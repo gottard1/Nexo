@@ -14,6 +14,9 @@
 		853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */; };
 		8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */; };
 		8544319E2CEBCCD100B3B024 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */; };
+		854431A12CED095400B3B024 /* NexoLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854431A02CED095400B3B024 /* NexoLoadingView.swift */; };
+		854431B12CF0C73800B3B024 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 854431B02CF0C73800B3B024 /* Lottie */; };
+		854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 854431B42CF0C79700B3B024 /* loadingAnimation.json */; };
 		855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7AC2CA1B05E0055571D /* Shared.docc */; };
 		855DC7B32CA1B05E0055571D /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855DC7A82CA1B05E0055571D /* Shared.framework */; };
 		855DC7B82CA1B05E0055571D /* SharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7B72CA1B05E0055571D /* SharedTests.swift */; };
@@ -64,6 +67,8 @@
 		853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItem.swift; sourceTree = "<group>"; };
 		8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowNavigator.swift; sourceTree = "<group>"; };
 		8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		854431A02CED095400B3B024 /* NexoLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoLoadingView.swift; sourceTree = "<group>"; };
+		854431B42CF0C79700B3B024 /* loadingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnimation.json; sourceTree = "<group>"; };
 		855DC7A82CA1B05E0055571D /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7AB2CA1B05E0055571D /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854431B12CF0C73800B3B024 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +157,15 @@
 				8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8544319F2CED093200B3B024 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				854431B42CF0C79700B3B024 /* loadingAnimation.json */,
+				854431A02CED095400B3B024 /* NexoLoadingView.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		855DC79E2CA1B05E0055571D = {
@@ -318,6 +333,7 @@
 		C3D726492CA2250E00634461 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8544319F2CED093200B3B024 /* Loading */,
 				85A6222B2CE2A24300B36AB1 /* Presentation  */,
 				858436232CB9771F00CF83CC /* Textfield */,
 				853422B02CB4444A00EF82B2 /* TabBar */,
@@ -364,6 +380,9 @@
 			dependencies = (
 			);
 			name = Shared;
+			packageProductDependencies = (
+				854431B02CF0C73800B3B024 /* Lottie */,
+			);
 			productName = Shared;
 			productReference = 855DC7A82CA1B05E0055571D /* Shared.framework */;
 			productType = "com.apple.product-type.framework";
@@ -413,6 +432,9 @@
 				Base,
 			);
 			mainGroup = 855DC79E2CA1B05E0055571D;
+			packageReferences = (
+				854431AE2CF0C43800B3B024 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 855DC7A92CA1B05E0055571D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -434,6 +456,7 @@
 				85A6704E2CBD5BC800915268 /* OpenSans-Bold.ttf in Resources */,
 				85A670522CBD5BFB00915268 /* Exo2-Bold.ttf in Resources */,
 				85A670562CBD5CF800915268 /* Shared.plist in Resources */,
+				854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */,
 				85A670502CBD5BDA00915268 /* OpenSans-Light.ttf in Resources */,
 				8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */,
 			);
@@ -468,6 +491,7 @@
 				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
 				85BCBA952CD2A667005DEEAF /* BaseTarget.swift in Sources */,
 				85A670422CBD5AA900915268 /* NexoFont.swift in Sources */,
+				854431A12CED095400B3B024 /* NexoLoadingView.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
 				858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */,
 				85A622382CE2A62200B36AB1 /* UIPresentationController+Extension.swift in Sources */,
@@ -761,6 +785,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		854431AE2CF0C43800B3B024 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		854431B02CF0C73800B3B024 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 854431AE2CF0C43800B3B024 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 855DC79F2CA1B05E0055571D /* Project object */;
 }

@@ -21,6 +21,26 @@ public protocol Coordinator: AnyObject {
 }
 
 public extension Coordinator {
+    public func currentViewController(from base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        guard let base = base else {
+            return nil
+        }
+        
+        if let navigationController = base as? UINavigationController {
+            return currentViewController(from: navigationController.visibleViewController)
+        }
+        
+        if let tabBarController = base as? UITabBarController, let selectedVC = tabBarController.selectedViewController {
+            return currentViewController(from: selectedVC)
+        }
+        
+        if let presentedVC = base.presentedViewController {
+            return currentViewController(from: presentedVC)
+        }
+        
+        return base
+    }
+    
     func showCustomAlert(
         title: String,
         message: String?,
@@ -57,6 +77,6 @@ public extension Coordinator {
             buttons: buttons
         )
         
-        navigationController.topViewController?.present(modalSheet, animated: true, completion: nil)
+        currentViewController()?.present(modalSheet, animated: true, completion: nil)
     }
 }

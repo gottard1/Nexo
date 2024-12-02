@@ -18,6 +18,8 @@ public enum ButtonStyle {
 public final class NexoButton: UIButton {
     
     private var buttonStyle: ButtonStyle = .filled
+    private var originalTitle: String?
+    private let loadingView = NexoLoadingView()
     
     public var enableBackgroundColor: UIColor = NexoColor.mainSecondary {
         didSet {
@@ -57,10 +59,17 @@ public final class NexoButton: UIButton {
         }
     }
     
+    public var isLoading: Bool = false {
+        didSet {
+            updatePresentation()
+        }
+    }
+    
     public init(style: ButtonStyle = .filled) {
         super.init(frame: .zero)
         self.buttonStyle = style
         setupButton()
+        setupLoadingView()
         
         layer.cornerRadius = 16
         titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
@@ -85,8 +94,7 @@ public final class NexoButton: UIButton {
         switch buttonStyle {
             case .filled:
                 backgroundColor = isEnabled ? enableBackgroundColor : disableBackgroundColor
-                let titleColor = isEnabled ? enableTitleColor : disableTitleColor
-                setTitleColor(titleColor, for: .normal)
+                setTitleColor(isEnabled ? enableTitleColor : disableTitleColor, for: .normal)
             case .outlined:
                 backgroundColor = .clear
                 layer.borderWidth = 1
@@ -99,10 +107,10 @@ public final class NexoButton: UIButton {
                 backgroundColor = .clear
                 layer.borderWidth = 1
                 layer.borderColor = NexoColor.gray1.cgColor
-                setTitleColor(NexoColor.redC13018, for: .normal)
+                setTitleColor(NexoColor.failure, for: .normal)
             case .disabled:
                 backgroundColor = disableBackgroundColor
-                setTitleColor(disableTitleColor.withAlphaComponent(0.7) , for: .normal)
+                setTitleColor(disableTitleColor.withAlphaComponent(0.7), for: .normal)
         }
     }
     
@@ -112,5 +120,31 @@ public final class NexoButton: UIButton {
     
     public func onTap(_ action: @escaping ButtonBlock) {
         self.action = action
+    }
+    
+    // MARK: - Loading View
+    private func setupLoadingView() {
+        loadingView.isHidden = true
+        addSubview(loadingView)
+        
+        loadingView.anchor { make in
+            make.centerX(to: centerXAnchor)
+            make.centerY(to: centerYAnchor)
+            make.height(equalTo: 20)
+            make.width(equalTo: 20)
+        }
+    }
+    
+    private func updatePresentation() {
+        if isLoading {
+            originalTitle = originalTitle ?? title(for: .normal)
+            setTitle(nil, for: .normal)
+            loadingView.isHidden = false
+            loadingView.startAnimating()
+        } else {
+            setTitle(originalTitle, for: .normal)
+            loadingView.isHidden = true
+            loadingView.stopAnimating()
+        }
     }
 }

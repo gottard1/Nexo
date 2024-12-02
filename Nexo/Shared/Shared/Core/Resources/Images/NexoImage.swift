@@ -13,17 +13,20 @@ public final class NexoImage {
         return UIImage(named: name, in: .shared, compatibleWith: nil)
     }
     
+    public static var onboarding: UIImage? { return loadImage(named: "onboarding") }
+    
+    
     // Exemplo de imagens
-    static var logo: UIImage? { return loadImage(named: "logo") }
-    static var iconProfile: UIImage? { return loadImage(named: "iconProfile") }
-    static var backgroundPattern: UIImage? { return loadImage(named: "backgroundPattern") }
+    public static var logo: UIImage? { return loadImage(named: "logo") }
+    public static var iconProfile: UIImage? { return loadImage(named: "iconProfile") }
+    public static var backgroundPattern: UIImage? { return loadImage(named: "backgroundPattern") }
     
     // Outros exemplos de imagens categorizadas
     // Você pode criar diferentes seções assim como as cores
-    static var buttonImage: UIImage? { return loadImage(named: "buttonImage") }
-    static var splashScreen: UIImage? { return loadImage(named: "splashScreen") }
+    public static var buttonImage: UIImage? { return loadImage(named: "buttonImage") }
+    public static var splashScreen: UIImage? { return loadImage(named: "splashScreen") }
     
     // Gray scale (caso tenha imagens)
-    static var grayImage1: UIImage? { return loadImage(named: "grayImage1") }
-    static var grayImage2: UIImage? { return loadImage(named: "grayImage2") }
+    public static var grayImage1: UIImage? { return loadImage(named: "grayImage1") }
+    public static var grayImage2: UIImage? { return loadImage(named: "grayImage2") }
 }

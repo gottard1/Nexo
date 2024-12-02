@@ -8,6 +8,12 @@
 import UIKit
 import Shared
 
+enum AuthActions {
+    case login
+    case register
+    case status
+}
+
 public final class AuthCoordinator: Coordinator {
     public var navigationController: UINavigationController
     private let networkManager: Networking
@@ -21,23 +27,45 @@ public final class AuthCoordinator: Coordinator {
     }
     
     public func start() {
-        showLogin()
+//        goToLogin()
+        showOnboarding()
     }
     
-    func goToHome() {
-        navigationDelegate?.navigateToHome()
+    func handleNavigation(action: AuthActions) {
+        switch action {
+            case .login:
+                goToLogin()
+            case .register:
+                goToRegister()
+            case .status:
+                goToAccountStatus()
+        }
     }
     
     func showLoginErrorAlert(message: String) {
         showCustomAlert(title: "Atenção", message: message)
     }
-    
 }
 
 // MARK: - Private Functions
 extension AuthCoordinator {
     
-    private func showLogin() {
+    private func showOnboarding() {
+        let onboardingViewController = OnboardingViewController()
+        let presenter = OnboardingPresenter()
+        let interactor = OnboardingInteractor(presenter: presenter, view: onboardingViewController)
+        
+        onboardingViewController.interactor = interactor
+        onboardingViewController.coordinator = self
+        
+        navigationController.setViewControllers([onboardingViewController], animated: false)
+    }
+    
+    private func goToHome() {
+        navigationDelegate?.navigateToHome()
+    }
+    
+    private func goToLogin() {
         let loginViewController = LoginViewController()
         loginViewController.onLoginSuccess = { [weak self] in
             self?.goToHome()
@@ -49,7 +77,26 @@ extension AuthCoordinator {
         loginViewController.interactor = interactor
         loginViewController.coordinator = self
         
-        navigationController.pushViewController(loginViewController, animated: true)
+//        navigationController.setViewControllers([loginViewController], animated: false)
+        
+        let loginNavigationController = UINavigationController(rootViewController: loginViewController)
+        loginNavigationController.modalPresentationStyle = .fullScreen
+        
+        navigationController.present(loginNavigationController, animated: true)
+    }
+    
+    private func goToRegister() {
+        let registerVC = UIViewController()
+        registerVC.view.backgroundColor = .green
+        registerVC.title = "Register"
+        navigationController.pushViewController(registerVC, animated: true)
+    }
+    
+    private func goToAccountStatus() {
+        let accountVC = UIViewController()
+        accountVC.view.backgroundColor = .blue
+        accountVC.title = "Acompanhar Conta"
+        navigationController.pushViewController(accountVC, animated: true)
     }
     
 }

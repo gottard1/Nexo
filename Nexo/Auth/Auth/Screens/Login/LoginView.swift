@@ -64,6 +64,7 @@ final class LoginView: UIView {
     let loginButton: NexoButton = {
         let button = NexoButton(style: .filled)
         button.setTitle("Login", for: .normal)
+        button.isLoading = true
         return button
     }()
     

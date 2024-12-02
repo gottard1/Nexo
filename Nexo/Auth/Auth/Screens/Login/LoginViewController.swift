@@ -36,6 +36,8 @@ final class LoginViewController: UIViewController {
             return
         }
         
+        mainView.loginButton.isLoading = true
+        
         interactor?.login(username: username, password: password)
     }
 }
@@ -43,10 +45,15 @@ final class LoginViewController: UIViewController {
 // MARK: - Login Protocol
 extension LoginViewController: LoginViewProtocol {
     func displayLoginSuccess(with token: AuthenticateResponse) {
+        mainView.loginButton.isLoading = false
+        
         onLoginSuccess?()
+        dismiss(animated: true)
     }
     
     func displayLoginError(_ message: String) {
+        mainView.loginButton.isLoading = false
+        
         coordinator?.showLoginErrorAlert(message: message)
     }
 }
