@@ -23,10 +23,26 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActions()
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.backward"),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonAction)
+        )
+        backButton.tintColor = NexoColor.background
+        navigationItem.leftBarButtonItem = backButton
     }
     
     private func setupActions() {
         mainView.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - Actions
+extension LoginViewController {
+    
+    @objc private func backButtonAction() {
+        coordinator?.dismissLogin()
     }
     
     @objc private func loginButtonTapped() {

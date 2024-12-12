@@ -27,7 +27,7 @@ final class LoginView: UIView {
     }()
     
     let usernameTextField: NexoTextField = {
-        let textField = NexoTextField(type: .normal, title: "CPF/CNPJ")
+        let textField = NexoTextField(type: .normal, title: "Documento")
         return textField
     }()
     
@@ -63,8 +63,7 @@ final class LoginView: UIView {
     
     let loginButton: NexoButton = {
         let button = NexoButton(style: .filled)
-        button.setTitle("Login", for: .normal)
-        button.isLoading = true
+        button.setTitle("Entrar", for: .normal)
         return button
     }()
     

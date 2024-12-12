@@ -130,8 +130,8 @@ public final class NexoButton: UIButton {
         loadingView.anchor { make in
             make.centerX(to: centerXAnchor)
             make.centerY(to: centerYAnchor)
-            make.height(equalTo: 20)
-            make.width(equalTo: 20)
+            make.height(equalTo: 30)
+            make.width(equalTo: 30)
         }
     }
     

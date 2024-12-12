@@ -17,7 +17,6 @@ public final class NexoColor {
     // Complementary Colors
     public static var disable: UIColor { return loadColor(named: "disable") }
     public static var blue009ED0: UIColor { return loadColor(named: "blue009ED0") }
-    public static var yellowFCD610: UIColor { return loadColor(named: "yellowFCD610") }
     
     // Core Colors
     public static var accent: UIColor { return loadColor(named: "accent") }

@@ -14,6 +14,13 @@ public enum NexoTextFieldType {
     case actionButton(String)
     case currency(UIImage?)
     case secureText
+    case document
+}
+
+@objc public protocol NexoTextFieldDelegate: NSObjectProtocol {
+    @objc optional func nexoTextFieldDidBeginEditing(_ textField: NexoTextField)
+    @objc optional func nexoTextFieldDidEndEditing(_ textField: NexoTextField)
+    @objc optional func nexoTextFieldDidChangeSelection(_ textField: NexoTextField)
 }
 
 public final class NexoTextField: UIView {
@@ -66,20 +73,44 @@ public final class NexoTextField: UIView {
         return view
     }()
     
+    private var isPasswordVisible = false
+
     public var selectedColor: UIColor = NexoColor.mainSecondary
     public var activeColor: UIColor = NexoColor.gray6
     public var inactiveColor: UIColor = NexoColor.gray2
-    private var isPasswordVisible = false
-    
     public var type: NexoTextFieldType = .normal
-    
     public var buttonAction: (() -> Void)? = nil
     
     public var text: String? {
         get {
             return textField.text ?? ""
         }
+        
+        set {
+            textField.text = newValue
+        }
     }
+    
+    public var placeholder: String? {
+        didSet {
+            textField.placeholder = placeholder
+        }
+    }
+    
+    public var warningMessage: String? {
+        didSet {
+            guard let warningMessage else {
+                helperLabel.text = nil
+                helperLabel.textColor = NexoColor.gray3
+                return
+            }
+            helperLabel.text = warningMessage
+            helperLabel.textColor = NexoColor.failure
+            helperLabel.isHidden = warningMessage.isEmpty
+        }
+    }
+    
+    public weak var delegate: NexoTextFieldDelegate?
     
     public init(
         type: NexoTextFieldType,
@@ -119,8 +150,10 @@ public final class NexoTextField: UIView {
     
     public func configure(for type: NexoTextFieldType) {
         switch type {
+            case .document:
+                textField.keyboardType = .numberPad
             case .normal:
-                break
+                textField.autocapitalizationType = .none
             case .withHelper(let helperText):
                 helperLabel.text = helperText
                 helperLabel.isHidden = false
@@ -184,6 +217,7 @@ extension NexoTextField: UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         titleLabel.textColor = selectedColor
         bottomLineView.backgroundColor = selectedColor
+        delegate?.nexoTextFieldDidBeginEditing?(self)
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
@@ -195,6 +229,7 @@ extension NexoTextField: UITextFieldDelegate {
             titleLabel.textColor = inactiveColor
         }
         bottomLineView.backgroundColor = inactiveColor
+        delegate?.nexoTextFieldDidEndEditing?(self)
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -223,7 +258,36 @@ extension NexoTextField: UITextFieldDelegate {
             
             return false
         }
+        
+        if case .document = type {
+            guard let currentText = textField.text as NSString? else { return true }
+            let newString = currentText.replacingCharacters(in: range, with: string)
+            
+            let digits = newString.replacingOccurrences(of: "\\D", with: "", options: .regularExpression)
+            
+            guard digits.count <= 14 else { return false }
+            
+            textField.text = formatDocument(digits: digits)
+            return false
+        }
+        
         return true
+    }
+    
+    public func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate?.nexoTextFieldDidChangeSelection?(self)
+    }
+    
+    private func formatDocument(digits: String) -> String {
+        if digits.count <= 11 {
+            let pattern = "(\\d{3})(\\d{3})(\\d{3})(\\d{2})"
+            let formatted = digits.replacingOccurrences(of: pattern, with: "$1.$2.$3-$4", options: .regularExpression, range: nil)
+            return formatted
+        } else {
+            let pattern = "(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})"
+            let formatted = digits.replacingOccurrences(of: pattern, with: "$1.$2.$3/$4-$5", options: .regularExpression, range: nil)
+            return formatted
+        }
     }
 }
 

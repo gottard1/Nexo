@@ -10,6 +10,8 @@
 		850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D540B2CAB8DE100B8B019 /* NexoColor.swift */; };
 		850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D540D2CAB8E5B00B8B019 /* NexoImage.swift */; };
 		850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */; };
+		852527F32CFDF30F005ED399 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852527F22CFDF30F005ED399 /* GradientView.swift */; };
+		852527FF2CFE2A41005ED399 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852527FE2CFE2A41005ED399 /* ProgressBarView.swift */; };
 		853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423912CB54CD900EF82B2 /* NexoTabBarController.swift */; };
 		853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */; };
 		8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */; };
@@ -18,8 +20,6 @@
 		854431B12CF0C73800B3B024 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 854431B02CF0C73800B3B024 /* Lottie */; };
 		854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 854431B42CF0C79700B3B024 /* loadingAnimation.json */; };
 		855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7AC2CA1B05E0055571D /* Shared.docc */; };
-		855DC7B32CA1B05E0055571D /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855DC7A82CA1B05E0055571D /* Shared.framework */; };
-		855DC7B82CA1B05E0055571D /* SharedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7B72CA1B05E0055571D /* SharedTests.swift */; };
 		855DC7B92CA1B05E0055571D /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DC7AB2CA1B05E0055571D /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */; };
 		8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361E2CB8642500CF83CC /* NexoTabBarView.swift */; };
@@ -44,25 +44,18 @@
 		85BCBA972CD2A708005DEEAF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA962CD2A708005DEEAF /* NetworkError.swift */; };
 		85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */; };
 		85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */; };
+		85D805892D072BE600D49706 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D805882D072BE600D49706 /* String+Extension.swift */; };
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
 		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		855DC7B42CA1B05E0055571D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 855DC79F2CA1B05E0055571D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 855DC7A72CA1B05E0055571D;
-			remoteInfo = Shared;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		850D540B2CAB8DE100B8B019 /* NexoColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoColor.swift; sourceTree = "<group>"; };
 		850D540D2CAB8E5B00B8B019 /* NexoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoImage.swift; sourceTree = "<group>"; };
 		850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		852527F22CFDF30F005ED399 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		852527FE2CFE2A41005ED399 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		853423912CB54CD900EF82B2 /* NexoTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarController.swift; sourceTree = "<group>"; };
 		853423CA2CB560B700EF82B2 /* NexoTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItem.swift; sourceTree = "<group>"; };
 		8544319A2CEBBBD300B3B024 /* FlowNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowNavigator.swift; sourceTree = "<group>"; };
@@ -72,8 +65,6 @@
 		855DC7A82CA1B05E0055571D /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7AB2CA1B05E0055571D /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
-		855DC7B22CA1B05E0055571D /* SharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		855DC7B72CA1B05E0055571D /* SharedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTests.swift; sourceTree = "<group>"; };
 		8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItemModel.swift; sourceTree = "<group>"; };
 		8584361E2CB8642500CF83CC /* NexoTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarView.swift; sourceTree = "<group>"; };
 		858436242CB9799500CF83CC /* NexoRoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextField.swift; sourceTree = "<group>"; };
@@ -97,6 +88,7 @@
 		85BCBA962CD2A708005DEEAF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		85D805882D072BE600D49706 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
@@ -111,14 +103,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		855DC7AF2CA1B05E0055571D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				855DC7B32CA1B05E0055571D /* Shared.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,8 +113,25 @@
 				85A622352CE2A60600B36AB1 /* UIView+Extension.swift */,
 				85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */,
 				85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */,
+				85D805882D072BE600D49706 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		852527F12CFDF2FC005ED399 /* Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				852527F22CFDF30F005ED399 /* GradientView.swift */,
+			);
+			path = Gradient;
+			sourceTree = "<group>";
+		};
+		852527FD2CFE2A35005ED399 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				852527FE2CFE2A41005ED399 /* ProgressBarView.swift */,
+			);
+			path = ProgressBar;
 			sourceTree = "<group>";
 		};
 		853422AF2CB4444300EF82B2 /* Buttons */ = {
@@ -172,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				855DC7AA2CA1B05E0055571D /* Shared */,
-				855DC7B62CA1B05E0055571D /* SharedTests */,
 				855DC7A92CA1B05E0055571D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -181,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				855DC7A82CA1B05E0055571D /* Shared.framework */,
-				855DC7B22CA1B05E0055571D /* SharedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,14 +196,6 @@
 				C3D726492CA2250E00634461 /* Components */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		855DC7B62CA1B05E0055571D /* SharedTests */ = {
-			isa = PBXGroup;
-			children = (
-				855DC7B72CA1B05E0055571D /* SharedTests.swift */,
-			);
-			path = SharedTests;
 			sourceTree = "<group>";
 		};
 		8584361D2CB860B300CF83CC /* Item */ = {
@@ -333,6 +324,8 @@
 		C3D726492CA2250E00634461 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				852527FD2CFE2A35005ED399 /* ProgressBar */,
+				852527F12CFDF2FC005ED399 /* Gradient */,
 				8544319F2CED093200B3B024 /* Loading */,
 				85A6222B2CE2A24300B36AB1 /* Presentation  */,
 				858436232CB9771F00CF83CC /* Textfield */,
@@ -387,24 +380,6 @@
 			productReference = 855DC7A82CA1B05E0055571D /* Shared.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		855DC7B12CA1B05E0055571D /* SharedTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 855DC7BF2CA1B05E0055571D /* Build configuration list for PBXNativeTarget "SharedTests" */;
-			buildPhases = (
-				855DC7AE2CA1B05E0055571D /* Sources */,
-				855DC7AF2CA1B05E0055571D /* Frameworks */,
-				855DC7B02CA1B05E0055571D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				855DC7B52CA1B05E0055571D /* PBXTargetDependency */,
-			);
-			name = SharedTests;
-			productName = SharedTests;
-			productReference = 855DC7B22CA1B05E0055571D /* SharedTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -416,9 +391,6 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					855DC7A72CA1B05E0055571D = {
-						CreatedOnToolsVersion = 15.3;
-					};
-					855DC7B12CA1B05E0055571D = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -440,7 +412,6 @@
 			projectRoot = "";
 			targets = (
 				855DC7A72CA1B05E0055571D /* Shared */,
-				855DC7B12CA1B05E0055571D /* SharedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -459,13 +430,6 @@
 				854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */,
 				85A670502CBD5BDA00915268 /* OpenSans-Light.ttf in Resources */,
 				8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		855DC7B02CA1B05E0055571D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +458,8 @@
 				854431A12CED095400B3B024 /* NexoLoadingView.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
 				858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */,
+				852527FF2CFE2A41005ED399 /* ProgressBarView.swift in Sources */,
+				852527F32CFDF30F005ED399 /* GradientView.swift in Sources */,
 				85A622382CE2A62200B36AB1 /* UIPresentationController+Extension.swift in Sources */,
 				858436292CB9970600CF83CC /* NexoTextField.swift in Sources */,
 				85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */,
@@ -502,27 +468,12 @@
 				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
 				8544319E2CEBCCD100B3B024 /* ConstraintMaker.swift in Sources */,
 				85A6223A2CE3702200B36AB1 /* UIApplication+Extension.swift in Sources */,
+				85D805892D072BE600D49706 /* String+Extension.swift in Sources */,
 				850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		855DC7AE2CA1B05E0055571D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				855DC7B82CA1B05E0055571D /* SharedTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		855DC7B52CA1B05E0055571D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 855DC7A72CA1B05E0055571D /* Shared */;
-			targetProxy = 855DC7B42CA1B05E0055571D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		855DC7BA2CA1B05E0055571D /* Debug */ = {
@@ -722,38 +673,6 @@
 			};
 			name = Release;
 		};
-		855DC7C02CA1B05E0055571D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.SharedTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		855DC7C12CA1B05E0055571D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.SharedTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -771,15 +690,6 @@
 			buildConfigurations = (
 				855DC7BD2CA1B05E0055571D /* Debug */,
 				855DC7BE2CA1B05E0055571D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		855DC7BF2CA1B05E0055571D /* Build configuration list for PBXNativeTarget "SharedTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				855DC7C02CA1B05E0055571D /* Debug */,
-				855DC7C12CA1B05E0055571D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

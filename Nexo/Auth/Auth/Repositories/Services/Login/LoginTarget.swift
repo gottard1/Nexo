@@ -10,7 +10,6 @@ import Foundation
 
 enum LoginTarget {
     case authenticate(object: AuthenticateRequest)
-    case register(object: RegisterRequest)
 }
 
 extension LoginTarget: BaseTarget {
@@ -19,14 +18,12 @@ extension LoginTarget: BaseTarget {
         switch self {
             case .authenticate:
                 return AuthEndpointsModel.login
-            case .register:
-                return AuthEndpointsModel.login
         }
     }
     
     var method: HTTPMethod {
         switch self {
-            case .authenticate, .register:
+            case .authenticate:
                 return .post
         }
     }
@@ -40,8 +37,6 @@ extension LoginTarget: BaseTarget {
     var body: Data? {
         switch self {
             case .authenticate(let credentials):
-                return try? JSONEncoder().encode(credentials)
-            case .register(let credentials):
                 return try? JSONEncoder().encode(credentials)
         }
     }

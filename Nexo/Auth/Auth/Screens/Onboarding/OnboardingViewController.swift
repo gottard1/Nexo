@@ -43,7 +43,7 @@ final class OnboardingViewController: UIViewController {
     }
     
     @objc private func didTapRegister() {
-        interactor?.handleButtonTap(action: .register)
+        interactor?.handleButtonTap(action: .registerInitial)
     }
     
     @objc private func didTapAccount() {
