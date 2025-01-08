@@ -8,6 +8,11 @@
 import UIKit
 import Shared
 
+protocol LoginViewProtocol: AnyObject {
+    func displayLoginSuccess(with token: AuthenticateResponse)
+    func displayLoginError(_ message: String)
+}
+
 final class LoginViewController: UIViewController {
     weak var coordinator: AuthCoordinator?
     var interactor: LoginInteractorProtocol?
@@ -46,7 +51,7 @@ extension LoginViewController {
     }
     
     @objc private func loginButtonTapped() {
-        guard let username = mainView.usernameTextField.text, !username.isEmpty,
+        guard let username = mainView.usernameTextField.text?.onlyDigits, !username.isEmpty,
               let password = mainView.passwordTextField.text, !password.isEmpty else {
             displayLoginError("Preencha os campos")
             return

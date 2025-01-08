@@ -13,7 +13,6 @@ public protocol Networking {
 
 public final class NetworkManager: Networking {
     private let baseURL: String = "http://127.0.0.1:5000"
-    
     private let session: URLSession
     
     public init(session: URLSession = .shared) {
@@ -51,15 +50,19 @@ public final class NetworkManager: Networking {
             }
             
             guard (200...299).contains(httpResponse.statusCode) else {
-                throw NetworkError.statusCode(httpResponse.statusCode)
+                let errorMessage = try? JSONDecoder().decode(ErrorResponse.self, from: data)
+                throw NetworkError.statusCode(httpResponse.statusCode, errorMessage?.message ?? "Erro desconhecido.")
             }
             
             let decodedData = try JSONDecoder().decode(T.self, from: data)
             return decodedData
             
+        } catch let networkError as NetworkError {
+            throw networkError
         } catch let decodingError as DecodingError {
             throw NetworkError.decodingError(decodingError)
         } catch {
-            throw NetworkError.apiError(error)
+            throw NetworkError.apiError(error.localizedDescription)
         }
-    }}
+    }
+}

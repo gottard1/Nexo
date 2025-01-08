@@ -35,6 +35,19 @@ extension String {
         return NSPredicate(format: "SELF MATCHES %@", regexText).evaluate(with: self)
     }
     
+    public var isValidPassword: Bool {
+        let specialCharacterRegex = ".*[^A-Za-z0-9].*"
+        let containsSpecialCharacter = NSPredicate(format: "SELF MATCHES %@", specialCharacterRegex).evaluate(with: self)
+        
+        let uppercaseLetterRegex = ".*[A-Z].*"
+        let containsUppercaseLetter = NSPredicate(format: "SELF MATCHES %@", uppercaseLetterRegex).evaluate(with: self)
+        
+        let numberRegex = ".*[0-9].*"
+        let containsNumber = NSPredicate(format: "SELF MATCHES %@", numberRegex).evaluate(with: self)
+        
+        return containsSpecialCharacter && containsUppercaseLetter && containsNumber
+    }
+    
     public func formatText(using mask: MaskFormatterType) -> String {
         let pattern = mask.rawValue
         let patternArray = Array(pattern)

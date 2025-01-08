@@ -149,6 +149,7 @@ public final class NexoTextField: UIView {
     }
     
     public func configure(for type: NexoTextFieldType) {
+        textField.tintColor = NexoColor.mainSecondary
         switch type {
             case .document:
                 textField.keyboardType = .numberPad

@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import Shared
 
 protocol LoginInteractorProtocol {
     func login(username: String, password: String)
 }
 
-class LoginInteractor: LoginInteractorProtocol {
+class LoginInteractor: BaseInteractorProtocol, LoginInteractorProtocol {
     private let service: LoginServiceProtocol
     private let presenter: LoginPresenterProtocol
     
@@ -21,12 +22,14 @@ class LoginInteractor: LoginInteractorProtocol {
     }
     
     func login(username: String, password: String) {
-        Task {
-            do {
-                let token = try await self.service.login(cpfCnpj: username, password: password)
-                presenter.presentLoginResult(token: token, error: nil)
-            } catch {
-                presenter.presentLoginResult(token: nil, error: error)
+        handle {
+            try await self.service.login(cpfCnpj: username, password: password)
+        } completion: { result in
+            switch result {
+                case .success(let token):
+                    self.presenter.presentLoginResult(token: token, error: nil)
+                case .failure(let error):
+                    self.presenter.presentLoginResult(token: nil, error: error)
             }
         }
     }

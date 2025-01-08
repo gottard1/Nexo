@@ -36,6 +36,11 @@ class RegisterDocumentViewController: UIViewController {
         
         mainView.continueButton.addTarget(self, action: #selector(continueButtonAction), for: .touchUpInside)
         mainView.usernameTextField.delegate = self
+        
+#if DEBUG
+        mainView.usernameTextField.text = "079.600.469-21"
+        mainView.continueButton.isEnabled = true
+#endif
     }
     
 }

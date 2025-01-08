@@ -22,7 +22,10 @@ class LoginService: LoginServiceProtocol {
     func login(cpfCnpj: String, password: String) async throws -> AuthenticateResponse {
         let request = AuthenticateRequest(cpfCnpj: cpfCnpj, password: password)
         let endpoint = LoginTarget.authenticate(object: request)
-        let response: AuthenticateResponse = try await networkManager.request(target: endpoint, responseType: AuthenticateResponse.self)
+        let response: AuthenticateResponse = try await networkManager.request(
+            target: endpoint,
+            responseType: AuthenticateResponse.self
+        )
         return response
     }
 }

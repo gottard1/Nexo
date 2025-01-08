@@ -27,7 +27,7 @@ final class LoginView: UIView {
     }()
     
     let usernameTextField: NexoTextField = {
-        let textField = NexoTextField(type: .normal, title: "Documento")
+        let textField = NexoTextField(type: .document, title: "Documento")
         return textField
     }()
     

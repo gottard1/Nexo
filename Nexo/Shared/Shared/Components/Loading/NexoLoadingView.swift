@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Lottie
+internal import Lottie
 
 public final class NexoLoadingView: UIView {
     

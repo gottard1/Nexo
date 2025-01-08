@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RegisterInitialPresenterProtocol {
+protocol RegisterInitialPresenterProtocol: AnyObject {
     func navigateToNextScreen(action: AuthActions)
 }
 

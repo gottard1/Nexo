@@ -13,16 +13,4 @@
    <FileRef
       location = "group:Home/Home.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Extract/Extract.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Card/Card.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Services/Services.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Profile/Profile.xcodeproj">
-   </FileRef>
 </Workspace>

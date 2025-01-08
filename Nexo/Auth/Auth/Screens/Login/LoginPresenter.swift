@@ -5,15 +5,10 @@
 //  Created by Marcel Felipe Gottardi Anesi on 04/11/24.
 //
 
-import Foundation
-
-protocol LoginViewProtocol: AnyObject {
-    func displayLoginSuccess(with token: AuthenticateResponse)
-    func displayLoginError(_ message: String)
-}
+import Shared
 
 protocol LoginPresenterProtocol {
-    func presentLoginResult(token: AuthenticateResponse?, error: Error?)
+    func presentLoginResult(token: AuthenticateResponse?, error: NetworkError?)
 }
 
 class LoginPresenter: LoginPresenterProtocol {
@@ -23,12 +18,12 @@ class LoginPresenter: LoginPresenterProtocol {
         self.view = view
     }
     
-    func presentLoginResult(token: AuthenticateResponse?, error: Error?) {
+    func presentLoginResult(token: AuthenticateResponse?, error: NetworkError?) {
         DispatchQueue.main.async { [weak self] in
             if let token = token {
                 self?.view?.displayLoginSuccess(with: token)
             } else {
-                let message = error?.localizedDescription ?? "Login failed."
+                let message = error?.description ?? "Login failed."
                 self?.view?.displayLoginError(message)
             }
         }

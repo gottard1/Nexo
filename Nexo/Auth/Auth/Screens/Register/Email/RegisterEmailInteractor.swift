@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol RegisterEmailInteractorProtocol {
-    func handleButtonTap(action: AuthActions)
+protocol RegisterEmailInteractorProtocol: AnyObject {
     var userInfo: RegisterModel { get set }
+    func handleButtonTap(action: AuthActions)
 }
 
 final class RegisterEmailInteractor: RegisterEmailInteractorProtocol {
-    private let presenter: RegisterEmailPresenterProtocol
+    private var presenter: RegisterEmailPresenterProtocol
     private weak var view: RegisterEmailViewProtocol?
     
     var userInfo: RegisterModel

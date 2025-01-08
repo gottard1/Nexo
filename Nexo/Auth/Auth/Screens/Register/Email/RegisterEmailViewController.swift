@@ -38,6 +38,13 @@ class RegisterEmailViewController: UIViewController {
         mainView.continueButton.addTarget(self, action: #selector(continueButtonAction), for: .touchUpInside)
         mainView.emailTextField.delegate = self
         mainView.confirmEmailTextField.delegate = self
+        
+#if DEBUG
+        mainView.emailTextField.text = "email@email.com"
+        mainView.confirmEmailTextField.text = "email@email.com"
+        interactor?.userInfo.email = "email@email.com"
+        mainView.continueButton.isEnabled = true
+#endif
     }
     
 }
@@ -54,7 +61,7 @@ extension RegisterEmailViewController {
             coordinator?.showLoginErrorAlert(message: "Ocorreu um erro, tente novamente em instantes")
             return
         }
-        interactor?.handleButtonTap(action: .registerPassword(userInfo))
+        interactor?.handleButtonTap(action: .codeValidation(userInfo))
     }
 }
 
@@ -70,7 +77,7 @@ extension RegisterEmailViewController: NexoTextFieldDelegate {
         
         if areTheSame {
             guard let emailText else { return }
-            mainView.confirmEmailTextField.warningMessage = nil
+            mainView.confirmEmailTextField.warningMessage = isValidEmail ? nil : "Não é um email valido"
             interactor?.userInfo.email = emailText
         } else {
             mainView.confirmEmailTextField.warningMessage = "Os emails devem ser iguais"

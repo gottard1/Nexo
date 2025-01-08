@@ -13,6 +13,7 @@ enum AuthActions {
     case registerInitial
     case registerDocument
     case registerEmail(_ info: RegisterModel)
+    case codeValidation(_ info: RegisterModel)
     case registerPassword(_ info: RegisterModel)
     case status
 }
@@ -45,6 +46,8 @@ public final class AuthCoordinator: Coordinator {
                 goToRegisterDocument()
             case .registerEmail(let object):
                 goToRegisterEmail(with: object)
+            case .codeValidation(let object):
+                goToConfirmCode(with: object)
             case .registerPassword(let object):
                 goToRegisterPassword(with: object)
             case .status:
@@ -65,7 +68,9 @@ public final class AuthCoordinator: Coordinator {
     }
     
     func showLoginErrorAlert(message: String) {
-        showCustomAlert(title: "Atenção", message: message)
+        DispatchQueue.main.async {
+            self.showCustomAlert(title: "Atenção", message: message)
+        }
     }
 }
 
@@ -92,9 +97,9 @@ extension AuthCoordinator {
         viewController.onLoginSuccess = { [weak self] in
             self?.goToHome()
         }
-        let loginService = LoginService(networkManager: networkManager)
+        let service = LoginService(networkManager: networkManager)
         let presenter = LoginPresenter(view: viewController)
-        let interactor = LoginInteractor(service: loginService, presenter: presenter)
+        let interactor = LoginInteractor(service: service, presenter: presenter)
         
         viewController.interactor = interactor
         viewController.coordinator = self
@@ -149,18 +154,36 @@ extension AuthCoordinator {
         registerNavigationController.pushViewController(viewController, animated: true)
     }
     
+    private func goToConfirmCode(with info: RegisterModel) {
+        guard let registerNavigationController else { return }
+        
+        let confirmCodeViewController = ConfirmCodeViewController()
+        
+        let service = RegisterService(networkManager: networkManager)
+        let presenter = ConfirmCodePresenter(view: confirmCodeViewController)
+        let interactor = ConfirmCodeInteractor(service: service, presenter: presenter, with: info)
+        
+        confirmCodeViewController.interactor = interactor
+        confirmCodeViewController.coordinator = self
+        
+        registerNavigationController.pushViewController(confirmCodeViewController, animated: true)
+    }
+    
     private func goToRegisterPassword(with info: RegisterModel) {
         guard let registerNavigationController else { return }
         
-        let registerDocumentViewController = RegisterDocumentViewController()
+        let viewController = RegisterPasswordViewController()
+        viewController.onRegisterSuccess = { [weak self] in
+            self?.goToHome()
+        }
+        let service = RegisterService(networkManager: networkManager)
+        let presenter = RegisterPasswordPresenter(view: viewController)
+        let interactor = RegisterPasswordInteractor(service: service,presenter: presenter, with: info)
         
-        let presenter = RegisterDocumentPresenter(view: registerDocumentViewController)
-        let interactor = RegisterDocumentInteractor(presenter: presenter)
+        viewController.interactor = interactor
+        viewController.coordinator = self
         
-        registerDocumentViewController.interactor = interactor
-        registerDocumentViewController.coordinator = self
-        
-        registerNavigationController.pushViewController(registerDocumentViewController, animated: true)
+        registerNavigationController.pushViewController(viewController, animated: true)
     }
     
     private func goToAccountStatus() {

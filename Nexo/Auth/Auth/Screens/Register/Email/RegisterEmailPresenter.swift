@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RegisterEmailPresenterProtocol {
+protocol RegisterEmailPresenterProtocol: AnyObject {
     func navigateToNextScreen(action: AuthActions)
 }
 

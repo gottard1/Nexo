@@ -27,6 +27,8 @@
 		858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436262CB9963900CF83CC /* NexoRoundedTextView.swift */; };
 		858436292CB9970600CF83CC /* NexoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436282CB9970600CF83CC /* NexoTextField.swift */; };
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
+		858CBFCC2D2F05BD0030968A /* BaseInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */; };
+		858CBFD02D2F30CC0030968A /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */; };
 		85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */; };
 		85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622312CE2A54100B36AB1 /* PresentationController.swift */; };
 		85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */; };
@@ -44,6 +46,8 @@
 		85BCBA972CD2A708005DEEAF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA962CD2A708005DEEAF /* NetworkError.swift */; };
 		85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */; };
 		85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */; };
+		85D1822D2D0C942B00F58505 /* CodeInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1822C2D0C942B00F58505 /* CodeInputField.swift */; };
+		85D182302D0C981C00F58505 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1822F2D0C981C00F58505 /* CharacterView.swift */; };
 		85D805892D072BE600D49706 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D805882D072BE600D49706 /* String+Extension.swift */; };
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
@@ -71,6 +75,8 @@
 		858436262CB9963900CF83CC /* NexoRoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextView.swift; sourceTree = "<group>"; };
 		858436282CB9970600CF83CC /* NexoTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTextField.swift; sourceTree = "<group>"; };
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractorProtocol.swift; sourceTree = "<group>"; };
+		858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalBottomSheet.swift; sourceTree = "<group>"; };
 		85A622312CE2A54100B36AB1 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentationViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 		85BCBA962CD2A708005DEEAF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		85BCBA9A2CD2A730005DEEAF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		85D1822C2D0C942B00F58505 /* CodeInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputField.swift; sourceTree = "<group>"; };
+		85D1822F2D0C981C00F58505 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		85D805882D072BE600D49706 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 		8544319C2CEBCCC200B3B024 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */,
 				8544319D2CEBCCD100B3B024 /* ConstraintMaker.swift */,
 			);
 			path = Helpers;
@@ -313,6 +322,7 @@
 		85BCBA932CD2A54D005DEEAF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */,
 				85BCBA942CD2A667005DEEAF /* BaseTarget.swift */,
 				85BCBA962CD2A708005DEEAF /* NetworkError.swift */,
 				85BCBA982CD2A717005DEEAF /* HTTPMethod.swift */,
@@ -321,9 +331,27 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		85D1822B2D0C93BB00F58505 /* CodeInput */ = {
+			isa = PBXGroup;
+			children = (
+				85D1822E2D0C980100F58505 /* CharacterView */,
+				85D1822C2D0C942B00F58505 /* CodeInputField.swift */,
+			);
+			path = CodeInput;
+			sourceTree = "<group>";
+		};
+		85D1822E2D0C980100F58505 /* CharacterView */ = {
+			isa = PBXGroup;
+			children = (
+				85D1822F2D0C981C00F58505 /* CharacterView.swift */,
+			);
+			path = CharacterView;
+			sourceTree = "<group>";
+		};
 		C3D726492CA2250E00634461 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				85D1822B2D0C93BB00F58505 /* CodeInput */,
 				852527FD2CFE2A35005ED399 /* ProgressBar */,
 				852527F12CFDF2FC005ED399 /* Gradient */,
 				8544319F2CED093200B3B024 /* Loading */,
@@ -440,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D1822D2D0C942B00F58505 /* CodeInputField.swift in Sources */,
 				85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */,
 				8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */,
 				853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */,
@@ -461,11 +490,14 @@
 				852527FF2CFE2A41005ED399 /* ProgressBarView.swift in Sources */,
 				852527F32CFDF30F005ED399 /* GradientView.swift in Sources */,
 				85A622382CE2A62200B36AB1 /* UIPresentationController+Extension.swift in Sources */,
+				85D182302D0C981C00F58505 /* CharacterView.swift in Sources */,
 				858436292CB9970600CF83CC /* NexoTextField.swift in Sources */,
 				85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */,
 				8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */,
+				858CBFD02D2F30CC0030968A /* EmptyResponse.swift in Sources */,
 				8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */,
 				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
+				858CBFCC2D2F05BD0030968A /* BaseInteractorProtocol.swift in Sources */,
 				8544319E2CEBCCD100B3B024 /* ConstraintMaker.swift in Sources */,
 				85A6223A2CE3702200B36AB1 /* UIApplication+Extension.swift in Sources */,
 				85D805892D072BE600D49706 /* String+Extension.swift in Sources */,

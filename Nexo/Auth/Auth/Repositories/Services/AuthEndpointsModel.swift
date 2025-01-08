@@ -12,4 +12,5 @@ struct AuthEndpointsModel {
     
     static let login = "\(baseURL)/login"
     static let register = "\(baseURL)/register"
+    static let validateCode = "\(baseURL)/email/validateCode"
 }

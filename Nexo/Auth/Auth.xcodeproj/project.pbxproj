@@ -22,11 +22,22 @@
 		854431A52CED45ED00B3B024 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854431A42CED45ED00B3B024 /* OnboardingViewController.swift */; };
 		854431A72CED49CE00B3B024 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854431A62CED49CE00B3B024 /* OnboardingView.swift */; };
 		854431A92CED49DD00B3B024 /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854431A82CED49DD00B3B024 /* OnboardingInteractor.swift */; };
+		854647662D0C5D3A000D38D2 /* ConfirmCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854647652D0C5D3A000D38D2 /* ConfirmCodeViewController.swift */; };
+		854647682D0C5D46000D38D2 /* ConfirmCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854647672D0C5D46000D38D2 /* ConfirmCodeView.swift */; };
+		8546476A2D0C5D52000D38D2 /* ConfirmCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854647692D0C5D52000D38D2 /* ConfirmCodeInteractor.swift */; };
+		8546476C2D0C5D68000D38D2 /* ConfirmCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8546476B2D0C5D68000D38D2 /* ConfirmCodePresenter.swift */; };
 		8548E63D2CFA508A00334799 /* LoginServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8548E63C2CFA508A00334799 /* LoginServiceTests.swift */; };
 		855F9B982CD94873007FE3FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B972CD94873007FE3FB /* LoginView.swift */; };
 		855F9B9A2CD949A5007FE3FB /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B992CD949A5007FE3FB /* LoginInteractor.swift */; };
 		855F9B9C2CD949B8007FE3FB /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B9B2CD949B8007FE3FB /* LoginPresenter.swift */; };
 		855F9B9F2CD949D4007FE3FB /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855F9B9E2CD949D4007FE3FB /* LoginService.swift */; };
+		858A95842D13025A00B0ECB8 /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A95832D13025A00B0ECB8 /* RegisterService.swift */; };
+		858A95862D13032F00B0ECB8 /* RegisterTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A95852D13032F00B0ECB8 /* RegisterTarget.swift */; };
+		858A95882D1456E200B0ECB8 /* RegisterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A95872D1456E200B0ECB8 /* RegisterPasswordViewController.swift */; };
+		858A958A2D145FCB00B0ECB8 /* RegisterPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A95892D145FCB00B0ECB8 /* RegisterPasswordView.swift */; };
+		858A958C2D1460DF00B0ECB8 /* RegisterPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A958B2D1460DF00B0ECB8 /* RegisterPasswordInteractor.swift */; };
+		858A958E2D14619400B0ECB8 /* RegisterPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A958D2D14619400B0ECB8 /* RegisterPasswordPresenter.swift */; };
+		858CBFCE2D2F23160030968A /* ValidateCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCD2D2F23160030968A /* ValidateCodeModel.swift */; };
 		8590E8882CDE8D1D0077D0EA /* LoginTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */; };
 		85A622222CE236A100B36AB1 /* AuthEndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */; };
 		85A622242CE23C5E00B36AB1 /* AuthenticateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */; };
@@ -70,11 +81,22 @@
 		854431A42CED45ED00B3B024 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		854431A62CED49CE00B3B024 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		854431A82CED49DD00B3B024 /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
+		854647652D0C5D3A000D38D2 /* ConfirmCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeViewController.swift; sourceTree = "<group>"; };
+		854647672D0C5D46000D38D2 /* ConfirmCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeView.swift; sourceTree = "<group>"; };
+		854647692D0C5D52000D38D2 /* ConfirmCodeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeInteractor.swift; sourceTree = "<group>"; };
+		8546476B2D0C5D68000D38D2 /* ConfirmCodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodePresenter.swift; sourceTree = "<group>"; };
 		8548E63C2CFA508A00334799 /* LoginServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTests.swift; sourceTree = "<group>"; };
 		855F9B972CD94873007FE3FB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		855F9B992CD949A5007FE3FB /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		855F9B9B2CD949B8007FE3FB /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		855F9B9E2CD949D4007FE3FB /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		858A95832D13025A00B0ECB8 /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		858A95852D13032F00B0ECB8 /* RegisterTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTarget.swift; sourceTree = "<group>"; };
+		858A95872D1456E200B0ECB8 /* RegisterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordViewController.swift; sourceTree = "<group>"; };
+		858A95892D145FCB00B0ECB8 /* RegisterPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordView.swift; sourceTree = "<group>"; };
+		858A958B2D1460DF00B0ECB8 /* RegisterPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordInteractor.swift; sourceTree = "<group>"; };
+		858A958D2D14619400B0ECB8 /* RegisterPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordPresenter.swift; sourceTree = "<group>"; };
+		858CBFCD2D2F23160030968A /* ValidateCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeModel.swift; sourceTree = "<group>"; };
 		8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTarget.swift; sourceTree = "<group>"; };
 		85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointsModel.swift; sourceTree = "<group>"; };
 		85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateRequest.swift; sourceTree = "<group>"; };
@@ -144,6 +166,7 @@
 				852528002CFF7F0E005ED399 /* Initial */,
 				852528012D023216005ED399 /* Document */,
 				85D8058A2D07632F00D49706 /* Email */,
+				854647642D0C5D07000D38D2 /* ConfirmCode */,
 				85D805872D071DC000D49706 /* Password */,
 			);
 			path = Register;
@@ -182,6 +205,17 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		854647642D0C5D07000D38D2 /* ConfirmCode */ = {
+			isa = PBXGroup;
+			children = (
+				854647652D0C5D3A000D38D2 /* ConfirmCodeViewController.swift */,
+				854647672D0C5D46000D38D2 /* ConfirmCodeView.swift */,
+				854647692D0C5D52000D38D2 /* ConfirmCodeInteractor.swift */,
+				8546476B2D0C5D68000D38D2 /* ConfirmCodePresenter.swift */,
+			);
+			path = ConfirmCode;
+			sourceTree = "<group>";
+		};
 		8548E63A2CFA506D00334799 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,10 +241,20 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		858A95812D12E7F100B0ECB8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				858A95832D13025A00B0ECB8 /* RegisterService.swift */,
+				858A95852D13032F00B0ECB8 /* RegisterTarget.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		85A6221C2CE2297A00B36AB1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */,
+				858A95812D12E7F100B0ECB8 /* Register */,
 				85A6221E2CE2298800B36AB1 /* Login */,
 			);
 			path = Services;
@@ -245,6 +289,7 @@
 		85A622282CE23E9800B36AB1 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				858CBFCD2D2F23160030968A /* ValidateCodeModel.swift */,
 				85A622252CE23CDF00B36AB1 /* RegisterModel.swift */,
 			);
 			path = Register;
@@ -253,6 +298,10 @@
 		85D805872D071DC000D49706 /* Password */ = {
 			isa = PBXGroup;
 			children = (
+				858A95872D1456E200B0ECB8 /* RegisterPasswordViewController.swift */,
+				858A95892D145FCB00B0ECB8 /* RegisterPasswordView.swift */,
+				858A958B2D1460DF00B0ECB8 /* RegisterPasswordInteractor.swift */,
+				858A958D2D14619400B0ECB8 /* RegisterPasswordPresenter.swift */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -446,13 +495,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854647662D0C5D3A000D38D2 /* ConfirmCodeViewController.swift in Sources */,
 				8525280A2D035679005ED399 /* RegisterDocumentPresenter.swift in Sources */,
+				8546476A2D0C5D52000D38D2 /* ConfirmCodeInteractor.swift in Sources */,
+				858A95862D13032F00B0ECB8 /* RegisterTarget.swift in Sources */,
+				854647682D0C5D46000D38D2 /* ConfirmCodeView.swift in Sources */,
 				852528032D023237005ED399 /* RegisterDocumentView.swift in Sources */,
+				858A958C2D1460DF00B0ECB8 /* RegisterPasswordInteractor.swift in Sources */,
 				8525280C2D035688005ED399 /* RegisterDocumentViewController.swift in Sources */,
 				854431A52CED45ED00B3B024 /* OnboardingViewController.swift in Sources */,
 				C35419812CA37A8B00C9372F /* Shared.framework in Sources */,
 				C35419752CA376E700C9372F /* LoginViewController.swift in Sources */,
 				85A622262CE23CDF00B36AB1 /* RegisterModel.swift in Sources */,
+				858CBFCE2D2F23160030968A /* ValidateCodeModel.swift in Sources */,
 				855F9B9C2CD949B8007FE3FB /* LoginPresenter.swift in Sources */,
 				852527FA2CFE0D3C005ED399 /* RegisterInitialInteractor.swift in Sources */,
 				855F9B9A2CD949A5007FE3FB /* LoginInteractor.swift in Sources */,
@@ -462,15 +517,20 @@
 				C35419712CA3764600C9372F /* AuthCoordinator.swift in Sources */,
 				852527F82CFE0D2A005ED399 /* RegisterInitialView.swift in Sources */,
 				855F9B982CD94873007FE3FB /* LoginView.swift in Sources */,
+				858A958A2D145FCB00B0ECB8 /* RegisterPasswordView.swift in Sources */,
+				858A958E2D14619400B0ECB8 /* RegisterPasswordPresenter.swift in Sources */,
 				C36940F72CA374C1001AC719 /* Auth.docc in Sources */,
 				85A622242CE23C5E00B36AB1 /* AuthenticateRequest.swift in Sources */,
+				858A95842D13025A00B0ECB8 /* RegisterService.swift in Sources */,
 				855F9B9F2CD949D4007FE3FB /* LoginService.swift in Sources */,
+				8546476C2D0C5D68000D38D2 /* ConfirmCodePresenter.swift in Sources */,
 				85D8058E2D0763FC00D49706 /* RegisterEmailView.swift in Sources */,
 				85D805922D0766CE00D49706 /* RegisterEmailPresenter.swift in Sources */,
 				852527FC2CFE0D45005ED399 /* RegisterInitialPresenter.swift in Sources */,
 				852527F62CFE092A005ED399 /* RegisterInitialViewController.swift in Sources */,
 				852528082D03566C005ED399 /* RegisterDocumentInteractor.swift in Sources */,
 				85D8058C2D0763A000D49706 /* RegisterEmailViewController.swift in Sources */,
+				858A95882D1456E200B0ECB8 /* RegisterPasswordViewController.swift in Sources */,
 				854431A72CED49CE00B3B024 /* OnboardingView.swift in Sources */,
 				854431A92CED49DD00B3B024 /* OnboardingInteractor.swift in Sources */,
 				852527F02CFDE3A0005ED399 /* OnboardingPresenter.swift in Sources */,
@@ -631,7 +691,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 99P9P5HJ9J;
+				DEVELOPMENT_TEAM = 94M43PKX7X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -669,7 +729,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 99P9P5HJ9J;
+				DEVELOPMENT_TEAM = 94M43PKX7X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -21,16 +21,22 @@ public protocol Coordinator: AnyObject {
 }
 
 public extension Coordinator {
-    public func currentViewController(from base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        guard let base = base else {
-            return nil
-        }
+    func currentViewController(from base: UIViewController? = nil) -> UIViewController? {
+        let rootViewController: UIViewController? = base ?? {
+            return UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .first { $0.isKeyWindow }?.rootViewController
+        }()
+        
+        guard let base = rootViewController else { return nil }
         
         if let navigationController = base as? UINavigationController {
             return currentViewController(from: navigationController.visibleViewController)
         }
         
-        if let tabBarController = base as? UITabBarController, let selectedVC = tabBarController.selectedViewController {
+        if let tabBarController = base as? UITabBarController,
+           let selectedVC = tabBarController.selectedViewController {
             return currentViewController(from: selectedVC)
         }
         
@@ -77,6 +83,8 @@ public extension Coordinator {
             buttons: buttons
         )
         
-        currentViewController()?.present(modalSheet, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.currentViewController()?.present(modalSheet, animated: true, completion: nil)
+        }
     }
 }

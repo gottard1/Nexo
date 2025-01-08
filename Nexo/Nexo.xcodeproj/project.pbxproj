@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		853423702CB4471D00EF82B2 /* Card.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8534236F2CB4471D00EF82B2 /* Card.framework */; };
-		853423722CB4472200EF82B2 /* Extract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853423712CB4472200EF82B2 /* Extract.framework */; };
-		853423742CB4472A00EF82B2 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853423732CB4472A00EF82B2 /* Services.framework */; };
-		853423762CB4473200EF82B2 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853423752CB4473200EF82B2 /* Profile.framework */; };
 		853423BE2CB55D0400EF82B2 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853423BD2CB55D0400EF82B2 /* Home.framework */; };
 		858411F92CA1AFFE0054E820 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858411F82CA1AFFE0054E820 /* AppDelegate.swift */; };
 		858412052CA1AFFF0054E820 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 858412042CA1AFFF0054E820 /* Base */; };
@@ -57,10 +53,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				853423BE2CB55D0400EF82B2 /* Home.framework in Frameworks */,
-				853423762CB4473200EF82B2 /* Profile.framework in Frameworks */,
-				853423742CB4472A00EF82B2 /* Services.framework in Frameworks */,
-				853423722CB4472200EF82B2 /* Extract.framework in Frameworks */,
-				853423702CB4471D00EF82B2 /* Card.framework in Frameworks */,
 				C354197B2CA3792E00C9372F /* Auth.framework in Frameworks */,
 				C354197D2CA3792E00C9372F /* Shared.framework in Frameworks */,
 			);
@@ -400,7 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
+				DEVELOPMENT_TEAM = 94M43PKX7X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nexo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -431,7 +423,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z86DZ4SUMG;
+				DEVELOPMENT_TEAM = 94M43PKX7X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nexo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

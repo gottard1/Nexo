@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RegisterInitialInteractorProtocol {
+protocol RegisterInitialInteractorProtocol: AnyObject {
     func handleButtonTap(action: AuthActions)
 }
 
