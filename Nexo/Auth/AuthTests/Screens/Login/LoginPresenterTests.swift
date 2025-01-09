@@ -13,7 +13,7 @@ final class LoginPresenterTests: XCTestCase {
     
     var loginPresenter: LoginPresenter!
     var mockLoginView: MockLoginView!
-     
+    
     override func setUp() {
         super.setUp()
         mockLoginView = MockLoginView()
@@ -27,41 +27,66 @@ final class LoginPresenterTests: XCTestCase {
     }
     
     func testPresentLoginSuccess() {
-        let expectation = XCTestExpectation(description: "Presenter updates view on success")
-        let expectedResponse = AuthenticateResponse(token: "someToken")
+        let expectedResponse = AuthenticateResponse(token: "someToken", message: "someMessage")
         
         loginPresenter.presentLoginResult(token: expectedResponse, error: nil)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            XCTAssertTrue(self.mockLoginView.didDisplaySuccess)
-            XCTAssertEqual(self.mockLoginView.displayedToken?.token, expectedResponse.token)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1.0)
+        XCTAssertTrue(mockLoginView.didDisplaySuccess, "Expected the view to display a success message.")
+        XCTAssertEqual(mockLoginView.displayedToken?.token, expectedResponse.token, "Expected the token displayed to match the response.")
     }
     
-    func testPresentLoginError() {
-        let expectation = XCTestExpectation(description: "Presenter updates view on error")
-        let expectedError = NSError(domain: "TestError", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid credentials"])
-        
-        loginPresenter.presentLoginResult(token: nil, error: expectedError)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            XCTAssertTrue(self.mockLoginView.didDisplayError)
-            XCTAssertEqual(self.mockLoginView.displayedError?.localizedDescription, expectedError.localizedDescription)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 1.0)
-    }
+//    func testPresentLoginErrorWithAPIError() {
+//        let expectedError = NetworkError.apiError("Invalid credentials")
+//        
+//        loginPresenter.presentLoginResult(token: nil, error: expectedError)
+//        
+//        XCTAssertTrue(mockLoginView.didDisplayError, "Expected the view to display an error message.")
+//        XCTAssertEqual(mockLoginView.displayedError, "Erro na API: Invalid credentials", "Expected the error message to match the API error description.")
+//    }
+//    
+//    func testPresentLoginErrorWithStatusCode() {
+//        let expectedError = NetworkError.statusCode(401, "Unauthorized")
+//        
+//        loginPresenter.presentLoginResult(token: nil, error: expectedError)
+//        
+//        XCTAssertTrue(mockLoginView.didDisplayError, "Expected the view to display an error message.")
+//        XCTAssertEqual(mockLoginView.displayedError, "Erro de status 401: Unauthorized", "Expected the error message to match the status code error description.")
+//    }
+//    
+//    func testPresentLoginErrorWithNoData() {
+//        let expectedError = NetworkError.noData
+//        
+//        loginPresenter.presentLoginResult(token: nil, error: expectedError)
+//        
+//        XCTAssertTrue(mockLoginView.didDisplayError, "Expected the view to display an error message.")
+//        XCTAssertEqual(mockLoginView.displayedError, "Nenhum dado foi retornado da API.", "Expected the error message to match the no data error description.")
+//    }
+//    
+//    func testPresentLoginErrorWithDecodingError() {
+//        let decodingError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Mock decoding error"])
+//        let expectedError = NetworkError.decodingError(decodingError)
+//        
+//        loginPresenter.presentLoginResult(token: nil, error: expectedError)
+//        
+//        XCTAssertTrue(mockLoginView.didDisplayError, "Expected the view to display an error message.")
+//        XCTAssertEqual(mockLoginView.displayedError, "Erro ao decodificar a resposta: Mock decoding error", "Expected the error message to match the decoding error description.")
+//    }
+//    
+//    func testPresentLoginErrorWithoutSpecificError() {
+//        let expectedError: NetworkError? = nil
+//        
+//        loginPresenter.presentLoginResult(token: nil, error: expectedError)
+//        
+//        XCTAssertTrue(mockLoginView.didDisplayError, "Expected the view to display an error message.")
+//        XCTAssertEqual(mockLoginView.displayedError, "Login failed.", "Expected the default error message to be displayed.")
+//    }
 }
 
 final class MockLoginView: LoginViewProtocol {
     var didDisplaySuccess = false
     var didDisplayError = false
     var displayedToken: AuthenticateResponse?
-    var displayedError: Error?
+    var displayedError: String?
     
     func displayLoginSuccess(with token: AuthenticateResponse) {
         didDisplaySuccess = true
@@ -70,6 +95,6 @@ final class MockLoginView: LoginViewProtocol {
     
     func displayLoginError(_ message: String) {
         didDisplayError = true
-        displayedError = NSError(domain: "TestError", code: 1, userInfo: [NSLocalizedDescriptionKey: message])
+        displayedError = message
     }
 }

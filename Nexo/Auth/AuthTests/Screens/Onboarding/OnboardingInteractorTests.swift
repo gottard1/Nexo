@@ -28,29 +28,30 @@ final class OnboardingInteractorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testHandleButtonTap_callsNavigateToWithCorrectAction() {
-        let expectedAction: AuthActions = .login
+    func testHandleButtonTap_navigateToRegisterDocument() {
+        let expectedAction: AuthActions = .registerDocument
+        
         interactor.handleButtonTap(action: expectedAction)
         
-        XCTAssertEqual(mockView.didNavigateToAction, expectedAction, "Expected navigateTo(action:) to be called with \(expectedAction), but it wasn't.")
+        switch mockView.didNavigateToAction {
+            case .registerDocument:
+                XCTAssertTrue(true, "navigateTo(action:) called with correct action.")
+            default:
+                XCTFail("navigateTo(action:) was not called with .registerDocument as expected.")
+        }
     }
     
-    func testHandleButtonTap_callsNavigateToWithSignupAction() {
-        let expectedAction: AuthActions = .register
-        interactor.handleButtonTap(action: expectedAction)
-        XCTAssertEqual(mockView.didNavigateToAction, expectedAction, "Expected navigateTo(action:) to be called with \(expectedAction), but it wasn't.")
-    }
-    
-    func testHandleButtonTap_callsNavigateToWithStatusAction() {
-        let expectedAction: AuthActions = .status
-        interactor.handleButtonTap(action: expectedAction)
-        XCTAssertEqual(mockView.didNavigateToAction, expectedAction, "Expected navigateTo(action:) to be called with \(expectedAction), but it wasn't.")
-    }
-    
-    func testHandleButtonTap_shouldFailWithIncorrectAction() {
-        let unexpectedAction: AuthActions = .register
-        interactor.handleButtonTap(action: .login)
-        XCTAssertNotEqual(mockView.didNavigateToAction, unexpectedAction, "navigateTo(action:) should not be called with \(unexpectedAction).")
+    func testHandleButtonTap_doesNotNavigateToOtherActions() {
+        let unexpectedAction: AuthActions = .login
+        
+        interactor.handleButtonTap(action: .registerDocument)
+        
+        switch mockView.didNavigateToAction {
+            case .login:
+                XCTFail("navigateTo(action:) should not have been called with .login.")
+            default:
+                XCTAssertTrue(true, "navigateTo(action:) was not called with an incorrect action.")
+        }
     }
 }
 

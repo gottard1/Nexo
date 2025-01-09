@@ -27,7 +27,7 @@ final class LoginServiceTests: XCTestCase {
     }
     
     func testLoginSuccess() async throws {
-        let expectedResponse = AuthenticateResponse(token: "someToken")
+        let expectedResponse = AuthenticateResponse(token: "someToken", message: "someMessage")
         mockNetworkManager.mockResponse = expectedResponse
         
         let result = try await loginService.login(cpfCnpj: "12345678910", password: "password")

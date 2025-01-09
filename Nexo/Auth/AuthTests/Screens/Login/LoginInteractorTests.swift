@@ -3,7 +3,7 @@
 //  AuthTests
 //
 //  Created by Marcel Felipe Gottardi Anesi on 02/12/24.
-//
+// 
 
 import XCTest
 @testable import Auth
@@ -31,7 +31,7 @@ final class LoginInteractorTests: XCTestCase {
     
     func testLoginSuccess() {
         let expectation = XCTestExpectation(description: "LoginInteractor calls presenter on success")
-        let expectedResponse = AuthenticateResponse(token: "someToken")
+        let expectedResponse = AuthenticateResponse(token: "someToken", message: "someMessage")
         mockLoginService.mockLoginResponse = expectedResponse
         loginInteractor.login(username: "123456789", password: "password")
         
@@ -79,7 +79,7 @@ class MockLoginPresenter: LoginPresenterProtocol {
     var didPresentError = false
     var presentedToken: AuthenticateResponse?
     
-    func presentLoginResult(token: AuthenticateResponse?, error: Error?) {
+    func presentLoginResult(token: AuthenticateResponse?, error: NetworkError?) {
         if let token = token {
             didPresentSuccess = true
             presentedToken = token
