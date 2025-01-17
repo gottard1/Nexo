@@ -21,6 +21,8 @@
 		854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 854431B42CF0C79700B3B024 /* loadingAnimation.json */; };
 		855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7AC2CA1B05E0055571D /* Shared.docc */; };
 		855DC7B92CA1B05E0055571D /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DC7AB2CA1B05E0055571D /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		857056B92D3AC3D400CD1CBB /* ServiceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857056B82D3AC3D400CD1CBB /* ServiceButton.swift */; };
+		857056BD2D3AC3F200CD1CBB /* InvestmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */; };
 		8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */; };
 		8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361E2CB8642500CF83CC /* NexoTabBarView.swift */; };
 		858436252CB9799500CF83CC /* NexoRoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436242CB9799500CF83CC /* NexoRoundedTextField.swift */; };
@@ -29,6 +31,8 @@
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
 		858CBFCC2D2F05BD0030968A /* BaseInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */; };
 		858CBFD02D2F30CC0030968A /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */; };
+		85A397AC2D357C23000C8125 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A397AB2D357C23000C8125 /* ImageCache.swift */; };
+		85A397AE2D357C53000C8125 /* UIImageView+Extension.swift in Resources */ = {isa = PBXBuildFile; fileRef = 85A397AD2D357C53000C8125 /* UIImageView+Extension.swift */; };
 		85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */; };
 		85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622312CE2A54100B36AB1 /* PresentationController.swift */; };
 		85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */; };
@@ -50,6 +54,20 @@
 		85D182302D0C981C00F58505 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1822F2D0C981C00F58505 /* CharacterView.swift */; };
 		85D805892D072BE600D49706 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D805882D072BE600D49706 /* String+Extension.swift */; };
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
+		85FD12402D315EDB00126D8A /* SDUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD123F2D315EDB00126D8A /* SDUIComponent.swift */; };
+		85FD12422D315EF200126D8A /* SDUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12412D315EF200126D8A /* SDUIConfig.swift */; };
+		85FD12442D315F0000126D8A /* SDUIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12432D315F0000126D8A /* SDUIParser.swift */; };
+		85FD12462D315F1B00126D8A /* SDUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12452D315F1B00126D8A /* SDUIFactory.swift */; };
+		85FD12482D315F2300126D8A /* BalanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12472D315F2300126D8A /* BalanceCardView.swift */; };
+		85FD124A2D315F2900126D8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12492D315F2900126D8A /* CustomButton.swift */; };
+		85FD124C2D315F2E00126D8A /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD124B2D315F2E00126D8A /* BannerView.swift */; };
+		85FD12512D31787200126D8A /* WaveEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12502D31787200126D8A /* WaveEffectView.swift */; };
+		85FD12542D3181B500126D8A /* BalanceCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12532D3181B500126D8A /* BalanceCardModel.swift */; };
+		85FD12562D3181C300126D8A /* CustomMenuButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12552D3181C300126D8A /* CustomMenuButtonModel.swift */; };
+		85FD12582D3181CF00126D8A /* ServiceMenuButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12572D3181CF00126D8A /* ServiceMenuButtonModel.swift */; };
+		85FD125A2D3181DE00126D8A /* InvestmentCardButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12592D3181DE00126D8A /* InvestmentCardButtonModel.swift */; };
+		85FD125C2D3181EB00126D8A /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD125B2D3181EB00126D8A /* BannerModel.swift */; };
+		85FD125E2D3181F700126D8A /* SDUIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD125D2D3181F700126D8A /* SDUIBuilder.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
 		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +87,8 @@
 		855DC7A82CA1B05E0055571D /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7AB2CA1B05E0055571D /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
+		857056B82D3AC3D400CD1CBB /* ServiceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceButton.swift; sourceTree = "<group>"; };
+		857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCardView.swift; sourceTree = "<group>"; };
 		8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItemModel.swift; sourceTree = "<group>"; };
 		8584361E2CB8642500CF83CC /* NexoTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarView.swift; sourceTree = "<group>"; };
 		858436242CB9799500CF83CC /* NexoRoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextField.swift; sourceTree = "<group>"; };
@@ -77,6 +97,8 @@
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractorProtocol.swift; sourceTree = "<group>"; };
 		858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		85A397AB2D357C23000C8125 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		85A397AD2D357C53000C8125 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalBottomSheet.swift; sourceTree = "<group>"; };
 		85A622312CE2A54100B36AB1 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		85A622332CE2A5A900B36AB1 /* BasePresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresentationViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +120,20 @@
 		85D1822F2D0C981C00F58505 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		85D805882D072BE600D49706 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		85FD123F2D315EDB00126D8A /* SDUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIComponent.swift; sourceTree = "<group>"; };
+		85FD12412D315EF200126D8A /* SDUIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIConfig.swift; sourceTree = "<group>"; };
+		85FD12432D315F0000126D8A /* SDUIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIParser.swift; sourceTree = "<group>"; };
+		85FD12452D315F1B00126D8A /* SDUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIFactory.swift; sourceTree = "<group>"; };
+		85FD12472D315F2300126D8A /* BalanceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardView.swift; sourceTree = "<group>"; };
+		85FD12492D315F2900126D8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		85FD124B2D315F2E00126D8A /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		85FD12502D31787200126D8A /* WaveEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffectView.swift; sourceTree = "<group>"; };
+		85FD12532D3181B500126D8A /* BalanceCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardModel.swift; sourceTree = "<group>"; };
+		85FD12552D3181C300126D8A /* CustomMenuButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuButtonModel.swift; sourceTree = "<group>"; };
+		85FD12572D3181CF00126D8A /* ServiceMenuButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMenuButtonModel.swift; sourceTree = "<group>"; };
+		85FD12592D3181DE00126D8A /* InvestmentCardButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCardButtonModel.swift; sourceTree = "<group>"; };
+		85FD125B2D3181EB00126D8A /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		85FD125D2D3181F700126D8A /* SDUIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIBuilder.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				850D54102CAB8F2200B8B019 /* Bundle+Extension.swift */,
+				85A397AD2D357C53000C8125 /* UIImageView+Extension.swift */,
 				85A622352CE2A60600B36AB1 /* UIView+Extension.swift */,
 				85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */,
 				85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */,
@@ -200,9 +237,9 @@
 				85A670552CBD5CF800915268 /* Shared.plist */,
 				855DC7AB2CA1B05E0055571D /* Shared.h */,
 				8585B8BF2CAAE670000D38D7 /* Core */,
+				C3D726492CA2250E00634461 /* Components */,
 				8544319C2CEBCCC200B3B024 /* Helpers */,
 				850D540F2CAB8EE600B8B019 /* Extensions */,
-				C3D726492CA2250E00634461 /* Components */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -246,6 +283,7 @@
 		8585B8BE2CAAE1DB000D38D7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				85A397AB2D357C23000C8125 /* ImageCache.swift */,
 				C35419692CA375A300C9372F /* Assets.xcassets */,
 				850D540D2CAB8E5B00B8B019 /* NexoImage.swift */,
 			);
@@ -348,9 +386,10 @@
 			path = CharacterView;
 			sourceTree = "<group>";
 		};
-		C3D726492CA2250E00634461 /* Components */ = {
+		85FD12382D31428F00126D8A /* Generics */ = {
 			isa = PBXGroup;
 			children = (
+				85FD124E2D31785E00126D8A /* With animations */,
 				85D1822B2D0C93BB00F58505 /* CodeInput */,
 				852527FD2CFE2A35005ED399 /* ProgressBar */,
 				852527F12CFDF2FC005ED399 /* Gradient */,
@@ -359,6 +398,101 @@
 				858436232CB9771F00CF83CC /* Textfield */,
 				853422B02CB4444A00EF82B2 /* TabBar */,
 				853422AF2CB4444300EF82B2 /* Buttons */,
+			);
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		85FD12392D31429800126D8A /* SDUI */ = {
+			isa = PBXGroup;
+			children = (
+				85FD123C2D3142F700126D8A /* Views */,
+				85FD123B2D3142F000126D8A /* Parsers */,
+				85FD123A2D3142E900126D8A /* Models */,
+				85FD123E2D31432000126D8A /* Helpers */,
+			);
+			path = SDUI;
+			sourceTree = "<group>";
+		};
+		85FD123A2D3142E900126D8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85FD125D2D3181F700126D8A /* SDUIBuilder.swift */,
+				85FD123F2D315EDB00126D8A /* SDUIComponent.swift */,
+				85FD12412D315EF200126D8A /* SDUIConfig.swift */,
+				85FD12522D3181A600126D8A /* Home */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85FD123B2D3142F000126D8A /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12452D315F1B00126D8A /* SDUIFactory.swift */,
+				85FD12432D315F0000126D8A /* SDUIParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		85FD123C2D3142F700126D8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85FD124D2D31764100126D8A /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		85FD123E2D31432000126D8A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		85FD124D2D31764100126D8A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */,
+				857056B82D3AC3D400CD1CBB /* ServiceButton.swift */,
+				85FD12472D315F2300126D8A /* BalanceCardView.swift */,
+				85FD124B2D315F2E00126D8A /* BannerView.swift */,
+				85FD12492D315F2900126D8A /* CustomButton.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		85FD124E2D31785E00126D8A /* With animations */ = {
+			isa = PBXGroup;
+			children = (
+				85FD124F2D31786400126D8A /* WaveEffectView */,
+			);
+			path = "With animations";
+			sourceTree = "<group>";
+		};
+		85FD124F2D31786400126D8A /* WaveEffectView */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12502D31787200126D8A /* WaveEffectView.swift */,
+			);
+			path = WaveEffectView;
+			sourceTree = "<group>";
+		};
+		85FD12522D3181A600126D8A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85FD125B2D3181EB00126D8A /* BannerModel.swift */,
+				85FD12592D3181DE00126D8A /* InvestmentCardButtonModel.swift */,
+				85FD12572D3181CF00126D8A /* ServiceMenuButtonModel.swift */,
+				85FD12552D3181C300126D8A /* CustomMenuButtonModel.swift */,
+				85FD12532D3181B500126D8A /* BalanceCardModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C3D726492CA2250E00634461 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12392D31429800126D8A /* SDUI */,
+				85FD12382D31428F00126D8A /* Generics */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -449,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A397AE2D357C53000C8125 /* UIImageView+Extension.swift in Resources */,
 				C354196A2CA375A300C9372F /* Assets.xcassets in Resources */,
 				85A670542CBD5C1300915268 /* Exo2-Light.ttf in Resources */,
 				85A6704C2CBD5BA800915268 /* OpenSans-SemiBold.ttf in Resources */,
@@ -469,8 +604,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D1822D2D0C942B00F58505 /* CodeInputField.swift in Sources */,
+				85FD12442D315F0000126D8A /* SDUIParser.swift in Sources */,
 				85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */,
+				85FD12562D3181C300126D8A /* CustomMenuButtonModel.swift in Sources */,
 				8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */,
+				85FD12582D3181CF00126D8A /* ServiceMenuButtonModel.swift in Sources */,
 				853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */,
 				85A622322CE2A54100B36AB1 /* PresentationController.swift in Sources */,
 				85BCBA972CD2A708005DEEAF /* NetworkError.swift in Sources */,
@@ -479,13 +617,21 @@
 				850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */,
 				858436252CB9799500CF83CC /* NexoRoundedTextField.swift in Sources */,
 				85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */,
+				85FD124A2D315F2900126D8A /* CustomButton.swift in Sources */,
+				85FD12402D315EDB00126D8A /* SDUIComponent.swift in Sources */,
+				85FD12482D315F2300126D8A /* BalanceCardView.swift in Sources */,
+				85FD125C2D3181EB00126D8A /* BannerModel.swift in Sources */,
 				85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */,
+				85A397AC2D357C23000C8125 /* ImageCache.swift in Sources */,
 				85A622362CE2A60600B36AB1 /* UIView+Extension.swift in Sources */,
 				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
 				85BCBA952CD2A667005DEEAF /* BaseTarget.swift in Sources */,
+				85FD124C2D315F2E00126D8A /* BannerView.swift in Sources */,
 				85A670422CBD5AA900915268 /* NexoFont.swift in Sources */,
 				854431A12CED095400B3B024 /* NexoLoadingView.swift in Sources */,
+				85FD12512D31787200126D8A /* WaveEffectView.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
+				857056BD2D3AC3F200CD1CBB /* InvestmentCardView.swift in Sources */,
 				858436272CB9963900CF83CC /* NexoRoundedTextView.swift in Sources */,
 				852527FF2CFE2A41005ED399 /* ProgressBarView.swift in Sources */,
 				852527F32CFDF30F005ED399 /* GradientView.swift in Sources */,
@@ -497,10 +643,16 @@
 				858CBFD02D2F30CC0030968A /* EmptyResponse.swift in Sources */,
 				8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */,
 				C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */,
+				85FD12462D315F1B00126D8A /* SDUIFactory.swift in Sources */,
+				85FD125A2D3181DE00126D8A /* InvestmentCardButtonModel.swift in Sources */,
+				85FD125E2D3181F700126D8A /* SDUIBuilder.swift in Sources */,
+				85FD12422D315EF200126D8A /* SDUIConfig.swift in Sources */,
 				858CBFCC2D2F05BD0030968A /* BaseInteractorProtocol.swift in Sources */,
 				8544319E2CEBCCD100B3B024 /* ConstraintMaker.swift in Sources */,
+				85FD12542D3181B500126D8A /* BalanceCardModel.swift in Sources */,
 				85A6223A2CE3702200B36AB1 /* UIApplication+Extension.swift in Sources */,
 				85D805892D072BE600D49706 /* String+Extension.swift in Sources */,
+				857056B92D3AC3D400CD1CBB /* ServiceButton.swift in Sources */,
 				850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,13 @@
 		853423BC2CB55B1300EF82B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423BB2CB55B1300EF82B2 /* HomeViewController.swift */; };
 		853423C12CB55D4000EF82B2 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853423C02CB55D4000EF82B2 /* Shared.framework */; };
 		853423C22CB55D4000EF82B2 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 853423C02CB55D4000EF82B2 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85FD12262D312F4100126D8A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12252D312F4100126D8A /* HomeView.swift */; };
+		85FD12282D3134F400126D8A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12272D3134F400126D8A /* HomeInteractor.swift */; };
+		85FD122A2D31351500126D8A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12292D31351500126D8A /* HomePresenter.swift */; };
+		85FD12302D3137AC00126D8A /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD122F2D3137AC00126D8A /* HomeService.swift */; };
+		85FD12322D31387300126D8A /* HomeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12312D31387300126D8A /* HomeTarget.swift */; };
+		85FD12342D3138AC00126D8A /* HomeEndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12332D3138AC00126D8A /* HomeEndpointsModel.swift */; };
+		85FD12372D313FE700126D8A /* HomeDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12362D313FE700126D8A /* HomeDataRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +57,13 @@
 		853423B82CB55B0300EF82B2 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		853423BB2CB55B1300EF82B2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		853423C02CB55D4000EF82B2 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85FD12252D312F4100126D8A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		85FD12272D3134F400126D8A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		85FD12292D31351500126D8A /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		85FD122F2D3137AC00126D8A /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		85FD12312D31387300126D8A /* HomeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTarget.swift; sourceTree = "<group>"; };
+		85FD12332D3138AC00126D8A /* HomeEndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpointsModel.swift; sourceTree = "<group>"; };
+		85FD12362D313FE700126D8A /* HomeDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				853423B82CB55B0300EF82B2 /* HomeCoordinator.swift */,
+				85FD122B2D31376800126D8A /* Repositories */,
 				853423B72CB55AF900EF82B2 /* Screens */,
 				853423A02CB55AEF00EF82B2 /* Home.h */,
 				853423A12CB55AEF00EF82B2 /* Home.docc */,
@@ -114,6 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				853423BB2CB55B1300EF82B2 /* HomeViewController.swift */,
+				85FD12252D312F4100126D8A /* HomeView.swift */,
+				85FD12272D3134F400126D8A /* HomeInteractor.swift */,
+				85FD12292D31351500126D8A /* HomePresenter.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -124,6 +142,49 @@
 				853423C02CB55D4000EF82B2 /* Shared.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85FD122B2D31376800126D8A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12332D3138AC00126D8A /* HomeEndpointsModel.swift */,
+				85FD122C2D31377100126D8A /* Models */,
+				85FD122D2D31377500126D8A /* Services */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		85FD122C2D31377100126D8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12352D313FE600126D8A /* Home */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85FD122D2D31377500126D8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				85FD122E2D31378000126D8A /* Home */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		85FD122E2D31378000126D8A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12312D31387300126D8A /* HomeTarget.swift */,
+				85FD122F2D3137AC00126D8A /* HomeService.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		85FD12352D313FE600126D8A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				85FD12362D313FE700126D8A /* HomeDataRequest.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FD12302D3137AC00126D8A /* HomeService.swift in Sources */,
 				853423A22CB55AEF00EF82B2 /* Home.docc in Sources */,
+				85FD12372D313FE700126D8A /* HomeDataRequest.swift in Sources */,
+				85FD12262D312F4100126D8A /* HomeView.swift in Sources */,
 				853423B92CB55B0300EF82B2 /* HomeCoordinator.swift in Sources */,
+				85FD12322D31387300126D8A /* HomeTarget.swift in Sources */,
+				85FD122A2D31351500126D8A /* HomePresenter.swift in Sources */,
+				85FD12342D3138AC00126D8A /* HomeEndpointsModel.swift in Sources */,
 				853423BC2CB55B1300EF82B2 /* HomeViewController.swift in Sources */,
+				85FD12282D3134F400126D8A /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
