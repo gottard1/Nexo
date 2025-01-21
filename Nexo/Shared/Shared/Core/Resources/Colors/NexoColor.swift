@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 public final class NexoColor {
     private static func loadColor(named name: String) -> UIColor {
         return UIColor(named: name, in: .shared, compatibleWith: nil) ?? .clear
@@ -38,4 +36,19 @@ public final class NexoColor {
     public static var gray4: UIColor { return loadColor(named: "gray4") }
     public static var gray5: UIColor { return loadColor(named: "gray5") }
     public static var gray6: UIColor { return loadColor(named: "gray6") }
+}
+
+public extension NexoColor {
+    /// Método que retorna uma cor dinamicamente com base no nome da propriedade
+    static func color(named name: String) -> UIColor? {
+        let mirror = Mirror(reflecting: NexoColor.self)
+        
+        for child in mirror.children {
+            if child.label == name, let color = child.value as? UIColor {
+                return color
+            }
+        }
+        
+        return nil
+    }
 }

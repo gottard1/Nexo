@@ -408,7 +408,6 @@
 				85FD123C2D3142F700126D8A /* Views */,
 				85FD123B2D3142F000126D8A /* Parsers */,
 				85FD123A2D3142E900126D8A /* Models */,
-				85FD123E2D31432000126D8A /* Helpers */,
 			);
 			path = SDUI;
 			sourceTree = "<group>";
@@ -439,13 +438,6 @@
 				85FD124D2D31764100126D8A /* Home */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		85FD123E2D31432000126D8A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		85FD124D2D31764100126D8A /* Home */ = {

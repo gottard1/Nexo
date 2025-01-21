@@ -10,39 +10,43 @@ import UIKit
 class SDUIFactory {
     func createView(for component: SDUIComponent) -> UIView {
         switch component {
-            case .balanceCard(let model, let config):
+            case .balanceCard(let model):
                 let balanceCardView = BalanceCardView(model: model)
-                applyConfig(config, to: balanceCardView)
+                applyConfig(model.configs, to: balanceCardView)
                 return balanceCardView
-                
-            case .customButton(let models, let config):
+            case .customButton(let models):
                 let stackView = createHorizontalStackView()
                 models.forEach { model in
                     let buttonView = CustomButton(model: model)
                     stackView.addArrangedSubview(buttonView)
+                    applyConfig(model.configs, to: buttonView)
                 }
-                applyConfig(config, to: stackView)
                 return stackView
-                
-            case .serviceButton(let models, let config):
+            case .serviceButton(let models):
                 let stackView = createHorizontalStackView()
                 models.forEach { model in
                     let buttonView = ServiceButton(model: model)
                     stackView.addArrangedSubview(buttonView)
+                    applyConfig(model.configs, to: buttonView)
                 }
-                applyConfig(config, to: stackView)
                 return stackView
-                
-            case .investmentCard(let model, let config):
-                let investmentCardView = InvestmentCardView(model: model)
-                applyConfig(config, to: investmentCardView)
-                return investmentCardView
-                
-            case .banner(let model, let config):
-                let bannerView = BannerView()
-                bannerView.setupView(with: model)
-                applyConfig(config, to: bannerView)
-                return bannerView
+            case .investmentCard(let models):
+                let stackView = createHorizontalStackView()
+                models.forEach { model in
+                    let investmentCardView = InvestmentCardView(model: model)
+                    stackView.addArrangedSubview(investmentCardView)
+                    applyConfig(model.configs, to: investmentCardView)
+                }
+                return stackView
+            case .banner(let models):
+                let stackView = createHorizontalStackView()
+                models.forEach { model in
+                    let bannerView = BannerView()
+                    bannerView.setupView(with: model)
+                    stackView.addArrangedSubview(bannerView)
+                    applyConfig(model.configs, to: bannerView)
+                }
+                return stackView
         }
     }
     
@@ -56,13 +60,12 @@ class SDUIFactory {
     private func applyConfig(_ config: SDUIConfig?, to view: UIView) {
         guard let config = config else { return }
         
-        view.layer.cornerRadius = config.roundedCorners ?? 0
         view.layer.masksToBounds = true
         
-        let topSpacer = CGFloat(config.topSpacer)
-        let leadingSpacer = CGFloat(config.leadingSpacer)
-        let traillingSpacer = CGFloat(config.traillingSpacer)
-        let bottomSpacer = CGFloat(config.bottomSpacer)
+        let topSpacer = CGFloat(config.spacing.topSpacer)
+        let leadingSpacer = CGFloat(config.spacing.leadingSpacer)
+        let traillingSpacer = CGFloat(config.spacing.traillingSpacer)
+        let bottomSpacer = CGFloat(config.spacing.bottomSpacer)
         
         if let superview = view.superview {
             view.anchor { make in

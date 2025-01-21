@@ -48,7 +48,7 @@ final class HomeViewController: UIViewController {
 // MARK: - Presenter Protocol
 extension HomeViewController: HomeViewProtocol {
     func displayHomeSuccess(with components: [Shared.SDUIComponent]) {
-        
+        dump(components)
     }
     
     func displayHomeError(_ message: String) {

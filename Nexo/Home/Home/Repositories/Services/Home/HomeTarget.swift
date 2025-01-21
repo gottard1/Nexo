@@ -8,21 +8,27 @@
 import Shared
 
 enum HomeTarget {
-    case fetchHome(object: HomeDataRequest)
+    case fetchHome(document: String)
+    case organizeHome(object: SDUIBuilder)
 }
 
 extension HomeTarget: BaseTarget {
     
     var path: String {
         switch self {
-            case .fetchHome:
-                return HomeEndpointsModel.buildHome
+            case .fetchHome(let document):
+                // Adicione o cpf_cnpj ao caminho
+                return "\(HomeEndpointsModel.components)?cpf_cnpj=\(document)"
+            case .organizeHome:
+                return HomeEndpointsModel.components
         }
     }
     
     var method: HTTPMethod {
         switch self {
             case .fetchHome:
+                return .get
+            case .organizeHome:
                 return .post
         }
     }
@@ -35,9 +41,10 @@ extension HomeTarget: BaseTarget {
     
     var body: Data? {
         switch self {
-            case .fetchHome(let parameters):
-                return try? JSONEncoder().encode(parameters)
+            case .fetchHome:
+                return nil
+            case .organizeHome(let body):
+                return try? JSONEncoder().encode(body)
         }
     }
-    
 }

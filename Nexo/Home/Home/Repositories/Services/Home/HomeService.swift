@@ -9,7 +9,7 @@ import Shared
 import UIKit
 
 protocol HomeServiceProtocol {
-    func fetchHome(parameters: HomeDataRequest) async throws -> [SDUIComponent]
+    func fetchHome() async throws -> SDUIBuilder
 }
 
 class HomeService: HomeServiceProtocol {
@@ -19,11 +19,12 @@ class HomeService: HomeServiceProtocol {
         self.networkManager = networkManager
     }
     
-    func fetchHome(parameters: HomeDataRequest) async throws -> [SDUIComponent] {
-        let endpoint = HomeTarget.fetchHome(object: parameters)
-        let response: [SDUIComponent] = try await networkManager.request(
+    func fetchHome() async throws -> SDUIBuilder {
+        let document = "07960046921"
+        let endpoint = HomeTarget.fetchHome(document: document)
+        let response: SDUIBuilder = try await networkManager.request(
             target: endpoint,
-            responseType: [SDUIComponent].self
+            responseType: SDUIBuilder.self
         )
         return response
     }

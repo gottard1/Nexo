@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CustomMenuButtonModel: Decodable {
+public struct CustomMenuButtonModel: Codable {
     let title: String
     let icon: String
     let action: String

@@ -17,6 +17,10 @@ final class ServiceButton: UIView {
         super.init(frame: .zero)
         setupUI()
         configure(with: model)
+        
+        let background = model.configs.colors.background
+        let color = NexoColor.color(named: background)
+        backgroundColor = color
     }
     
     required init?(coder: NSCoder) {
@@ -31,30 +35,36 @@ final class ServiceButton: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        stackView.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.bottom(to: bottomAnchor)
+        }
         
-        // Configure tap gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapButton))
         addGestureRecognizer(tapGesture)
     }
     
     func configure(with model: ServiceMenuButtonModel) {
-        imageView.image = UIImage(named: model.icon)
+        imageView.image = UIImage(systemName: model.icon)
         imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 24),
-            imageView.heightAnchor.constraint(equalToConstant: 24)
-        ])
+        
+        let iconColor = model.configs.colors.iconColor
+        let tintColor = NexoColor.color(named: iconColor)
+        imageView.tintColor = tintColor
+        
+        imageView.anchor { make in
+            make.width(equalTo: 24)
+            make.height(equalTo: 24)
+        }
         
         titleLabel.text = model.title
         titleLabel.font = .systemFont(ofSize: 14)
-        titleLabel.textColor = .black
+        
+        let color = model.configs.colors.textColor
+        let textColor = NexoColor.color(named: color)
+        titleLabel.textColor = textColor
         
         actionHandler = {
             print("Service Button Action: \(model.action)")

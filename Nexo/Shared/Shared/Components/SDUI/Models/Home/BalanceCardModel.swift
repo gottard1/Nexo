@@ -7,9 +7,8 @@
 
 import Foundation
 
-public struct BalanceCardModel: Decodable {
-    let title: String
-    let description: String
+public struct BalanceCardModel: Codable {
     let value: String
+    let icon: String
     let configs: SDUIConfig
 }

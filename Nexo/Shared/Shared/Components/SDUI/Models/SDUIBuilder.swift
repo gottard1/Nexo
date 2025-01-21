@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct SDUIBuilder: Decodable {
-    let components: [SDUIComponent]
+public struct SDUIBuilder: Codable {
+    public let components: [SDUIComponent]
 }

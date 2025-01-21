@@ -28,9 +28,7 @@ final class AppCoordinator: Coordinator, FlowNavigator {
     }
     
     private func isUserAuthenticated() -> Bool {
-        // TODO: Verificar se o usuário está autenticado
-        return false
-//        return true
+        return true
     }
     
     func navigateToAuth() {

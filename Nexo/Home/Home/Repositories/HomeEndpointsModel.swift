@@ -10,5 +10,5 @@ import Foundation
 struct HomeEndpointsModel {
     static let baseURL = "/home"
     
-    static let buildHome = "\(baseURL)/buildScreen"
+    static let components = "\(baseURL)/components"
 }

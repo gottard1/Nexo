@@ -21,14 +21,13 @@ final class HomeInteractor: BaseInteractorProtocol, HomeInteractorProtocol {
     }
     
     func fetchHomeData() {
-        let request = HomeDataRequest(cpfCnpj: "0796004691")
-        
         handle {
-            try await self.service.fetchHome(parameters: request)
+            try await self.service.fetchHome()
         } completion: {  [weak self] result in
             switch result {
-                case .success(let homeComponents):
-                    self?.presenter.presentHomeResult(homeComponents, error: nil)
+                case .success(let home):
+                    self?.presenter
+                        .presentHomeResult(home.components, error: nil)
                 case .failure(let error):
                     self?.presenter.presentHomeResult(nil, error: error)
             }

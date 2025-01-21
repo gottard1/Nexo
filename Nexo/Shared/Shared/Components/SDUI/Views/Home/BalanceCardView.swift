@@ -12,30 +12,22 @@ class BalanceCardView: UIView {
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.spacing = 8
         return stackView
-    }()
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .black
-        return label
-    }()
-    
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.textColor = .gray
-        return label
     }()
     
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 24)
-        label.textColor = .green
         return label
+    }()
+    
+    private let iconImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
     }()
     
     init(model: BalanceCardModel) {
@@ -50,9 +42,8 @@ class BalanceCardView: UIView {
     }
     
     private func setupView(model: BalanceCardModel) {
-        titleLabel.text = model.title
-        descriptionLabel.text = model.description
         valueLabel.text = model.value
+        iconImageView.image = UIImage(systemName: model.icon)
     }
 }
 
@@ -60,9 +51,8 @@ class BalanceCardView: UIView {
 extension BalanceCardView {
     
     private func setupLayout() {
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(descriptionLabel)
         stackView.addArrangedSubview(valueLabel)
+        stackView.addArrangedSubview(iconImageView)
         
         addSubview(stackView)
         stackView.anchor { make in

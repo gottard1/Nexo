@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct BannerModel: Decodable {
+public struct BannerModel: Codable {
     let icon: String
     let action: String
     let configs: SDUIConfig
