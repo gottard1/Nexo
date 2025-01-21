@@ -8,20 +8,20 @@
 import UIKit
 
 public struct SDUIConfig: Codable {
-    let colors: SDUIColor
-    let spacing: SDUISpacing
+    let colors: SDUIColor?
+    let spacing: SDUISpacing?
 }
 
 public struct SDUIColor: Codable {
-    var background: String
-    var borderColor: String
-    var textColor: String
-    var iconColor: String
+    var background: String?
+    var borderColor: String?
+    var textColor: String?
+    var iconColor: String?
 }
 
 public struct SDUISpacing: Codable {
-    let topSpacer: Double
-    let leadingSpacer: Double
-    let traillingSpacer: Double
-    let bottomSpacer: Double
+    let topSpacer: Double?
+    let leadingSpacer: Double?
+    let traillingSpacer: Double?
+    let bottomSpacer: Double?
 }

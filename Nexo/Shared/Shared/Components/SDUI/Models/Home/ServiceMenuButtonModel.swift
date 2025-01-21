@@ -11,5 +11,5 @@ public struct ServiceMenuButtonModel: Codable {
     let title: String
     let icon: String
     let action: String
-    let configs: SDUIConfig
+    let config: SDUIConfig
 }

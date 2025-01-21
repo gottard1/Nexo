@@ -40,7 +40,11 @@ public final class NexoColor {
 
 public extension NexoColor {
     /// Método que retorna uma cor dinamicamente com base no nome da propriedade
-    static func color(named name: String) -> UIColor? {
+    static func color(named name: String?) -> UIColor? {
+        guard let name else {
+            return nil
+        }
+        
         let mirror = Mirror(reflecting: NexoColor.self)
         
         for child in mirror.children {

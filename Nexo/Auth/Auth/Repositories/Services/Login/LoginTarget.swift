@@ -34,6 +34,10 @@ extension LoginTarget: BaseTarget {
         return headers
     }
     
+    var queryParameters: [String: String]? {
+        return nil
+    }
+    
     var body: Data? {
         switch self {
             case .authenticate(let credentials):

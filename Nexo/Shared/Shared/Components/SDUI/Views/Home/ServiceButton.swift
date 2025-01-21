@@ -18,7 +18,7 @@ final class ServiceButton: UIView {
         setupUI()
         configure(with: model)
         
-        let background = model.configs.colors.background
+        let background = model.config.colors?.background
         let color = NexoColor.color(named: background)
         backgroundColor = color
     }
@@ -50,7 +50,7 @@ final class ServiceButton: UIView {
         imageView.image = UIImage(systemName: model.icon)
         imageView.contentMode = .scaleAspectFit
         
-        let iconColor = model.configs.colors.iconColor
+        let iconColor = model.config.colors?.iconColor
         let tintColor = NexoColor.color(named: iconColor)
         imageView.tintColor = tintColor
         
@@ -62,7 +62,7 @@ final class ServiceButton: UIView {
         titleLabel.text = model.title
         titleLabel.font = .systemFont(ofSize: 14)
         
-        let color = model.configs.colors.textColor
+        let color = model.config.colors?.textColor
         let textColor = NexoColor.color(named: color)
         titleLabel.textColor = textColor
         

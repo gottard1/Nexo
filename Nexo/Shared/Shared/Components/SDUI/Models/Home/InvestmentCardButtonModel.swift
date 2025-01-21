@@ -11,5 +11,5 @@ public struct InvestmentCardButtonModel: Codable {
     let title: String
     let description: String
     let action: String
-    let configs: SDUIConfig
+    let config: SDUIConfig
 }

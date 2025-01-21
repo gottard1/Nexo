@@ -8,7 +8,7 @@
 import Foundation
 
 public struct BalanceCardModel: Codable {
-    let value: String
+    let value: Double
     let icon: String
-    let configs: SDUIConfig
+    let config: SDUIConfig
 }

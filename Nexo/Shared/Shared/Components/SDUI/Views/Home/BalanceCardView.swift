@@ -42,7 +42,7 @@ class BalanceCardView: UIView {
     }
     
     private func setupView(model: BalanceCardModel) {
-        valueLabel.text = model.value
+        valueLabel.text = String(model.value)
         iconImageView.image = UIImage(systemName: model.icon)
     }
 }

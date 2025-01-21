@@ -16,11 +16,19 @@ extension HomeTarget: BaseTarget {
     
     var path: String {
         switch self {
-            case .fetchHome(let document):
-                // Adicione o cpf_cnpj ao caminho
-                return "\(HomeEndpointsModel.components)?cpf_cnpj=\(document)"
+            case .fetchHome:
+                return HomeEndpointsModel.components
             case .organizeHome:
                 return HomeEndpointsModel.components
+        }
+    }
+    
+    var queryParameters: [String: String]? {
+        switch self {
+            case .fetchHome(let document):
+                return ["cpf_cnpj": document]
+            default:
+                return nil
         }
     }
     
@@ -41,10 +49,10 @@ extension HomeTarget: BaseTarget {
     
     var body: Data? {
         switch self {
-            case .fetchHome:
-                return nil
             case .organizeHome(let body):
                 return try? JSONEncoder().encode(body)
+            default:
+                return nil
         }
     }
 }

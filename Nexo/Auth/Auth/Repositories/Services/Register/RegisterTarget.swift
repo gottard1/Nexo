@@ -37,6 +37,10 @@ extension RegisterTarget: BaseTarget {
         return headers
     }
     
+    var queryParameters: [String: String]? {
+        return nil
+    }
+    
     var body: Data? {
         switch self {
             case .validateCode(let code):

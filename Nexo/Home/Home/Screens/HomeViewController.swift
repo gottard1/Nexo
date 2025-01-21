@@ -17,7 +17,7 @@ final class HomeViewController: UIViewController {
     weak var coordinator: HomeCoordinator?
     var interactor: HomeInteractorProtocol?
     
-    private let homeView: HomeView = .init()
+    private let mainView: HomeView = .init()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -29,7 +29,7 @@ final class HomeViewController: UIViewController {
     }
     
     override func loadView() {
-        self.view = HomeView()
+        self.view = mainView
     }
     
     override func viewDidLoad() {
@@ -48,11 +48,16 @@ final class HomeViewController: UIViewController {
 // MARK: - Presenter Protocol
 extension HomeViewController: HomeViewProtocol {
     func displayHomeSuccess(with components: [Shared.SDUIComponent]) {
-        dump(components)
+        let factory = SDUIFactory()
+        
+        components.forEach { component in
+            let newView = factory.createView(for: component)
+            mainView.stackView.addArrangedSubview(newView)
+        }
     }
     
     func displayHomeError(_ message: String) {
-        
+        coordinator?.showCustomAlert(title: "ERRO PORRA", message: message)
     }
 }
 

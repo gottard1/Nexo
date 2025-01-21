@@ -26,8 +26,7 @@ final class HomeInteractor: BaseInteractorProtocol, HomeInteractorProtocol {
         } completion: {  [weak self] result in
             switch result {
                 case .success(let home):
-                    self?.presenter
-                        .presentHomeResult(home.components, error: nil)
+                    self?.presenter.presentHomeResult(home.components, error: nil)
                 case .failure(let error):
                     self?.presenter.presentHomeResult(nil, error: error)
             }

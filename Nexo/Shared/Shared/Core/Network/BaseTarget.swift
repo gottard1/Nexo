@@ -11,5 +11,6 @@ public protocol BaseTarget {
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: [String: String]? { get }
+    var queryParameters: [String: String]? { get }
     var body: Data? { get }
 }

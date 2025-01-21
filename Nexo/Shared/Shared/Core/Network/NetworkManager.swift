@@ -27,10 +27,8 @@ public final class NetworkManager: Networking {
         let fullURL = base.appendingPathComponent(target.path)
         var urlComponents = URLComponents(url: fullURL, resolvingAgainstBaseURL: false)
         
-        if target.method == .get, let queryParameters = target.body {
-            if let queryDict = try? JSONSerialization.jsonObject(with: queryParameters, options: []) as? [String: Any] {
-                urlComponents?.queryItems = queryDict.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
-            }
+        if let queryParameters = target.queryParameters {
+            urlComponents?.queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }
         }
         
         guard let url = urlComponents?.url else {
@@ -54,7 +52,8 @@ public final class NetworkManager: Networking {
                 throw NetworkError.statusCode(httpResponse.statusCode, errorMessage?.message ?? "Erro desconhecido.")
             }
             
-            let decodedData = try JSONDecoder().decode(T.self, from: data)
+            let decoder = JSONDecoder()
+            let decodedData = try decoder.decode(T.self, from: data)
             return decodedData
             
         } catch let networkError as NetworkError {

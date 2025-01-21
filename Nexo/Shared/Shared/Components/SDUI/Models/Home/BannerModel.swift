@@ -10,5 +10,5 @@ import Foundation
 public struct BannerModel: Codable {
     let icon: String
     let action: String
-    let configs: SDUIConfig
+    let config: SDUIConfig
 }
