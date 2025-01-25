@@ -29,9 +29,7 @@ extension LoginTarget: BaseTarget {
     }
     
     var headers: [String: String]? {
-        var headers = [String: String]()
-        headers["Content-Type"] = "application/json"
-        return headers
+        return nil
     }
     
     var queryParameters: [String: String]? {

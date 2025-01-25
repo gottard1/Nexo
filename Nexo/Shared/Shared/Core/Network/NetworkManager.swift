@@ -27,7 +27,7 @@ public final class NetworkManager: Networking {
         let fullURL = base.appendingPathComponent(target.path)
         var urlComponents = URLComponents(url: fullURL, resolvingAgainstBaseURL: false)
         
-        if let queryParameters = target.queryParameters {
+        if target.method == .get, let queryParameters = target.queryParameters {
             urlComponents?.queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }
         }
         
@@ -37,8 +37,17 @@ public final class NetworkManager: Networking {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = target.method.rawValue
-        urlRequest.allHTTPHeaderFields = target.headers
-        urlRequest.httpBody = target.method == .get ? nil : target.body
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let headers = target.headers {
+            headers.forEach { key, value in
+                urlRequest.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        if let body = target.body, target.method != .get{
+            urlRequest.httpBody = body
+        }
         
         do {
             let (data, response) = try await session.data(for: urlRequest)
@@ -55,7 +64,6 @@ public final class NetworkManager: Networking {
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(T.self, from: data)
             return decodedData
-            
         } catch let networkError as NetworkError {
             throw networkError
         } catch let decodingError as DecodingError {

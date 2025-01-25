@@ -9,12 +9,12 @@ import UIKit
 
 enum ComponentType: String, Codable {
     case balanceCard = "balance_card"
-    case serviceButton = "service_button"
+    case quickMenuButtons = "quick_menu_buttons"
 }
 
 public enum SDUIComponent: Codable {
-    case balanceCard([BalanceCardModel])
-    case serviceButton([ServiceMenuButtonModel])
+    case balanceCard(BalanceCardModel)
+    case quickMenuButtons(QuickMenuButtonsModel)
     
     private enum CodingKeys: String, CodingKey {
         case componentType = "component_type"
@@ -27,11 +27,11 @@ public enum SDUIComponent: Codable {
         
         switch type {
             case .balanceCard:
-                let data = try container.decode([BalanceCardModel].self, forKey: .data)
+                let data = try container.decode(BalanceCardModel.self, forKey: .data)
                 self = .balanceCard(data)
-            case .serviceButton:
-                let data = try container.decode([ServiceMenuButtonModel].self, forKey: .data)
-                self = .serviceButton(data)
+            case .quickMenuButtons:
+                let data = try container.decode(QuickMenuButtonsModel.self, forKey: .data)
+                self = .quickMenuButtons(data)
         }
     }
     
@@ -42,8 +42,8 @@ public enum SDUIComponent: Codable {
             case .balanceCard(let data):
                 try container.encode(ComponentType.balanceCard, forKey: .componentType)
                 try container.encode(data, forKey: .data)
-            case .serviceButton(let data):
-                try container.encode(ComponentType.serviceButton, forKey: .componentType)
+            case .quickMenuButtons(let data):
+                try container.encode(ComponentType.quickMenuButtons, forKey: .componentType)
                 try container.encode(data, forKey: .data)
         }
     }

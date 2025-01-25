@@ -8,7 +8,17 @@
 import UIKit
 
 // ALTERAR ESSE COMPONENTE
-class BalanceCardView: UIView {
+final class BalanceCardView: UIView {
+    
+    private let contentView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 8
+        view.layer.shadowColor = NexoColor.black040F14.cgColor
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 4
+        return view
+    }()
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -19,7 +29,7 @@ class BalanceCardView: UIView {
     
     private let valueLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 24)
+        label.font = NexoFont.openSans(ofType: .bold, size: 24)
         return label
     }()
     
@@ -32,7 +42,8 @@ class BalanceCardView: UIView {
     
     init(model: BalanceCardModel) {
         super.init(frame: .zero)
-        setupLayout()
+        setupHierarchy()
+        setupConstraints()
         
         setupView(model: model)
     }
@@ -44,22 +55,51 @@ class BalanceCardView: UIView {
     private func setupView(model: BalanceCardModel) {
         valueLabel.text = String(model.value)
         iconImageView.image = UIImage(systemName: model.icon)
+        
+        setupColors(with: model.config.colors)
+    }
+    
+    private func setupColors(with colors: SDUIColor?) {
+        guard let textColor = colors?.textColor,
+              let background = colors?.background,
+              let iconColor = colors?.iconColor else { return }
+        
+        contentView.backgroundColor = NexoColor.loadColor(named: background)
+        valueLabel.textColor = NexoColor.loadColor(named: textColor)
+        iconImageView.tintColor = NexoColor.loadColor(named: iconColor)
+        
     }
 }
 
 // MARK: - Layout
 extension BalanceCardView {
     
-    private func setupLayout() {
-        stackView.addArrangedSubview(valueLabel)
-        stackView.addArrangedSubview(iconImageView)
-        
-        addSubview(stackView)
-        stackView.anchor { make in
-            make.top(to: topAnchor, constant: 16)
-            make.leading(to: leadingAnchor, constant: 16)
-            make.trailing(to: trailingAnchor, constant: 16)
+    private func setupHierarchy() {
+        addSubview(contentView)
+        contentView.addSubview(valueLabel)
+        contentView.addSubview(iconImageView)
+    }
+    
+    private func setupConstraints() {
+        contentView.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
             make.bottom(to: bottomAnchor, constant: 16)
+            make.height(equalTo: 50)
+        }
+        
+        valueLabel.anchor { make in
+            make.top(to: contentView.topAnchor, constant: 16)
+            make.leading(to: leadingAnchor, constant: 16)
+            make.bottom(to: contentView.bottomAnchor, constant: 16)
+        }
+        
+        iconImageView.anchor { make in
+            make.top(to: valueLabel.topAnchor)
+            make.leading(to: valueLabel.trailingAnchor, constant: 8)
+            make.trailing(to: trailingAnchor, constant: 16)
+            make.bottom(to: valueLabel.bottomAnchor)
         }
     }
 }

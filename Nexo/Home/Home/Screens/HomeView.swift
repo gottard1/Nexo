@@ -10,6 +10,12 @@ import Shared
 
 final class HomeView: UIView {
     
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
     let stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -31,13 +37,22 @@ final class HomeView: UIView {
     
     private func setupView() {
         backgroundColor = NexoColor.background
-        addSubview(stackView)
         
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            stackView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.bottomAnchor, constant: -16)
-        ])
+        addSubview(scrollView)
+        scrollView.addSubview(stackView)
+        
+        scrollView.anchor { make in
+            make.top(to: topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.bottom(to: bottomAnchor, constant: 58)
+        }
+        
+        stackView.anchor { make in
+            make.top(to: scrollView.topAnchor)
+            make.leading(to: leadingAnchor)
+            make.trailing(to: trailingAnchor)
+            make.bottom(to: scrollView.bottomAnchor)
+        }
     }
 }

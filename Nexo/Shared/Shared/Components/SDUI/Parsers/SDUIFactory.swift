@@ -8,6 +8,8 @@
 import UIKit
 
 public final class SDUIFactory {
+    private let stackView = UIStackView()
+    
     public init() { }
     
     @available(*, unavailable)
@@ -17,50 +19,76 @@ public final class SDUIFactory {
     
     public func createView(for component: SDUIComponent) -> UIView {
         switch component {
-            case .balanceCard(let models):
-                let stackView = createHorizontalStackView()
-                models.forEach { model in
-                    let balanceCardView = BalanceCardView(model: model)
-                    applyConfig(model.config, to: balanceCardView)
-                    stackView.addArrangedSubview(balanceCardView)
+            case .balanceCard(let model):
+                let balanceCardView = BalanceCardView(model: model)
+                let containerView = UIView()
+                containerView.addSubview(balanceCardView)
+                applyConfig(model.config, to: balanceCardView)
+                return containerView
+            case .quickMenuButtons(let models):
+                let scrollView = createScrollableHorizontalStackView(height: 100)
+                if let stackView = scrollView.subviews.first(where: { $0 is UIStackView }) as? UIStackView {
+                    models.buttons.forEach { model in
+                        let buttonView = QuickMenuButtons(model: model)
+                        buttonView.anchor { make in
+                            make.width(equalTo: 100)
+                        }
+                        stackView.addArrangedSubview(buttonView)
+                    }
                 }
-                return stackView
-            case .serviceButton(let models):
-                let stackView = createHorizontalStackView()
-                models.forEach { model in
-                    let buttonView = ServiceButton(model: model)
-                    applyConfig(model.config, to: buttonView)
-                    stackView.addArrangedSubview(buttonView)
-                }
-                return stackView
+                return scrollView
         }
     }
+}
+
+// MARK: - Helpers
+extension SDUIFactory {
     
-    private func createHorizontalStackView() -> UIStackView {
-        let stackView = UIStackView()
+    private func createScrollableHorizontalStackView(height: CGFloat) -> UIScrollView {
+        let scrollView = UIScrollView()
+        scrollView.showsHorizontalScrollIndicator = false
+        
         stackView.axis = .horizontal
         stackView.spacing = 8
-        return stackView
+        stackView.distribution = .fillEqually
+        
+        scrollView.addSubview(stackView)
+        
+        stackView.anchor { make in
+            make.top(to: scrollView.contentLayoutGuide.topAnchor)
+            make.leading(to: scrollView.contentLayoutGuide.leadingAnchor)
+            make.trailing(to: scrollView.contentLayoutGuide.trailingAnchor)
+            make.bottom(to: scrollView.contentLayoutGuide.bottomAnchor)
+            make.height(equalTo: height)
+        }
+        
+        scrollView.anchor { make in
+            make.height(equalTo: height)
+        }
+        
+        return scrollView
     }
     
     private func applyConfig(_ config: SDUIConfig?, to view: UIView) {
         guard let config = config,
               let spacing = config.spacing else { return }
         
-        view.layer.masksToBounds = true
+        let topSpacer = CGFloat(spacing.topSpacer ?? 0)
+        let leadingSpacer = CGFloat(spacing.leadingSpacer ?? 0)
+        let trailingSpacer = CGFloat(spacing.trailingSpacer ?? 0)
+        let bottomSpacer = CGFloat(spacing.bottomSpacer ?? 0)
         
-        let topSpacer = CGFloat(spacing.topSpacer ?? 16.0)
-        let leadingSpacer = CGFloat(spacing.leadingSpacer ?? 16.0)
-        let traillingSpacer = CGFloat(spacing.traillingSpacer ?? 16.0)
-        let bottomSpacer = CGFloat(spacing.bottomSpacer ?? 16.0)
+        guard let superview = view.superview else {
+            return
+        }
         
-        if let superview = view.superview {
-            view.anchor { make in
-                make.top(to: superview.topAnchor, constant: topSpacer)
-                make.leading(to: superview.leadingAnchor, constant: leadingSpacer)
-                make.trailing(to: superview.trailingAnchor, constant: traillingSpacer)
-                make.bottom(to: superview.bottomAnchor, constant: bottomSpacer)
-            }
+        view.anchor { make in
+            make.top(to: superview.topAnchor, constant: topSpacer)
+            make.leading(to: superview.leadingAnchor, constant: leadingSpacer)
+            make.trailing(to: superview.trailingAnchor, constant: trailingSpacer)
+            make.bottom(to: superview.bottomAnchor, constant: bottomSpacer)
         }
     }
+
+    
 }

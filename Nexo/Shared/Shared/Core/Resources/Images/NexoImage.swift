@@ -8,7 +8,6 @@
 import UIKit
 
 public final class NexoImage {
-    // Exemplo de uma função auxiliar para carregar imagens do Shared Bundle
     private static func loadImage(named name: String) -> UIImage? {
         return UIImage(named: name, in: .shared, compatibleWith: nil)
     }

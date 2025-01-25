@@ -39,6 +39,8 @@
 		858A958E2D14619400B0ECB8 /* RegisterPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A958D2D14619400B0ECB8 /* RegisterPasswordPresenter.swift */; };
 		858CBFCE2D2F23160030968A /* ValidateCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCD2D2F23160030968A /* ValidateCodeModel.swift */; };
 		8590E8882CDE8D1D0077D0EA /* LoginTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */; };
+		859477D72D43F2010085C05B /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 859477D62D43F2010085C05B /* Shared.framework */; };
+		859477D82D43F2010085C05B /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 859477D62D43F2010085C05B /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85A622222CE236A100B36AB1 /* AuthEndpointsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */; };
 		85A622242CE23C5E00B36AB1 /* AuthenticateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */; };
 		85A622262CE23CDF00B36AB1 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A622252CE23CDF00B36AB1 /* RegisterModel.swift */; };
@@ -48,7 +50,6 @@
 		85D805922D0766CE00D49706 /* RegisterEmailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D805912D0766CE00D49706 /* RegisterEmailPresenter.swift */; };
 		C35419712CA3764600C9372F /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35419702CA3764600C9372F /* AuthCoordinator.swift */; };
 		C35419752CA376E700C9372F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35419742CA376E700C9372F /* LoginViewController.swift */; };
-		C35419782CA3779600C9372F /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35419772CA3779600C9372F /* Shared.framework */; };
 		C35419812CA37A8B00C9372F /* Shared.framework in Sources */ = {isa = PBXBuildFile; fileRef = C35419772CA3779600C9372F /* Shared.framework */; };
 		C36940F72CA374C1001AC719 /* Auth.docc in Sources */ = {isa = PBXBuildFile; fileRef = C36940F62CA374C1001AC719 /* Auth.docc */; };
 		C36940FD2CA374C1001AC719 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36940F22CA374C1001AC719 /* Auth.framework */; };
@@ -64,6 +65,20 @@
 			remoteInfo = Auth;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		859477D92D43F2010085C05B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				859477D82D43F2010085C05B /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		852527E82CFDD462005ED399 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
@@ -98,6 +113,7 @@
 		858A958D2D14619400B0ECB8 /* RegisterPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPasswordPresenter.swift; sourceTree = "<group>"; };
 		858CBFCD2D2F23160030968A /* ValidateCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCodeModel.swift; sourceTree = "<group>"; };
 		8590E8872CDE8D1D0077D0EA /* LoginTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTarget.swift; sourceTree = "<group>"; };
+		859477D62D43F2010085C05B /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A622212CE236A100B36AB1 /* AuthEndpointsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpointsModel.swift; sourceTree = "<group>"; };
 		85A622232CE23C5E00B36AB1 /* AuthenticateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateRequest.swift; sourceTree = "<group>"; };
 		85A622252CE23CDF00B36AB1 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
@@ -119,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C35419782CA3779600C9372F /* Shared.framework in Frameworks */,
+				859477D72D43F2010085C05B /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +357,7 @@
 		C35419762CA3779600C9372F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				859477D62D43F2010085C05B /* Shared.framework */,
 				C35419772CA3779600C9372F /* Shared.framework */,
 			);
 			name = Frameworks;
@@ -408,6 +425,7 @@
 				C36940EE2CA374C1001AC719 /* Sources */,
 				C36940EF2CA374C1001AC719 /* Frameworks */,
 				C36940F02CA374C1001AC719 /* Resources */,
+				859477D92D43F2010085C05B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

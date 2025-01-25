@@ -22,6 +22,6 @@ public struct SDUIColor: Codable {
 public struct SDUISpacing: Codable {
     let topSpacer: Double?
     let leadingSpacer: Double?
-    let traillingSpacer: Double?
+    let trailingSpacer: Double?
     let bottomSpacer: Double?
 }

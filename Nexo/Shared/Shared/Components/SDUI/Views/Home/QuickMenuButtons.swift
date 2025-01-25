@@ -1,5 +1,5 @@
 //
-//  ServiceButton.swift
+//  QuickMenuButtons.swift
 //  Shared
 //
 //  Created by Marcel Felipe Gottardi Anesi on 17/01/25.
@@ -8,7 +8,7 @@
 import UIKit
 
 // ALTERAR ESSE COMPONENTE
-final class ServiceButton: UIView {
+final class QuickMenuButtons: UIView {
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
     private var actionHandler: (() -> Void)?
@@ -19,7 +19,7 @@ final class ServiceButton: UIView {
         configure(with: model)
         
         let background = model.config.colors?.background
-        let color = NexoColor.color(named: background)
+        let color = NexoColor.loadColor(named: background ?? "")
         backgroundColor = color
     }
     
@@ -51,7 +51,7 @@ final class ServiceButton: UIView {
         imageView.contentMode = .scaleAspectFit
         
         let iconColor = model.config.colors?.iconColor
-        let tintColor = NexoColor.color(named: iconColor)
+        let tintColor = NexoColor.loadColor(named: iconColor ?? "")
         imageView.tintColor = tintColor
         
         imageView.anchor { make in
@@ -63,7 +63,7 @@ final class ServiceButton: UIView {
         titleLabel.font = .systemFont(ofSize: 14)
         
         let color = model.config.colors?.textColor
-        let textColor = NexoColor.color(named: color)
+        let textColor = NexoColor.loadColor(named: color ?? "")
         titleLabel.textColor = textColor
         
         actionHandler = {

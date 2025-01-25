@@ -10,6 +10,6 @@ import Foundation
 public extension Bundle {
     /// Retorna o `Bundle` associado ao módulo Shared.
     static var shared: Bundle? {
-        return Bundle(identifier: "com.br.Shared")
+        return Bundle(identifier: "com.br.Nexo.Shared")
     }
 }

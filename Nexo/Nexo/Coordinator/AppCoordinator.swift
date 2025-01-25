@@ -28,6 +28,7 @@ final class AppCoordinator: Coordinator, FlowNavigator {
     }
     
     private func isUserAuthenticated() -> Bool {
+//        return false
         return true
     }
     

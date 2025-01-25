@@ -33,13 +33,13 @@ public final class NexoButton: UIButton {
         }
     }
     
-    public var enableTitleColor: UIColor = .white {
+    public var enableTitleColor: UIColor = NexoColor.whiteF2F2F2 {
         didSet {
             setupButton()
         }
     }
     
-    public var disableTitleColor: UIColor = .white {
+    public var disableTitleColor: UIColor = NexoColor.whiteF2F2F2 {
         didSet {
             setupButton()
         }

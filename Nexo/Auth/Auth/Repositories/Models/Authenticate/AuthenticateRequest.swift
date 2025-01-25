@@ -12,7 +12,7 @@ struct AuthenticateRequest: Encodable {
     var password: String
     
     enum CodingKeys: String, CodingKey {
-        case cpfCnpj = "cpf_cnspj"
+        case cpfCnpj = "cpf_cnpj"
         case password
     }
 }

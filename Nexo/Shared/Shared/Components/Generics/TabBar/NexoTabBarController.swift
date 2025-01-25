@@ -44,6 +44,8 @@ public final class NexoTabBarController: UITabBarController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBar.isHidden = true
+        
+        navigationController?.isNavigationBarHidden = true
     }
     
     private func addTabBarItemsToStackView() {

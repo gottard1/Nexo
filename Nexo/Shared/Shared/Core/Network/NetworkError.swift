@@ -21,11 +21,11 @@ public enum NetworkError: Error {
     public var description: String {
         switch self {
             case .invalidURL:
-                return "A URL fornecida é inválida."
+                return "A URL é inválida."
             case .apiError(let message):
-                return "Erro na API: \(message)"
+                return message
             case .statusCode(let statusCode, let message):
-                return "Erro de status \(statusCode): \(message)"
+                return "\(statusCode): \(message)"
             case .noData:
                 return "Nenhum dado foi retornado da API."
             case .decodingError(let error):

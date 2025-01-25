@@ -28,6 +28,6 @@ public final class HomeCoordinator: Coordinator {
         controller.interactor = interactor
         controller.coordinator = self
         
-        navigationController.pushViewController(controller, animated: true)
+        navigationController.setViewControllers([controller], animated: false)
     }
 }
