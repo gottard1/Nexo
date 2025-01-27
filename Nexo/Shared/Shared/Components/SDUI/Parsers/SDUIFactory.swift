@@ -7,8 +7,14 @@
 
 import UIKit
 
+public protocol SDUIActionHandler: AnyObject {
+    func handleAction(_ action: String)
+}
+
 public final class SDUIFactory {
     private let stackView = UIStackView()
+    
+    public weak var actionHandler: SDUIActionHandler?
     
     public init() { }
     
@@ -29,14 +35,29 @@ public final class SDUIFactory {
                 let scrollView = createScrollableHorizontalStackView(height: 100)
                 if let stackView = scrollView.subviews.first(where: { $0 is UIStackView }) as? UIStackView {
                     models.buttons.forEach { model in
-                        let buttonView = QuickMenuButtons(model: model)
+                        let buttonView = QuickMenuButton(model: model)
+                        
+                        buttonView.actionHandler = { [weak self] in
+                            self?.actionHandler?.handleAction(model.action)
+                        }
+                        
                         buttonView.anchor { make in
-                            make.width(equalTo: 100)
+                            make.width(equalTo: 80)
                         }
                         stackView.addArrangedSubview(buttonView)
                     }
                 }
                 return scrollView
+            case .investmentCard(let model):
+                let investmentCardView = InvestmentCardView(model: model)
+                let containerView = UIView()
+                containerView.addSubview(investmentCardView)
+                
+                containerView.anchor { make in
+                    make.height(equalTo: 200)
+                }
+                applyConfig(model.config, to: investmentCardView)
+                return containerView
         }
     }
 }
@@ -49,15 +70,15 @@ extension SDUIFactory {
         scrollView.showsHorizontalScrollIndicator = false
         
         stackView.axis = .horizontal
-        stackView.spacing = 8
+        stackView.spacing = 28
         stackView.distribution = .fillEqually
         
         scrollView.addSubview(stackView)
         
         stackView.anchor { make in
             make.top(to: scrollView.contentLayoutGuide.topAnchor)
-            make.leading(to: scrollView.contentLayoutGuide.leadingAnchor)
-            make.trailing(to: scrollView.contentLayoutGuide.trailingAnchor)
+            make.leading(to: scrollView.contentLayoutGuide.leadingAnchor, constant: 20)
+            make.trailing(to: scrollView.contentLayoutGuide.trailingAnchor, constant: 20)
             make.bottom(to: scrollView.contentLayoutGuide.bottomAnchor)
             make.height(equalTo: height)
         }
@@ -89,6 +110,4 @@ extension SDUIFactory {
             make.bottom(to: superview.bottomAnchor, constant: bottomSpacer)
         }
     }
-
-    
 }

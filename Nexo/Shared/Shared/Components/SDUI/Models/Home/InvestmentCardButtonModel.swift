@@ -7,9 +7,14 @@
 
 import Foundation
 
-public struct InvestmentCardButtonModel: Codable {
-    let title: String
-    let description: String
-    let action: String
-    let config: SDUIConfig
+public struct InvestmentCardModel: Codable {
+    let title: String?
+    let value: Double?
+    let action: String?
+    let config: SDUIConfig?
+}
+
+public struct InvestmentCardsModel: Codable {
+    let cards: [InvestmentCardModel?]
+    let config: SDUIConfig?
 }

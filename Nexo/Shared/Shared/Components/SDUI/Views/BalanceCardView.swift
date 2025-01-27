@@ -7,7 +7,6 @@
 
 import UIKit
 
-// ALTERAR ESSE COMPONENTE
 final class BalanceCardView: UIView {
     
     private let contentView: UIView = {
@@ -85,8 +84,8 @@ extension BalanceCardView {
             make.top(to: topAnchor)
             make.leading(to: leadingAnchor)
             make.trailing(to: trailingAnchor)
-            make.bottom(to: bottomAnchor, constant: 16)
-            make.height(equalTo: 50)
+            make.bottom(to: bottomAnchor)
+            make.height(equalTo: 60)
         }
         
         valueLabel.anchor { make in

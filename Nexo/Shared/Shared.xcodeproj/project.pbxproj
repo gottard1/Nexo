@@ -31,6 +31,7 @@
 		8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8585B8B42CA59E1B000D38D7 /* Colors.xcassets */; };
 		858CBFCC2D2F05BD0030968A /* BaseInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */; };
 		858CBFD02D2F30CC0030968A /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */; };
+		859477DC2D46716D0085C05B /* InvestmentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859477DB2D46716D0085C05B /* InvestmentCardCell.swift */; };
 		85A397AC2D357C23000C8125 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A397AB2D357C23000C8125 /* ImageCache.swift */; };
 		85A397AE2D357C53000C8125 /* UIImageView+Extension.swift in Resources */ = {isa = PBXBuildFile; fileRef = 85A397AD2D357C53000C8125 /* UIImageView+Extension.swift */; };
 		85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */; };
@@ -53,6 +54,7 @@
 		85D1822D2D0C942B00F58505 /* CodeInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1822C2D0C942B00F58505 /* CodeInputField.swift */; };
 		85D182302D0C981C00F58505 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D1822F2D0C981C00F58505 /* CharacterView.swift */; };
 		85D805892D072BE600D49706 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D805882D072BE600D49706 /* String+Extension.swift */; };
+		85DACAD02D46D2E70001675C /* Double+Extension.swift in Resources */ = {isa = PBXBuildFile; fileRef = 85DACACF2D46D2E70001675C /* Double+Extension.swift */; };
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		85FD12402D315EDB00126D8A /* SDUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD123F2D315EDB00126D8A /* SDUIComponent.swift */; };
 		85FD12422D315EF200126D8A /* SDUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12412D315EF200126D8A /* SDUIConfig.swift */; };
@@ -97,6 +99,7 @@
 		8585B8B42CA59E1B000D38D7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		858CBFCB2D2F05BD0030968A /* BaseInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractorProtocol.swift; sourceTree = "<group>"; };
 		858CBFCF2D2F30CC0030968A /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		859477DB2D46716D0085C05B /* InvestmentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCardCell.swift; sourceTree = "<group>"; };
 		85A397AB2D357C23000C8125 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		85A397AD2D357C53000C8125 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		85A6222E2CE2A2B000B36AB1 /* ModalBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalBottomSheet.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		85D1822C2D0C942B00F58505 /* CodeInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputField.swift; sourceTree = "<group>"; };
 		85D1822F2D0C981C00F58505 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		85D805882D072BE600D49706 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		85DACACF2D46D2E70001675C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		85FD123F2D315EDB00126D8A /* SDUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIComponent.swift; sourceTree = "<group>"; };
 		85FD12412D315EF200126D8A /* SDUIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIConfig.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				85A622352CE2A60600B36AB1 /* UIView+Extension.swift */,
 				85A622372CE2A62200B36AB1 /* UIPresentationController+Extension.swift */,
 				85A622392CE3702200B36AB1 /* UIApplication+Extension.swift */,
+				85DACACF2D46D2E70001675C /* Double+Extension.swift */,
 				85D805882D072BE600D49706 /* String+Extension.swift */,
 			);
 			path = Extensions;
@@ -302,6 +307,15 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		859477DA2D4671180085C05B /* InvestmentCard */ = {
+			isa = PBXGroup;
+			children = (
+				859477DB2D46716D0085C05B /* InvestmentCardCell.swift */,
+				857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */,
+			);
+			path = InvestmentCard;
+			sourceTree = "<group>";
+		};
 		85A6222B2CE2A24300B36AB1 /* Presentation  */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +449,9 @@
 		85FD123C2D3142F700126D8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				859477DA2D4671180085C05B /* InvestmentCard */,
+				857056B82D3AC3D400CD1CBB /* QuickMenuButtons.swift */,
+				85FD12472D315F2300126D8A /* BalanceCardView.swift */,
 				85FD124D2D31764100126D8A /* Home */,
 			);
 			path = Views;
@@ -443,9 +460,6 @@
 		85FD124D2D31764100126D8A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */,
-				857056B82D3AC3D400CD1CBB /* QuickMenuButtons.swift */,
-				85FD12472D315F2300126D8A /* BalanceCardView.swift */,
 				85FD124B2D315F2E00126D8A /* BannerView.swift */,
 				85FD12492D315F2900126D8A /* CustomButton.swift */,
 			);
@@ -584,6 +598,7 @@
 				85A670562CBD5CF800915268 /* Shared.plist in Resources */,
 				854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */,
 				85A670502CBD5BDA00915268 /* OpenSans-Light.ttf in Resources */,
+				85DACAD02D46D2E70001675C /* Double+Extension.swift in Resources */,
 				8585B8B52CA59E1B000D38D7 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +644,7 @@
 				852527F32CFDF30F005ED399 /* GradientView.swift in Sources */,
 				85A622382CE2A62200B36AB1 /* UIPresentationController+Extension.swift in Sources */,
 				85D182302D0C981C00F58505 /* CharacterView.swift in Sources */,
+				859477DC2D46716D0085C05B /* InvestmentCardCell.swift in Sources */,
 				858436292CB9970600CF83CC /* NexoTextField.swift in Sources */,
 				85BCBA992CD2A717005DEEAF /* HTTPMethod.swift in Sources */,
 				8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */,

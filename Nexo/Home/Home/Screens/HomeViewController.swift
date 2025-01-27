@@ -17,6 +17,8 @@ final class HomeViewController: UIViewController {
     weak var coordinator: HomeCoordinator?
     var interactor: HomeInteractorProtocol?
     
+    private let factory = SDUIFactory()
+    
     private let mainView: HomeView = .init()
     
     init() {
@@ -47,8 +49,8 @@ final class HomeViewController: UIViewController {
 
 // MARK: - Presenter Protocol
 extension HomeViewController: HomeViewProtocol {
-    func displayHomeSuccess(with components: [Shared.SDUIComponent]) {
-        let factory = SDUIFactory()
+    func displayHomeSuccess(with components: [SDUIComponent]) {
+        factory.actionHandler = self
         
         components.forEach { component in
             let newView = factory.createView(for: component)
@@ -61,3 +63,18 @@ extension HomeViewController: HomeViewProtocol {
     }
 }
 
+// MARK: - SDUIFactory action handler
+extension HomeViewController: SDUIActionHandler {
+    func handleAction(_ action: String) {
+        switch action {
+            case "plus":
+                print("Abrindo Configurações na HomeViewController...")
+            case "minus":
+                print("Exibindo Perfil do Usuário na HomeViewController...")
+            case "teste":
+                print("Fazendo Logout na HomeViewController...")
+            default:
+                print("Ação não reconhecida na HomeViewController: \(action)")
+        }
+    }
+}

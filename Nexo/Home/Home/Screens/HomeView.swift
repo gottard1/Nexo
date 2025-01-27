@@ -45,7 +45,7 @@ final class HomeView: UIView {
             make.top(to: topAnchor)
             make.leading(to: leadingAnchor)
             make.trailing(to: trailingAnchor)
-            make.bottom(to: bottomAnchor, constant: 58)
+            make.bottom(to: bottomAnchor, constant: 90)
         }
         
         stackView.anchor { make in

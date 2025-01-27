@@ -11,9 +11,10 @@ public struct ServiceMenuButtonModel: Codable {
     let title: String
     let icon: String
     let action: String
-    let config: SDUIConfig
+    let config: SDUIConfig?
 }
 
 public struct QuickMenuButtonsModel: Codable {
     let buttons: [ServiceMenuButtonModel]
+    let config: SDUIConfig?
 }

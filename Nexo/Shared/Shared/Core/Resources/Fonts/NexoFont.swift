@@ -53,11 +53,11 @@ extension NexoFont {
     
     public static func registerFonts() {
         let fontNames = [
-            "Exo2-Bold.ttf",
-            "Exo2-Light.ttf",
-            "OpenSans-SemiBold.ttf",
-            "OpenSans-Bold.ttf",
-            "OpenSans-Light.ttf"
+            "Exo2-Bold",
+            "Exo2-Light",
+            "OpenSans-SemiBold",
+            "OpenSans-Bold",
+            "OpenSans-Light"
         ]
         fontNames.forEach {
             registerFont(bundle: .shared, fontName: $0, fontExtension: "ttf")

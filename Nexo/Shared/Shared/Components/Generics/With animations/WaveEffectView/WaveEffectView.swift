@@ -7,72 +7,108 @@
 
 import UIKit
 
-public final class WaveEffectView: UIView {
-    private let darkWaveLayer = CAShapeLayer()
-    private let lightWaveLayer = CAShapeLayer()
-    private let lineWaveLayer = CAShapeLayer()
+class WaveView: UIView {
+    private var waveLayers: [CAShapeLayer] = []
+    private var displayLink: CADisplayLink?
     
-    private var waveAnimationDuration: Double = 2.0
+    private var waveConfigs: [(amplitude: CGFloat, frequency: CGFloat, speed: CGFloat, verticalOffset: CGFloat, color: UIColor, isLine: Bool)] = []
+    
+    private var wavePhases: [CGFloat] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayers()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupLayers()
     }
     
-    private func setupLayers() {
-        layer.addSublayer(darkWaveLayer)
-        layer.addSublayer(lightWaveLayer)
-        layer.addSublayer(lineWaveLayer)
+    deinit {
+        stopWaveAnimation()
+    }
+    
+    // MARK: - Setup
+    func setupWaves(withPrimaryColor primaryColor: UIColor) {
+        if !waveLayers.isEmpty {
+            return
+        }
         
-        configureLayer(darkWaveLayer, color: UIColor.systemYellow.cgColor, opacity: 1.0)
-        configureLayer(lightWaveLayer, color: UIColor.systemYellow.withAlphaComponent(0.6).cgColor, opacity: 1.0)
-        configureLayer(lineWaveLayer, color: UIColor.systemYellow.cgColor, opacity: 1.0, isStroke: true)
+        waveConfigs = [
+            (amplitude: 23.0, frequency: 0.017, speed: 0.05, verticalOffset: 60.0, color: primaryColor.withAlphaComponent(0.3), isLine: false),
+            (amplitude: 25.0, frequency: 0.013, speed: 0.06, verticalOffset: 60.0, color: primaryColor.withAlphaComponent(0.6), isLine: false),
+            (amplitude: 27.0, frequency: 0.014, speed: 0.04, verticalOffset: 60.0, color: primaryColor, isLine: true)
+        ]
+        
+        setupWaveLayers()
     }
     
-    private func configureLayer(_ layer: CAShapeLayer, color: CGColor, opacity: Float, isStroke: Bool = false) {
-        layer.fillColor = isStroke ? nil : color
-        layer.strokeColor = isStroke ? color : nil
-        layer.opacity = opacity
+    private func setupWaveLayers() {
+        waveLayers.forEach { $0.removeFromSuperlayer() }
+        waveLayers.removeAll()
+        wavePhases.removeAll()
+        
+        for config in waveConfigs {
+            let layer = CAShapeLayer()
+            layer.fillColor = config.isLine ? UIColor.clear.cgColor : config.color.cgColor
+            layer.strokeColor = config.isLine ? config.color.cgColor : nil
+            layer.lineWidth = config.isLine ? 2.0 : 0.0
+            waveLayers.append(layer)
+            wavePhases.append(0)
+            self.layer.addSublayer(layer)
+        }
+        startWaveAnimation()
     }
     
-    private func createWavePath(phase: CGFloat) -> CGPath {
+    func startWaveAnimation() {
+        if displayLink != nil {
+            return
+        }
+        
+        displayLink = CADisplayLink(target: self, selector: #selector(updateWaves))
+        displayLink?.add(to: .main, forMode: .common)
+    }
+    
+    func stopWaveAnimation() {
+        displayLink?.invalidate()
+        displayLink = nil
+        
+        for layer in waveLayers {
+            layer.path = nil
+        }
+        
+        waveLayers.forEach { $0.removeFromSuperlayer() }
+        waveLayers.removeAll()
+        wavePhases.removeAll()
+    }
+    
+    @objc private func updateWaves() {
+        guard displayLink != nil else { return }
+        
+        for (index, layer) in waveLayers.enumerated() {
+            wavePhases[index] += waveConfigs[index].speed
+            layer.path = createWavePath(amplitude: waveConfigs[index].amplitude,
+                                        frequency: waveConfigs[index].frequency,
+                                        phase: wavePhases[index],
+                                        verticalOffset: waveConfigs[index].verticalOffset).cgPath
+        }
+    }
+    
+    private func createWavePath(amplitude: CGFloat, frequency: CGFloat, phase: CGFloat, verticalOffset: CGFloat) -> UIBezierPath {
         let path = UIBezierPath()
         let width = bounds.width
         let height = bounds.height
-        let amplitude: CGFloat = 20.0
+        let midY = height / 2 + verticalOffset
         
-        path.move(to: .zero)
-        for x in stride(from: 0, to: width, by: 1) {
-            let y = sin((x / width) * .pi * 2 + phase) * amplitude + height / 2
+        path.move(to: CGPoint(x: 0, y: midY))
+        for x in stride(from: 0, through: width, by: 1) {
+            let y = amplitude * sin(frequency * x + phase) + midY
             path.addLine(to: CGPoint(x: x, y: y))
         }
-        path.addLine(to: CGPoint(x: width, y: height))
-        path.addLine(to: CGPoint(x: 0, y: height))
+        if amplitude > 0 {
+            path.addLine(to: CGPoint(x: width, y: height))
+            path.addLine(to: CGPoint(x: 0, y: height))
+        }
         path.close()
-        return path.cgPath
-    }
-    
-    public func startAnimation() {
-        let animation = CABasicAnimation(keyPath: "path")
-        animation.duration = waveAnimationDuration
-        animation.repeatCount = .infinity
-        animation.autoreverses = true
-        animation.fromValue = createWavePath(phase: 0)
-        animation.toValue = createWavePath(phase: .pi)
-        
-        darkWaveLayer.add(animation, forKey: "waveAnimation")
-        lightWaveLayer.add(animation, forKey: "waveAnimation")
-        lineWaveLayer.add(animation, forKey: "waveAnimation")
-    }
-    
-    public func stopAnimation() {
-        darkWaveLayer.removeAllAnimations()
-        lightWaveLayer.removeAllAnimations()
-        lineWaveLayer.removeAllAnimations()
+        return path
     }
 }

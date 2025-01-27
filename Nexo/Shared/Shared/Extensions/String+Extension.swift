@@ -15,6 +15,12 @@ public enum MaskFormatterType: String {
 }
 
 extension String {
+    public var loadColor: UIColor {
+        NexoColor.loadColor(named: self)
+    }
+}
+
+extension String {
     public var onlyDigits: String {
         return self.replacingOccurrences(of: "\\D", with: "", options: .regularExpression)
     }

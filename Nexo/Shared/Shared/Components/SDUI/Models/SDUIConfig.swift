@@ -15,8 +15,10 @@ public struct SDUIConfig: Codable {
 public struct SDUIColor: Codable {
     var background: String?
     var borderColor: String?
-    var textColor: String?
     var iconColor: String?
+    var textColor: String?
+    var descriptionColor: String?
+    var investmentsColor: String?
 }
 
 public struct SDUISpacing: Codable {
