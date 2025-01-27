@@ -77,8 +77,8 @@ extension QuickMenuButton {
         imageView.anchor { make in
             make.top(to: topAnchor, constant: 16)
             make.centerX(to: centerXAnchor)
-            make.height(equalTo: 24)
-            make.width(equalTo: 24)
+            make.height(equalTo: 32)
+            make.width(equalTo: 32)
         }
         
         titleLabel.anchor { make in

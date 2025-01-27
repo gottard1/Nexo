@@ -32,7 +32,7 @@ public final class SDUIFactory {
                 applyConfig(model.config, to: balanceCardView)
                 return containerView
             case .quickMenuButtons(let models):
-                let scrollView = createScrollableHorizontalStackView(height: 100)
+                let scrollView = createScrollableHorizontalStackView(height: 90)
                 if let stackView = scrollView.subviews.first(where: { $0 is UIStackView }) as? UIStackView {
                     models.buttons.forEach { model in
                         let buttonView = QuickMenuButton(model: model)
@@ -42,7 +42,7 @@ public final class SDUIFactory {
                         }
                         
                         buttonView.anchor { make in
-                            make.width(equalTo: 80)
+                            make.width(equalTo: 76)
                         }
                         stackView.addArrangedSubview(buttonView)
                     }
