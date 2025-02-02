@@ -7,55 +7,41 @@
 
 import UIKit
 
-enum ComponentType: String, Codable {
-    case balanceCard = "balance_card"
-    case quickMenuButtons = "quick_menu_buttons"
-    case investmentCard = "investment_card"
-}
-
-public enum SDUIComponent: Codable {
-    case balanceCard(BalanceCardModel)
-    case quickMenuButtons(QuickMenuButtonsModel)
-    case investmentCard(InvestmentCardsModel)
+public struct SDUIComponentData: Codable {
+    let componentType: ComponentType
+    let data: Codable
+    let config: SDUIConfig?
     
-    private enum CodingKeys: String, CodingKey {
-        case componentType = "component_type"
-        case data
-        case config
+    init<T: SDUIComponentModel>(model: T, config: SDUIConfig? = nil) {
+        self.componentType = T.type
+        self.data = model
+        self.config = config
     }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let type = try container.decode(ComponentType.self, forKey: .componentType)
+        self.componentType = try container.decode(ComponentType.self, forKey: .componentType)
+        self.config = try container.decodeIfPresent(SDUIConfig.self, forKey: .config)
         
-        switch type {
-            case .balanceCard:
-                let data = try container.decode(BalanceCardModel.self, forKey: .data)
-                self = .balanceCard(data)
-            case .quickMenuButtons:
-                let data = try container.decode(QuickMenuButtonsModel.self, forKey: .data)
-                if let _ = try? container.decodeIfPresent(SDUIConfig.self,forKey: .config) { }
-                self = .quickMenuButtons(data)
-            case .investmentCard:
-                let data = try container.decode(InvestmentCardsModel.self, forKey: .data)
-                if let _ = try? container.decodeIfPresent(SDUIConfig.self,forKey: .config) { }
-                self = .investmentCard(data)
+        if let modelType = ComponentMapper.componentMap[componentType] {
+            let data = try container.decode(modelType, forKey: .data)
+            self.data = data
+//            self.data = try modelType.init(from: decoder)
+        } else {
+            throw DecodingError.dataCorruptedError(forKey: .componentType, in: container, debugDescription: "Tipo de componente desconhecido")
         }
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        switch self {
-            case .balanceCard(let data):
-                try container.encode(ComponentType.balanceCard, forKey: .componentType)
-                try container.encode(data, forKey: .data)
-            case .quickMenuButtons(let data):
-                try container.encode(ComponentType.quickMenuButtons, forKey: .componentType)
-                try container.encode(data, forKey: .data)
-            case .investmentCard(let data):
-                try container.encode(ComponentType.investmentCard, forKey: .componentType)
-                try container.encode(data, forKey: .data)
-        }
+        try container.encode(componentType, forKey: .componentType)
+        try data.encode(to: encoder)
+        try container.encodeIfPresent(config, forKey: .config)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case componentType = "component_type"
+        case data
+        case config
     }
 }

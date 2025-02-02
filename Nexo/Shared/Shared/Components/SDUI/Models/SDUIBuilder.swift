@@ -8,5 +8,5 @@
 import Foundation
 
 public struct SDUIBuilder: Codable {
-    public let components: [SDUIComponent]
+    public let components: [SDUIComponentData]
 }

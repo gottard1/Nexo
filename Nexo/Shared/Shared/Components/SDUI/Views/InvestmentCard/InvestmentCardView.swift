@@ -97,9 +97,9 @@ extension InvestmentCardView: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
         
-        if let model = model.cards[indexPath.item] {
-            cell.configure(with: model)
-        }
+        let model = model.cards[indexPath.item]
+        cell.configure(with: model)
+        
         return cell
     }
     

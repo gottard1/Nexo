@@ -9,7 +9,7 @@ import Shared
 import UIKit
 
 protocol HomePresenterProtocol {
-    func presentHomeResult(_ components: [SDUIComponent]?, error: NetworkError?)
+    func presentHomeResult(_ components: [SDUIComponentData]?, error: NetworkError?)
 }
 
 final class HomePresenter: HomePresenterProtocol {
@@ -19,7 +19,7 @@ final class HomePresenter: HomePresenterProtocol {
         self.view = view
     }
     
-    func presentHomeResult(_ components: [SDUIComponent]?, error: NetworkError?) {
+    func presentHomeResult(_ components: [SDUIComponentData]?, error: NetworkError?) {
         DispatchQueue.main.async { [weak self] in
             if let components {
                 self?.view?.displayHomeSuccess(with: components)

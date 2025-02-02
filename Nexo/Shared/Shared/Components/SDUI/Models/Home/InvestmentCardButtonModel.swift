@@ -8,13 +8,19 @@
 import Foundation
 
 public struct InvestmentCardModel: Codable {
-    let title: String?
-    let value: Double?
-    let action: String?
+    let title: String
+    let value: Double
+    let action: String
     let config: SDUIConfig?
 }
 
-public struct InvestmentCardsModel: Codable {
-    let cards: [InvestmentCardModel?]
+public struct InvestmentCardsModel: SDUIComponentModel {
+    static var type: ComponentType { .investmentCard }
+    let cards: [InvestmentCardModel]
     let config: SDUIConfig?
+    
+    enum CodingKeys: CodingKey {
+        case cards
+        case config
+    }
 }

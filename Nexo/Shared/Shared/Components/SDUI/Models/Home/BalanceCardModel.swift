@@ -7,8 +7,15 @@
 
 import Foundation
 
-public struct BalanceCardModel: Codable {
+public struct BalanceCardModel: SDUIComponentModel {
+    static var type: ComponentType { .balanceCard }
     let value: Double
     let icon: String
-    let config: SDUIConfig
+    let config: SDUIConfig?
+    
+    enum CodingKeys: String, CodingKey {
+        case value
+        case icon
+        case config
+    }
 }

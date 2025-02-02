@@ -33,8 +33,8 @@ final class InvestmentCardCell: UICollectionViewCell {
         return label
     }()
     
-    private let waveView: WaveView = {
-        let waveView = WaveView()
+    private let waveView: WaveEffectView = {
+        let waveView = WaveEffectView()
         return waveView
     }()
     

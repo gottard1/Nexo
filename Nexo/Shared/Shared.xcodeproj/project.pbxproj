@@ -21,8 +21,13 @@
 		854431B52CF0C79700B3B024 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 854431B42CF0C79700B3B024 /* loadingAnimation.json */; };
 		855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */ = {isa = PBXBuildFile; fileRef = 855DC7AC2CA1B05E0055571D /* Shared.docc */; };
 		855DC7B92CA1B05E0055571D /* Shared.h in Headers */ = {isa = PBXBuildFile; fileRef = 855DC7AB2CA1B05E0055571D /* Shared.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		856C7BED2D4D6F2900BAE1C7 /* BalanceCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C7BEC2D4D6F2900BAE1C7 /* BalanceCardFactory.swift */; };
+		856C7BEF2D4D6F2F00BAE1C7 /* QuickMenuButtonsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C7BEE2D4D6F2F00BAE1C7 /* QuickMenuButtonsFactory.swift */; };
+		856C7BF12D4D6F3400BAE1C7 /* InvestmentCardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C7BF02D4D6F3400BAE1C7 /* InvestmentCardFactory.swift */; };
+		856C7BF32D4D71E600BAE1C7 /* SDUIComponentBaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856C7BF22D4D71E600BAE1C7 /* SDUIComponentBaseFactory.swift */; };
 		857056B92D3AC3D400CD1CBB /* QuickMenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857056B82D3AC3D400CD1CBB /* QuickMenuButtons.swift */; };
 		857056BD2D3AC3F200CD1CBB /* InvestmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */; };
+		858077A72D4D5820000398A4 /* ComponentMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858077A62D4D5820000398A4 /* ComponentMapper.swift */; };
 		8584361C2CB8609500CF83CC /* NexoTabBarItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */; };
 		8584361F2CB8642500CF83CC /* NexoTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8584361E2CB8642500CF83CC /* NexoTabBarView.swift */; };
 		858436252CB9799500CF83CC /* NexoRoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858436242CB9799500CF83CC /* NexoRoundedTextField.swift */; };
@@ -58,17 +63,12 @@
 		85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FC07BF2CAB928D0052E651 /* Coordinator.swift */; };
 		85FD12402D315EDB00126D8A /* SDUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD123F2D315EDB00126D8A /* SDUIComponent.swift */; };
 		85FD12422D315EF200126D8A /* SDUIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12412D315EF200126D8A /* SDUIConfig.swift */; };
-		85FD12442D315F0000126D8A /* SDUIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12432D315F0000126D8A /* SDUIParser.swift */; };
 		85FD12462D315F1B00126D8A /* SDUIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12452D315F1B00126D8A /* SDUIFactory.swift */; };
 		85FD12482D315F2300126D8A /* BalanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12472D315F2300126D8A /* BalanceCardView.swift */; };
-		85FD124A2D315F2900126D8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12492D315F2900126D8A /* CustomButton.swift */; };
-		85FD124C2D315F2E00126D8A /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD124B2D315F2E00126D8A /* BannerView.swift */; };
 		85FD12512D31787200126D8A /* WaveEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12502D31787200126D8A /* WaveEffectView.swift */; };
 		85FD12542D3181B500126D8A /* BalanceCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12532D3181B500126D8A /* BalanceCardModel.swift */; };
-		85FD12562D3181C300126D8A /* CustomMenuButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12552D3181C300126D8A /* CustomMenuButtonModel.swift */; };
 		85FD12582D3181CF00126D8A /* QuickMenuButtonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12572D3181CF00126D8A /* QuickMenuButtonsModel.swift */; };
 		85FD125A2D3181DE00126D8A /* InvestmentCardButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12592D3181DE00126D8A /* InvestmentCardButtonModel.swift */; };
-		85FD125C2D3181EB00126D8A /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD125B2D3181EB00126D8A /* BannerModel.swift */; };
 		85FD125E2D3181F700126D8A /* SDUIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD125D2D3181F700126D8A /* SDUIBuilder.swift */; };
 		C354196A2CA375A300C9372F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35419692CA375A300C9372F /* Assets.xcassets */; };
 		C3D7264B2CA2270000634461 /* NexoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7264A2CA2270000634461 /* NexoButton.swift */; };
@@ -89,8 +89,13 @@
 		855DC7A82CA1B05E0055571D /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		855DC7AB2CA1B05E0055571D /* Shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared.h; sourceTree = "<group>"; };
 		855DC7AC2CA1B05E0055571D /* Shared.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Shared.docc; sourceTree = "<group>"; };
+		856C7BEC2D4D6F2900BAE1C7 /* BalanceCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardFactory.swift; sourceTree = "<group>"; };
+		856C7BEE2D4D6F2F00BAE1C7 /* QuickMenuButtonsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMenuButtonsFactory.swift; sourceTree = "<group>"; };
+		856C7BF02D4D6F3400BAE1C7 /* InvestmentCardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCardFactory.swift; sourceTree = "<group>"; };
+		856C7BF22D4D71E600BAE1C7 /* SDUIComponentBaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIComponentBaseFactory.swift; sourceTree = "<group>"; };
 		857056B82D3AC3D400CD1CBB /* QuickMenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMenuButtons.swift; sourceTree = "<group>"; };
 		857056BC2D3AC3F200CD1CBB /* InvestmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCardView.swift; sourceTree = "<group>"; };
+		858077A62D4D5820000398A4 /* ComponentMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentMapper.swift; sourceTree = "<group>"; };
 		8584361B2CB8609500CF83CC /* NexoTabBarItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarItemModel.swift; sourceTree = "<group>"; };
 		8584361E2CB8642500CF83CC /* NexoTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoTabBarView.swift; sourceTree = "<group>"; };
 		858436242CB9799500CF83CC /* NexoRoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoRoundedTextField.swift; sourceTree = "<group>"; };
@@ -126,17 +131,12 @@
 		85FC07BF2CAB928D0052E651 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		85FD123F2D315EDB00126D8A /* SDUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIComponent.swift; sourceTree = "<group>"; };
 		85FD12412D315EF200126D8A /* SDUIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIConfig.swift; sourceTree = "<group>"; };
-		85FD12432D315F0000126D8A /* SDUIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIParser.swift; sourceTree = "<group>"; };
 		85FD12452D315F1B00126D8A /* SDUIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIFactory.swift; sourceTree = "<group>"; };
 		85FD12472D315F2300126D8A /* BalanceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardView.swift; sourceTree = "<group>"; };
-		85FD12492D315F2900126D8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		85FD124B2D315F2E00126D8A /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		85FD12502D31787200126D8A /* WaveEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveEffectView.swift; sourceTree = "<group>"; };
 		85FD12532D3181B500126D8A /* BalanceCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardModel.swift; sourceTree = "<group>"; };
-		85FD12552D3181C300126D8A /* CustomMenuButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuButtonModel.swift; sourceTree = "<group>"; };
 		85FD12572D3181CF00126D8A /* QuickMenuButtonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMenuButtonsModel.swift; sourceTree = "<group>"; };
 		85FD12592D3181DE00126D8A /* InvestmentCardButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCardButtonModel.swift; sourceTree = "<group>"; };
-		85FD125B2D3181EB00126D8A /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		85FD125D2D3181F700126D8A /* SDUIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDUIBuilder.swift; sourceTree = "<group>"; };
 		C35419692CA375A300C9372F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3D7264A2CA2270000634461 /* NexoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexoButton.swift; sourceTree = "<group>"; };
@@ -247,6 +247,16 @@
 				850D540F2CAB8EE600B8B019 /* Extensions */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		856C7BEB2D4D6F1E00BAE1C7 /* Factorys */ = {
+			isa = PBXGroup;
+			children = (
+				856C7BF02D4D6F3400BAE1C7 /* InvestmentCardFactory.swift */,
+				856C7BEE2D4D6F2F00BAE1C7 /* QuickMenuButtonsFactory.swift */,
+				856C7BEC2D4D6F2900BAE1C7 /* BalanceCardFactory.swift */,
+			);
+			path = Factorys;
 			sourceTree = "<group>";
 		};
 		8584361D2CB860B300CF83CC /* Item */ = {
@@ -419,6 +429,7 @@
 		85FD12392D31429800126D8A /* SDUI */ = {
 			isa = PBXGroup;
 			children = (
+				858077A62D4D5820000398A4 /* ComponentMapper.swift */,
 				85FD123C2D3142F700126D8A /* Views */,
 				85FD123B2D3142F000126D8A /* Parsers */,
 				85FD123A2D3142E900126D8A /* Models */,
@@ -440,8 +451,9 @@
 		85FD123B2D3142F000126D8A /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				856C7BF22D4D71E600BAE1C7 /* SDUIComponentBaseFactory.swift */,
 				85FD12452D315F1B00126D8A /* SDUIFactory.swift */,
-				85FD12432D315F0000126D8A /* SDUIParser.swift */,
+				856C7BEB2D4D6F1E00BAE1C7 /* Factorys */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -452,18 +464,8 @@
 				859477DA2D4671180085C05B /* InvestmentCard */,
 				857056B82D3AC3D400CD1CBB /* QuickMenuButtons.swift */,
 				85FD12472D315F2300126D8A /* BalanceCardView.swift */,
-				85FD124D2D31764100126D8A /* Home */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		85FD124D2D31764100126D8A /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				85FD124B2D315F2E00126D8A /* BannerView.swift */,
-				85FD12492D315F2900126D8A /* CustomButton.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		85FD124E2D31785E00126D8A /* With animations */ = {
@@ -485,10 +487,8 @@
 		85FD12522D3181A600126D8A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				85FD125B2D3181EB00126D8A /* BannerModel.swift */,
 				85FD12592D3181DE00126D8A /* InvestmentCardButtonModel.swift */,
 				85FD12572D3181CF00126D8A /* QuickMenuButtonsModel.swift */,
-				85FD12552D3181C300126D8A /* CustomMenuButtonModel.swift */,
 				85FD12532D3181B500126D8A /* BalanceCardModel.swift */,
 			);
 			path = Home;
@@ -611,9 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D1822D2D0C942B00F58505 /* CodeInputField.swift in Sources */,
-				85FD12442D315F0000126D8A /* SDUIParser.swift in Sources */,
 				85BCBA9B2CD2A730005DEEAF /* NetworkManager.swift in Sources */,
-				85FD12562D3181C300126D8A /* CustomMenuButtonModel.swift in Sources */,
 				8544319B2CEBBBD300B3B024 /* FlowNavigator.swift in Sources */,
 				85FD12582D3181CF00126D8A /* QuickMenuButtonsModel.swift in Sources */,
 				853423922CB54CD900EF82B2 /* NexoTabBarController.swift in Sources */,
@@ -622,20 +620,21 @@
 				855DC7AD2CA1B05E0055571D /* Shared.docc in Sources */,
 				85A6222F2CE2A2B000B36AB1 /* ModalBottomSheet.swift in Sources */,
 				850D54112CAB8F2200B8B019 /* Bundle+Extension.swift in Sources */,
+				858077A72D4D5820000398A4 /* ComponentMapper.swift in Sources */,
+				856C7BEF2D4D6F2F00BAE1C7 /* QuickMenuButtonsFactory.swift in Sources */,
 				858436252CB9799500CF83CC /* NexoRoundedTextField.swift in Sources */,
 				85A622342CE2A5A900B36AB1 /* BasePresentationViewController.swift in Sources */,
-				85FD124A2D315F2900126D8A /* CustomButton.swift in Sources */,
 				85FD12402D315EDB00126D8A /* SDUIComponent.swift in Sources */,
 				85FD12482D315F2300126D8A /* BalanceCardView.swift in Sources */,
-				85FD125C2D3181EB00126D8A /* BannerModel.swift in Sources */,
 				85FC07C02CAB928D0052E651 /* Coordinator.swift in Sources */,
 				85A397AC2D357C23000C8125 /* ImageCache.swift in Sources */,
 				85A622362CE2A60600B36AB1 /* UIView+Extension.swift in Sources */,
+				856C7BF12D4D6F3400BAE1C7 /* InvestmentCardFactory.swift in Sources */,
 				853423CB2CB560B700EF82B2 /* NexoTabBarItem.swift in Sources */,
 				85BCBA952CD2A667005DEEAF /* BaseTarget.swift in Sources */,
-				85FD124C2D315F2E00126D8A /* BannerView.swift in Sources */,
 				85A670422CBD5AA900915268 /* NexoFont.swift in Sources */,
 				854431A12CED095400B3B024 /* NexoLoadingView.swift in Sources */,
+				856C7BF32D4D71E600BAE1C7 /* SDUIComponentBaseFactory.swift in Sources */,
 				85FD12512D31787200126D8A /* WaveEffectView.swift in Sources */,
 				850D540C2CAB8DE100B8B019 /* NexoColor.swift in Sources */,
 				857056BD2D3AC3F200CD1CBB /* InvestmentCardView.swift in Sources */,
@@ -662,6 +661,7 @@
 				85D805892D072BE600D49706 /* String+Extension.swift in Sources */,
 				857056B92D3AC3D400CD1CBB /* QuickMenuButtons.swift in Sources */,
 				850D540E2CAB8E5B00B8B019 /* NexoImage.swift in Sources */,
+				856C7BED2D4D6F2900BAE1C7 /* BalanceCardFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

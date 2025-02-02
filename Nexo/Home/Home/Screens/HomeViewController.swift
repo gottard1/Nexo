@@ -9,7 +9,7 @@ import UIKit
 import Shared
 
 protocol HomeViewProtocol: AnyObject {
-    func displayHomeSuccess(with components: [SDUIComponent])
+    func displayHomeSuccess(with components: [SDUIComponentData])
     func displayHomeError(_ message: String)
 }
 
@@ -49,7 +49,7 @@ final class HomeViewController: UIViewController {
 
 // MARK: - Presenter Protocol
 extension HomeViewController: HomeViewProtocol {
-    func displayHomeSuccess(with components: [SDUIComponent]) {
+    func displayHomeSuccess(with components: [SDUIComponentData]) {
         factory.actionHandler = self
         
         components.forEach { component in

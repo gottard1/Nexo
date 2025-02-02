@@ -14,7 +14,13 @@ public struct ServiceMenuButtonModel: Codable {
     let config: SDUIConfig?
 }
 
-public struct QuickMenuButtonsModel: Codable {
+public struct QuickMenuButtonsModel: SDUIComponentModel {
+    static var type: ComponentType { .quickMenuButtons }
     let buttons: [ServiceMenuButtonModel]
     let config: SDUIConfig?
+    
+    enum CodingKeys: CodingKey {
+        case buttons
+        case config
+    }
 }

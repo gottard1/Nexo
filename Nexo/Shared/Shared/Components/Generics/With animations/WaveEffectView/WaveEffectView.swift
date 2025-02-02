@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WaveView: UIView {
+final class WaveEffectView: UIView {
     private var waveLayers: [CAShapeLayer] = []
     private var displayLink: CADisplayLink?
     
