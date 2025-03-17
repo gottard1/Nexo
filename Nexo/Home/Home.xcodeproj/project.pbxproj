@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		853423A22CB55AEF00EF82B2 /* Home.docc in Sources */ = {isa = PBXBuildFile; fileRef = 853423A12CB55AEF00EF82B2 /* Home.docc */; };
 		853423A82CB55AF000EF82B2 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8534239D2CB55AEF00EF82B2 /* Home.framework */; };
-		853423AD2CB55AF000EF82B2 /* HomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423AC2CB55AF000EF82B2 /* HomeTests.swift */; };
 		853423AE2CB55AF000EF82B2 /* Home.h in Headers */ = {isa = PBXBuildFile; fileRef = 853423A02CB55AEF00EF82B2 /* Home.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		853423B92CB55B0300EF82B2 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423B82CB55B0300EF82B2 /* HomeCoordinator.swift */; };
 		853423BC2CB55B1300EF82B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853423BB2CB55B1300EF82B2 /* HomeViewController.swift */; };
 		853423C12CB55D4000EF82B2 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853423C02CB55D4000EF82B2 /* Shared.framework */; };
 		853423C22CB55D4000EF82B2 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 853423C02CB55D4000EF82B2 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8558F3812D5A115A00B92524 /* MockSDUIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558F3802D5A115A00B92524 /* MockSDUIBuilder.swift */; };
+		8558F3842D5A136E00B92524 /* HomeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558F3832D5A136E00B92524 /* HomeServiceTests.swift */; };
+		8558F3882D5A17C500B92524 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558F3872D5A17C500B92524 /* HomeInteractorTests.swift */; };
+		8558F38A2D5A17DB00B92524 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8558F3892D5A17DB00B92524 /* HomePresenterTests.swift */; };
 		85FD12262D312F4100126D8A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12252D312F4100126D8A /* HomeView.swift */; };
 		85FD12282D3134F400126D8A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12272D3134F400126D8A /* HomeInteractor.swift */; };
 		85FD122A2D31351500126D8A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FD12292D31351500126D8A /* HomePresenter.swift */; };
@@ -53,10 +56,13 @@
 		853423A02CB55AEF00EF82B2 /* Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Home.h; sourceTree = "<group>"; };
 		853423A12CB55AEF00EF82B2 /* Home.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Home.docc; sourceTree = "<group>"; };
 		853423A72CB55AF000EF82B2 /* HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		853423AC2CB55AF000EF82B2 /* HomeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTests.swift; sourceTree = "<group>"; };
 		853423B82CB55B0300EF82B2 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		853423BB2CB55B1300EF82B2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		853423C02CB55D4000EF82B2 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8558F3802D5A115A00B92524 /* MockSDUIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSDUIBuilder.swift; sourceTree = "<group>"; };
+		8558F3832D5A136E00B92524 /* HomeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceTests.swift; sourceTree = "<group>"; };
+		8558F3872D5A17C500B92524 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		8558F3892D5A17DB00B92524 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		85FD12252D312F4100126D8A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		85FD12272D3134F400126D8A /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		85FD12292D31351500126D8A /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -120,7 +126,8 @@
 		853423AB2CB55AF000EF82B2 /* HomeTests */ = {
 			isa = PBXGroup;
 			children = (
-				853423AC2CB55AF000EF82B2 /* HomeTests.swift */,
+				8558F37B2D5A102400B92524 /* Repositories */,
+				8558F3852D5A177900B92524 /* Screens */,
 			);
 			path = HomeTests;
 			sourceTree = "<group>";
@@ -142,6 +149,40 @@
 				853423C02CB55D4000EF82B2 /* Shared.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8558F37B2D5A102400B92524 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				8558F3832D5A136E00B92524 /* HomeServiceTests.swift */,
+				8558F3822D5A128600B92524 /* Mock */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8558F3822D5A128600B92524 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				8558F3802D5A115A00B92524 /* MockSDUIBuilder.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		8558F3852D5A177900B92524 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8558F3862D5A17B300B92524 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8558F3862D5A17B300B92524 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8558F3892D5A17DB00B92524 /* HomePresenterTests.swift */,
+				8558F3872D5A17C500B92524 /* HomeInteractorTests.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		85FD122B2D31376800126D8A /* Repositories */ = {
@@ -253,6 +294,7 @@
 					};
 					853423A62CB55AF000EF82B2 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -314,7 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				853423AD2CB55AF000EF82B2 /* HomeTests.swift in Sources */,
+				8558F38A2D5A17DB00B92524 /* HomePresenterTests.swift in Sources */,
+				8558F3842D5A136E00B92524 /* HomeServiceTests.swift in Sources */,
+				8558F3882D5A17C500B92524 /* HomeInteractorTests.swift in Sources */,
+				8558F3812D5A115A00B92524 /* MockSDUIBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +578,7 @@
 		853423B52CB55AF000EF82B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94M43PKX7X;
@@ -543,6 +588,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.Nexo.HomeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -551,7 +598,7 @@
 		853423B62CB55AF000EF82B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 94M43PKX7X;
@@ -561,6 +608,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.Nexo.HomeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

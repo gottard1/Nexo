@@ -1,45 +1,51 @@
 //
-//  LoginServiceTests.swift
-//  AuthTests
+//  HomeServiceTests.swift
+//  Home
 //
-//  Created by Marcel Felipe Gottardi Anesi on 29/11/24.
+//  Created by Marcel Felipe Gottardi Anesi on 10/02/25.
 //
 
 import XCTest
-@testable import Auth
+@testable import Home
 @testable import Shared
 
-final class LoginServiceTests: XCTestCase {
+final class HomeServiceTests: XCTestCase {
     
-    var loginService: LoginService!
+    var homeService: HomeService!
     var mockNetworkManager: MockNetworkManager!
     
     override func setUp() {
         super.setUp()
         mockNetworkManager = MockNetworkManager()
-        loginService = LoginService(networkManager: mockNetworkManager)
+        homeService = HomeService(networkManager: mockNetworkManager)
     }
     
     override func tearDown() {
-        loginService = nil
+        homeService = nil
         mockNetworkManager = nil
         super.tearDown()
     }
     
     func testLoginSuccess() async throws {
-        let expectedResponse = AuthenticateResponse(token: "someToken", message: "someMessage")
+        let expectedResponse = MockSDUIBuilder.make()
         mockNetworkManager.mockResponse = expectedResponse
         
-        let result = try await loginService.login(cpfCnpj: "12345678910", password: "password")
+        let result = try await homeService.fetchHome()
         
-        XCTAssertEqual(result.token, expectedResponse.token)
+        XCTAssertEqual(result.components.count, expectedResponse.components.count)
+        
+        for (index, component) in result.components.enumerated() {
+            let expectedComponent = expectedResponse.components[index]
+            XCTAssertEqual(component.componentType, expectedComponent.componentType)
+            XCTAssertEqual(component.config?.colors?.background, expectedComponent.config?.colors?.background)
+        }
     }
     
     func testLoginFailure() async throws {
         mockNetworkManager.mockError = NSError(domain: "TestError", code: 1, userInfo: nil)
         
         do {
-            _ = try await loginService.login(cpfCnpj: "12345678910", password: "password")
+            _ = try await homeService.fetchHome()
             XCTFail("Expected error but got a successful response")
         } catch {
             XCTAssertNotNil(error)
@@ -48,7 +54,7 @@ final class LoginServiceTests: XCTestCase {
 }
 
 class MockNetworkManager: Networking {
-    var mockResponse: AuthenticateResponse?
+    var mockResponse: SDUIBuilder?
     var mockError: Error?
     
     func request<T>(target: BaseTarget, responseType: T.Type) async throws -> T where T : Decodable {

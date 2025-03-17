@@ -26,7 +26,6 @@ public struct SDUIComponentData: Codable {
         if let modelType = ComponentMapper.componentMap[componentType] {
             let data = try container.decode(modelType, forKey: .data)
             self.data = data
-//            self.data = try modelType.init(from: decoder)
         } else {
             throw DecodingError.dataCorruptedError(forKey: .componentType, in: container, debugDescription: "Tipo de componente desconhecido")
         }
